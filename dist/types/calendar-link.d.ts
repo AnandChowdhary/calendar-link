@@ -1,8 +1,12 @@
 interface CalendarEvent {
+    title: string;
     start: Date;
     end?: Date;
     duration?: number;
-    title: string;
+    description?: string;
+    location?: string;
+    busy?: boolean;
+    guests?: string[];
 }
 export default class CalendarLink {
     constructor(event: CalendarEvent);

@@ -10,6 +10,25 @@
                 margin: 10vh auto;
                 line-height: 1.7;
             }
+            a {
+                color: blue;
+                text-decoration: none;
+            }
+            li {
+                margin-bottom: 2rem;
+            }
+            [data-calendar-link]::after {
+                content: attr(href);
+                display: block;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                overflow-x: auto;
+                background-color: whitesmoke;
+                color: #000;
+                margin-top: 0.5rem;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+            }
         </style>
     </head>
     <body>
@@ -24,10 +43,18 @@
             const calendarLink = new window.calendarLink();
             const calendarLinkElements = document.querySelectorAll("[data-calendar-link]");
             calendarLinkElements.forEach(link => {
-                console.log(calendarLink[link.getAttribute("data-calendar-link")]({
+                link.setAttribute("href", (calendarLink[link.getAttribute("data-calendar-link")]({
                     start: new Date(),
-                    duration: 100
-                }));
+                    duration: 100,
+                    title: "Anand's birthday",
+                    description: "Get ready for the party of your life!",
+                    location: "Internet",
+                    busy: true,
+                    guests: [
+                        "friend@example.com",
+                        "coworker@oswaldlabs.com"
+                    ]
+                })));
             });
         </script>
     </body>
