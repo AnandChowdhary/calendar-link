@@ -1,8 +1,8 @@
 interface CalendarEvent {
     title: string;
-    start: Date;
-    end?: Date;
-    duration?: number;
+    start: any;
+    end?: any;
+    duration?: (string | number)[];
     description?: string;
     location?: string;
     busy?: boolean;

@@ -1,10 +1,11 @@
+import dayjs from 'dayjs'
 import objectToQuery from 'object-to-querystring'
 
 interface CalendarEvent {
   title: string
-  start: Date
-  end?: Date
-  duration?: number
+  start: any
+  end?: any
+  duration?: (string | number)[]
   description?: string
   location?: string
   busy?: boolean
@@ -14,7 +15,7 @@ interface CalendarEvent {
 interface GoogleLink {
   action?: string
   text?: string
-  dates?: string
+  dates?: string // YYYYMMDDToHHmmSSZ/YYYYMMDDToHHmmSSZ
   details?: string
   location?: string
   trp?: boolean
@@ -25,10 +26,20 @@ interface GoogleLink {
 }
 
 function sanitizeEvent(event: CalendarEvent) {
-  if (event.duration && !event.end) {
-    event.end = new Date()
+  event.start = dayjs(event.start).toDate()
+  if (event.duration && event.duration.length && !event.end) {
+    event.end = dayjs(event.start)
+      .add(event.duration[0], event.duration[1])
+      .toDate()
   }
   return event
+}
+
+function encodeAll(object: any) {
+  for (let key in object) {
+    // object[key] = encodeURIComponent(object[key]);
+  }
+  return object
 }
 
 export default class CalendarLink {
@@ -42,12 +53,21 @@ export default class CalendarLink {
       details: event.description,
       location: event.location,
       trp: event.busy,
-      dates: '20201231T193000Z/20201231T223000Z'
+      dates:
+        dayjs(event.start).format('YYYYMMDD') +
+        'T' +
+        dayjs(event.start).format('HHmmss') +
+        'Z' +
+        '/' +
+        dayjs(event.end).format('YYYYMMDD') +
+        'T' +
+        dayjs(event.end).format('HHmmss') +
+        'Z'
     }
     if (event.guests && event.guests.length) {
       details.add = event.guests.join()
     }
-    return 'https://calendar.google.com/calendar/render' + objectToQuery(details)
+    return 'https://calendar.google.com/calendar/render' + objectToQuery(encodeAll(details))
   }
 
   yahoo(event: CalendarEvent) {

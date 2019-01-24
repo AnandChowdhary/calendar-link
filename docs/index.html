@@ -44,9 +44,9 @@
             const calendarLinkElements = document.querySelectorAll("[data-calendar-link]");
             calendarLinkElements.forEach(link => {
                 link.setAttribute("href", (calendarLink[link.getAttribute("data-calendar-link")]({
-                    start: new Date(),
-                    duration: 100,
-                    title: "Anand's birthday",
+                    start: "2019-12-29",
+                    duration: [1, "day"],
+                    title: "Anand birthday",
                     description: "Get ready for the party of your life!",
                     location: "Internet",
                     busy: true,
