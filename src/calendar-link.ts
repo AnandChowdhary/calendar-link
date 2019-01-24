@@ -13,9 +13,9 @@ interface CalendarEvent {
 }
 
 interface GoogleLink {
-  action?: string
-  text?: string
-  dates?: string // YYYYMMDDToHHmmSSZ/YYYYMMDDToHHmmSSZ
+  action: string
+  text: string
+  dates: string
   details?: string
   location?: string
   trp?: boolean
@@ -23,6 +23,26 @@ interface GoogleLink {
   add?: string
   src?: string
   recur?: string
+}
+
+interface OutlookLink {
+  path: string
+  rru: string
+  startdt: string
+  enddt: string
+  subject: string
+  allday?: boolean
+  body?: string
+  location?: string
+}
+
+interface YahooLink {
+  v: number
+  title: string
+  st: string
+  et: string
+  desc?: string
+  in_loc?: string
 }
 
 function sanitizeEvent(event: CalendarEvent) {
@@ -35,18 +55,21 @@ function sanitizeEvent(event: CalendarEvent) {
   return event
 }
 
-function encodeAll(object: any) {
-  for (let key in object) {
-    // object[key] = encodeURIComponent(object[key]);
-  }
-  return object
-}
-
 export default class CalendarLink {
   constructor(event: CalendarEvent) {}
 
   google(event: CalendarEvent) {
     event = sanitizeEvent(event)
+    const startDate: string = dayjs(event.start)
+      .toISOString()
+      .replace(/-/g, '')
+      .replace(/:/g, '')
+      .replace(/\./g, '')
+    const endDate: string = dayjs(event.end)
+      .toISOString()
+      .replace(/-/g, '')
+      .replace(/:/g, '')
+      .replace(/\./g, '')
     const details: GoogleLink = {
       action: 'TEMPLATE',
       text: event.title,
@@ -54,29 +77,41 @@ export default class CalendarLink {
       location: event.location,
       trp: event.busy,
       dates:
-        dayjs(event.start).format('YYYYMMDD') +
-        'T' +
-        dayjs(event.start).format('HHmmss') +
-        'Z' +
-        '/' +
-        dayjs(event.end).format('YYYYMMDD') +
-        'T' +
-        dayjs(event.end).format('HHmmss') +
+        startDate.substring(0, startDate.length - 4) +
+        'Z/' +
+        endDate.substring(0, endDate.length - 4) +
         'Z'
     }
     if (event.guests && event.guests.length) {
       details.add = event.guests.join()
     }
-    return 'https://calendar.google.com/calendar/render' + objectToQuery(encodeAll(details))
-  }
-
-  yahoo(event: CalendarEvent) {
-    event = sanitizeEvent(event)
-    return JSON.stringify(event)
+    return 'https://calendar.google.com/calendar/render' + objectToQuery(details)
   }
 
   outlook(event: CalendarEvent) {
     event = sanitizeEvent(event)
-    return JSON.stringify(event)
+    const details: OutlookLink = {
+      path: '/calendar/action/compose',
+      rru: 'addevent',
+      startdt: dayjs(event.start).format('YYYYMMDD[T]HHmmss'),
+      enddt: dayjs(event.end).format('YYYYMMDD[T]HHmmss'),
+      subject: event.title,
+      body: event.description,
+      location: event.location
+    }
+    return 'https://outlook.live.com/owa/' + objectToQuery(details)
+  }
+
+  yahoo(event: CalendarEvent) {
+    event = sanitizeEvent(event)
+    const details: YahooLink = {
+      v: 60,
+      title: event.title,
+      st: dayjs(event.start).format('YYYYMMDD[T]HHmmss'),
+      et: dayjs(event.end).format('YYYYMMDD[T]HHmmss'),
+      desc: event.description,
+      in_loc: event.location
+    }
+    return 'https://calendar.yahoo.com/' + objectToQuery(details)
   }
 }
