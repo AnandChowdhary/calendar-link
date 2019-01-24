@@ -63,17 +63,26 @@ var CalendarLink = /** @class */ (function () {
     }
     CalendarLink.prototype.google = function (event) {
         event = sanitizeEvent(event);
-        var startDate = dayjs_min(event.start).toISOString().replace(/-/g, "").replace(/:/g, "").replace(/\./g, "");
-        var endDate = dayjs_min(event.end).toISOString().replace(/-/g, "").replace(/:/g, "").replace(/\./g, "");
+        var startDate = dayjs_min(event.start)
+            .toISOString()
+            .replace(/-/g, '')
+            .replace(/:/g, '')
+            .replace(/\./g, '');
+        var endDate = dayjs_min(event.end)
+            .toISOString()
+            .replace(/-/g, '')
+            .replace(/:/g, '')
+            .replace(/\./g, '');
         var details = {
             action: 'TEMPLATE',
             text: event.title,
             details: event.description,
             location: event.location,
             trp: event.busy,
-            dates: startDate.substring(0, startDate.length - 4)
-                + 'Z/' +
-                endDate.substring(0, endDate.length - 4) + 'Z'
+            dates: startDate.substring(0, startDate.length - 4) +
+                'Z/' +
+                endDate.substring(0, endDate.length - 4) +
+                'Z'
         };
         if (event.guests && event.guests.length) {
             details.add = event.guests.join();

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>calendar-link | calendar-link</title>
+	<title>GoogleLink | calendar-link</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -879,7 +879,7 @@ img { max-width: 100%; }
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">calendar-link</a></strong>
+					<strong><a href="../index.html">calendar-link</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -910,149 +910,190 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class">
-			<a href="classes/calendarlink.html" class="tsd-kind-icon">Calendar<wbr>Link</a>
+			<a href="../classes/calendarlink.html" class="tsd-kind-icon">Calendar<wbr>Link</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="interfaces/calendarevent.html" class="tsd-kind-icon">Calendar<wbr>Event</a>
+			<a href="calendarevent.html" class="tsd-kind-icon">Calendar<wbr>Event</a>
+		</li>
+		<li class="current tsd-kind-interface tsd-is-not-exported">
+			<a href="googlelink.html" class="tsd-kind-icon">Google<wbr>Link</a>
+			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#action" class="tsd-kind-icon">action</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#add" class="tsd-kind-icon">add</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#dates" class="tsd-kind-icon">dates</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#details" class="tsd-kind-icon">details</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#location" class="tsd-kind-icon">location</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#recur" class="tsd-kind-icon">recur</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#sprop" class="tsd-kind-icon">sprop</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#src" class="tsd-kind-icon">src</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#text" class="tsd-kind-icon">text</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a href="googlelink.html#trp" class="tsd-kind-icon">trp</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="interfaces/googlelink.html" class="tsd-kind-icon">Google<wbr>Link</a>
+			<a href="outlooklink.html" class="tsd-kind-icon">Outlook<wbr>Link</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="interfaces/outlooklink.html" class="tsd-kind-icon">Outlook<wbr>Link</a>
-		</li>
-		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="interfaces/yahoolink.html" class="tsd-kind-icon">Yahoo<wbr>Link</a>
+			<a href="yahoolink.html" class="tsd-kind-icon">Yahoo<wbr>Link</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
-			<a href="globals.html#sanitizeevent" class="tsd-kind-icon">sanitize<wbr>Event</a>
+			<a href="../globals.html#sanitizeevent" class="tsd-kind-icon">sanitize<wbr>Event</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<div class="tsd-panel tsd-typography">
-			<h1 id="typescript-library-starter">TypeScript library starter</h1>
-			<p><a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" alt="styled with prettier"></a>
-				<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/AnandChowdhary/calendar-link.svg" alt="Greenkeeper badge"></a>
-				<a href="https://travis-ci.org/AnandChowdhary/calendar-link"><img src="https://img.shields.io/travis/AnandChowdhary/calendar-link.svg" alt="Travis"></a>
-				<a href="https://coveralls.io/github/AnandChowdhary/calendar-link?branch=master"><img src="https://coveralls.io/repos/github/AnandChowdhary/calendar-link/badge.svg?branch=master" alt="Coverage Status"></a>
-			<a href="https://david-dm.org/AnandChowdhary/calendar-link?type=dev"><img src="https://david-dm.org/AnandChowdhary/calendar-link/dev-status.svg" alt="Dev Dependencies"></a></p>
-			<p>JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.</p>
-			<p><a href="https://npm.im/calendar-link/"><img src="https://nodei.co/npm/calendar-link.png" alt="NPM"></a></p>
-			<h3 id="usage">Usage</h3>
-			<p>You can import the library and use it:</p>
-			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> calendarLink <span class="hljs-keyword">from</span> <span class="hljs-string">'calendar-link'</span></code></pre>
-			<h2 id="development">Development</h2>
-			<h3 id="excluding-peerdependencies">Excluding peerDependencies</h3>
-			<p>On library development, one might want to set some peer dependencies, and thus remove those from the final bundle. You can see in <a href="https://rollupjs.org/#peer-dependencies">Rollup docs</a> how to do that.</p>
-			<p>Good news: the setup is here for you, you must only include the dependency name in <code>external</code> property within <code>rollup.config.js</code>. For example, if you want to exclude <code>lodash</code>, just write there <code>external: [&#39;lodash&#39;]</code>.</p>
-			<h3 id="automatic-releases">Automatic releases</h3>
-			<p><em><strong>Prerequisites</strong>: you need to create/login accounts and add your project to:</em></p>
-			<ul>
-				<li><a href="https://www.npmjs.com/">npm</a></li>
-				<li><a href="https://travis-ci.org">Travis CI</a></li>
-				<li><a href="https://coveralls.io">Coveralls</a></li>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">GoogleLink</span>
+				</li>
 			</ul>
-			<p><em><strong>Prerequisite for Windows</strong>: Semantic-release uses
-					<strong><a href="https://github.com/nodejs/node-gyp">node-gyp</a></strong> so you will need to
-					install
-					<a href="https://github.com/felixrieseberg/windows-build-tools">Microsoft&#39;s windows-build-tools</a>
-			using this command:</em></p>
-			<pre><code class="language-bash">npm install --global --production windows-build-tools</code></pre>
-			<h4 id="setup-steps">Setup steps</h4>
-			<p>Follow the console instructions to install semantic release and run it (answer NO to &quot;Do you want a <code>.travis.yml</code> file with semantic-release setup?&quot;).</p>
-			<p><em>Note: make sure you&#39;ve setup <code>repository.url</code> in your <code>package.json</code> file</em></p>
-			<pre><code class="language-bash">npm install -g semantic-release-cli
-semantic-release-cli setup
-<span class="hljs-comment"># IMPORTANT!! Answer NO to "Do you want a `.travis.yml` file with semantic-release setup?" question. It is already prepared for you :P</span></code></pre>
-			<p>From now on, you&#39;ll need to use <code>npm run commit</code>, which is a convenient way to create conventional commits.</p>
-			<p>Automatic releases are possible thanks to <a href="https://github.com/semantic-release/semantic-release">semantic release</a>, which publishes your code automatically on <a href="https://github.com/">github</a> and <a href="https://www.npmjs.com/">npm</a>, plus generates automatically a changelog. This setup is highly influenced by <a href="https://egghead.io/courses/how-to-write-an-open-source-javascript-library">Kent C. Dodds course on egghead.io</a></p>
-			<h3 id="git-hooks">Git Hooks</h3>
-			<p>There is already set a <code>precommit</code> hook for formatting your code with Prettier :nail_care:</p>
-			<p>By default, there are two disabled git hooks. They&#39;re set up when you run the <code>npm run semantic-release-prepare</code> script. They make sure:</p>
-			<ul>
-				<li>You follow a <a href="https://github.com/conventional-changelog/conventional-changelog">conventional commit message</a></li>
-				<li>Your build is not going to fail in <a href="https://travis-ci.org">Travis</a> (or your CI server), since it&#39;s runned locally before <code>git push</code></li>
-			</ul>
-			<p>This makes more sense in combination with <a href="#automatic-releases">automatic releases</a></p>
-			<h3 id="faq">FAQ</h3>
-			<h4 id="array-prototype-from-promise-map-is-undefined-"><code>Array.prototype.from</code>, <code>Promise</code>, <code>Map</code>... is undefined?</h4>
-			<p>TypeScript or Babel only provides down-emits on syntactical features (<code>class</code>, <code>let</code>, <code>async/await</code>...), but not on functional features (<code>Array.prototype.find</code>, <code>Set</code>, <code>Promise</code>...), . For that, you need Polyfills, such as <a href="https://github.com/zloirock/core-js"><code>core-js</code></a> or <a href="https://babeljs.io/docs/usage/polyfill/"><code>babel-polyfill</code></a> (which extends <code>core-js</code>).</p>
-			<p>For a library, <code>core-js</code> plays very nicely, since you can import just the polyfills you need:</p>
-			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/fn/array/find"</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/fn/string/includes"</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/fn/promise"</span>
-...</code></pre>
-			<h4 id="what-if-i-don-t-want-git-hooks-automatic-releases-or-semantic-release-">What if I don&#39;t want git-hooks, automatic releases or semantic-release?</h4>
-			<p>Then you may want to:</p>
-			<ul>
-				<li>Remove <code>commitmsg</code>, <code>postinstall</code> scripts from <code>package.json</code>. That will not use those git hooks to make sure you make a conventional commit</li>
-				<li>Remove <code>npm run semantic-release</code> from <code>.travis.yml</code></li>
-			</ul>
-			<h4 id="what-if-i-don-t-want-to-use-coveralls-or-report-my-coverage-">What if I don&#39;t want to use coveralls or report my coverage?</h4>
-			<p>Remove <code>npm run report-coverage</code> from <code>.travis.yml</code></p>
-		</div>
-		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section tsd-is-not-exported">
-						<h3>Modules</h3>
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-module tsd-is-not-exported"><a href="modules/_dayjs_.html" class="tsd-kind-icon">"dayjs"</a></li>
-							<li class="tsd-kind-module tsd-is-not-exported"><a href="modules/_object_to_querystring_.html" class="tsd-kind-icon">"object-<wbr>to-<wbr>querystring"</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Classes</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-class"><a href="classes/calendarlink.html" class="tsd-kind-icon">Calendar<wbr>Link</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section tsd-is-not-exported">
-						<h3>Interfaces</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/calendarevent.html" class="tsd-kind-icon">Calendar<wbr>Event</a></li>
-							<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/googlelink.html" class="tsd-kind-icon">Google<wbr>Link</a></li>
-							<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/outlooklink.html" class="tsd-kind-icon">Outlook<wbr>Link</a></li>
-							<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/yahoolink.html" class="tsd-kind-icon">Yahoo<wbr>Link</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section tsd-is-not-exported">
-						<h3>Functions</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#sanitizeevent" class="tsd-kind-icon">sanitize<wbr>Event</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#action" class="tsd-kind-icon">action</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#add" class="tsd-kind-icon">add</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#dates" class="tsd-kind-icon">dates</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#details" class="tsd-kind-icon">details</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#location" class="tsd-kind-icon">location</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#recur" class="tsd-kind-icon">recur</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#sprop" class="tsd-kind-icon">sprop</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#src" class="tsd-kind-icon">src</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#text" class="tsd-kind-icon">text</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="googlelink.html#trp" class="tsd-kind-icon">trp</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-			<h2>Functions</h2>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-				<a name="sanitizeevent" class="tsd-anchor"></a>
-				<h3>sanitize<wbr>Event</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">sanitize<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="interfaces/calendarevent.html" class="tsd-signature-type">CalendarEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/calendarevent.html" class="tsd-signature-type">CalendarEvent</a></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L48">calendar-link.ts:48</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>event: <a href="interfaces/calendarevent.html" class="tsd-signature-type">CalendarEvent</a></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="interfaces/calendarevent.html" class="tsd-signature-type">CalendarEvent</a></h4>
-					</li>
-				</ul>
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="action" class="tsd-anchor"></a>
+				<h3>action</h3>
+				<div class="tsd-signature tsd-kind-icon">action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L16">calendar-link.ts:16</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="add" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> add</h3>
+				<div class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L23">calendar-link.ts:23</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="dates" class="tsd-anchor"></a>
+				<h3>dates</h3>
+				<div class="tsd-signature tsd-kind-icon">dates<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L18">calendar-link.ts:18</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="details" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> details</h3>
+				<div class="tsd-signature tsd-kind-icon">details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L19">calendar-link.ts:19</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="location" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> location</h3>
+				<div class="tsd-signature tsd-kind-icon">location<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L20">calendar-link.ts:20</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="recur" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> recur</h3>
+				<div class="tsd-signature tsd-kind-icon">recur<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L25">calendar-link.ts:25</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="sprop" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> sprop</h3>
+				<div class="tsd-signature tsd-kind-icon">sprop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L22">calendar-link.ts:22</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="src" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> src</h3>
+				<div class="tsd-signature tsd-kind-icon">src<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L24">calendar-link.ts:24</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="text" class="tsd-anchor"></a>
+				<h3>text</h3>
+				<div class="tsd-signature tsd-kind-icon">text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L17">calendar-link.ts:17</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<a name="trp" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> trp</h3>
+				<div class="tsd-signature tsd-kind-icon">trp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/6a4eff5/src/calendar-link.ts#L21">calendar-link.ts:21</a></li>
+					</ul>
+				</aside>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
