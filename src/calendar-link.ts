@@ -56,8 +56,6 @@ function sanitizeEvent(event: CalendarEvent) {
 }
 
 export default class CalendarLink {
-  constructor(event: CalendarEvent) {}
-
   google(event: CalendarEvent) {
     event = sanitizeEvent(event)
     const startDate: string = dayjs(event.start)

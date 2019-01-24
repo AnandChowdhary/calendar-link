@@ -9,7 +9,6 @@ interface CalendarEvent {
     guests?: string[];
 }
 export default class CalendarLink {
-    constructor(event: CalendarEvent);
     google(event: CalendarEvent): string;
     outlook(event: CalendarEvent): string;
     yahoo(event: CalendarEvent): string;

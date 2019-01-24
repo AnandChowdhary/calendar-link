@@ -59,7 +59,7 @@ function sanitizeEvent(event) {
     return event;
 }
 var CalendarLink = /** @class */ (function () {
-    function CalendarLink(event) {
+    function CalendarLink() {
     }
     CalendarLink.prototype.google = function (event) {
         event = sanitizeEvent(event);
