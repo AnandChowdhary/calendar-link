@@ -13,19 +13,20 @@
         </style>
     </head>
     <body>
-        <p>Hello, world!</p>
+        <p>Click on the following links to add an event to your calendar:</p>
         <ul>
-            <li><a data-calendar-link="google" href="#">Google Calendar</a></li>
-            <li><a data-calendar-link="outlook" href="#">Outlook Calendar</a></li>
-            <li><a data-calendar-link="yahoo" href="#">Yahoo! Calendar</a></li>
+            <li><a target="_blank" data-calendar-link="google" href="#">Google Calendar</a></li>
+            <li><a target="_blank" data-calendar-link="outlook" href="#">Outlook Calendar</a></li>
+            <li><a target="_blank" data-calendar-link="yahoo" href="#">Yahoo! Calendar</a></li>
         </ul>
         <script src="../dist/calendar-link.umd.js"></script>
         <script>
             const calendarLink = new window.calendarLink();
             const calendarLinkElements = document.querySelectorAll("[data-calendar-link]");
             calendarLinkElements.forEach(link => {
-                console.log(link.getAttribute("data-calendar-link"), calendarLink.google({
-                    date: new Date()
+                console.log(calendarLink[link.getAttribute("data-calendar-link")]({
+                    start: new Date(),
+                    duration: 100
                 }));
             });
         </script>
