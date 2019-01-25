@@ -7,12 +7,11 @@ describe('Google test', () => {
     expect(new CalendarLink().google).toBeInstanceOf(Function)
   })
   it('Google returns correct URL', () => {
-    expect(
-      new CalendarLink().google({
-        start: '2018-01-01',
-        title: 'Hello world',
-        duration: [2, 'hours']
-      })
-    ).toEqual('Function')
+    const dsad =       new CalendarLink().google({
+      start: '2018-01-01',
+      title: 'Hello world',
+      duration: [2, 'hours']
+    });
+    expect(dsad).toEqual('Function')
   })
 })

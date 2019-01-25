@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs, { UnitType } from 'dayjs'
 import objectToQuery from 'object-to-querystring'
 
 interface CalendarEvent {
@@ -49,7 +49,7 @@ function sanitizeEvent(event: CalendarEvent) {
   event.start = dayjs(event.start).toDate()
   if (event.duration && event.duration.length && !event.end) {
     event.end = dayjs(event.start)
-      .add(event.duration[0], event.duration[1])
+      .add(4, 'minute')
       .toDate()
   }
   return event

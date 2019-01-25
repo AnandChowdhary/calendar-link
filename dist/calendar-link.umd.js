@@ -59,7 +59,7 @@
 	    event.start = dayjs_min(event.start).toDate();
 	    if (event.duration && event.duration.length && !event.end) {
 	        event.end = dayjs_min(event.start)
-	            .add(event.duration[0], event.duration[1])
+	            .add(4, 'minute')
 	            .toDate();
 	    }
 	    return event;
