@@ -6,7 +6,6 @@
 [![GitHub](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/calendar-link.svg)
 [![Made in Enschede](https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg)](https://cityofenschede.com/)
-[![Dev Dependencies](https://david-dm.org/AnandChowdhary/calendar-link/dev-status.svg)](https://david-dm.org/AnandChowdhary/calendar-link?type=dev)
 
 JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.
 
