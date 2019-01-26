@@ -9,7 +9,7 @@ describe('Outlook test', () => {
   })
   it('Outlook returns correct URL', () => {
     const outlookCalendarLink = new CalendarLink().outlook({
-      start: '2018-01-01',
+      start: '2018-01-01 UTC+0100',
       title: 'Hello world',
       duration: [2, 'hours']
     })

@@ -9,7 +9,7 @@ describe('Google test', () => {
   })
   it('Google returns correct URL', () => {
     const googleCalendarLink = new CalendarLink().google({
-      start: '2018-01-01',
+      start: '2018-01-01 UTC+0100',
       title: 'Hello world',
       duration: [2, 'hours']
     })
@@ -19,7 +19,7 @@ describe('Google test', () => {
   })
   it('Google returns correct URL for full featured (demo) event', () => {
     const googleCalendarLink = new CalendarLink().google({
-      start: '2019-12-29',
+      start: '2019-12-29 UTC+0100',
       duration: [1, 'day'],
       title: 'Anand birthday',
       description: 'Get ready for the party of your life!',

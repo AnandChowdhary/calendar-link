@@ -3,8 +3,8 @@ import CalendarLink from '../src/calendar-link'
 describe('Google test', () => {
   it('Google event with end', () => {
     const googleCalendarLink = new CalendarLink().google({
-      start: '2018-01-01',
-      end: '2018-01-02',
+      start: '2018-01-01 UTC+0100',
+      end: '2018-01-02 UTC+0100',
       title: 'Hello world'
     })
     const expectedLink: string =
@@ -13,7 +13,7 @@ describe('Google test', () => {
   })
   it('Google event with duration', () => {
     const googleCalendarLink = new CalendarLink().google({
-      start: '2018-01-01',
+      start: '2018-01-01 UTC+0100',
       title: 'Hello world',
       duration: [2, 'hours']
     })
@@ -23,8 +23,8 @@ describe('Google test', () => {
   })
   it('Google event with duration and end', () => {
     const googleCalendarLink = new CalendarLink().google({
-      start: '2018-01-01',
-      end: '2018-01-02',
+      start: '2018-01-01 UTC+0100',
+      end: '2018-01-02 UTC+0100',
       title: 'Hello world',
       duration: [2, 'hours']
     })

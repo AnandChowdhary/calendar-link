@@ -9,7 +9,7 @@ describe('Yahoo test', () => {
   })
   it('Yahoo returns correct URL', () => {
     const yahooCalendarLink = new CalendarLink().yahoo({
-      start: '2018-01-01',
+      start: '2018-01-01 UTC+0100',
       title: 'Hello world',
       duration: [2, 'hours']
     })
