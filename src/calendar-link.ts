@@ -1,4 +1,4 @@
-import dayjs, { UnitType } from 'dayjs'
+import * as dayjs from 'dayjs'
 import objectToQuery from 'object-to-querystring'
 
 interface CalendarEvent {
@@ -48,8 +48,10 @@ interface YahooLink {
 function sanitizeEvent(event: CalendarEvent) {
   event.start = dayjs(event.start).toDate()
   if (event.duration && event.duration.length && !event.end) {
+    const duration: number = +event.duration[0]
+    const unit: dayjs.UnitType = event.duration[0] as dayjs.UnitType
     event.end = dayjs(event.start)
-      .add(4, 'minute')
+      .add(duration, unit)
       .toDate()
   }
   return event
