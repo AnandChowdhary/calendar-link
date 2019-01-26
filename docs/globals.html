@@ -936,18 +936,62 @@ img { max-width: 100%; }
 			<p><a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/AnandChowdhary/calendar-link.svg" alt="Greenkeeper badge"></a>
 				<a href="https://travis-ci.org/AnandChowdhary/calendar-link"><img src="https://img.shields.io/travis/AnandChowdhary/calendar-link.svg" alt="Travis"></a>
 				<a href="https://coveralls.io/github/AnandChowdhary/calendar-link?branch=master"><img src="https://coveralls.io/repos/github/AnandChowdhary/calendar-link/badge.svg?branch=master" alt="Coverage Status"></a>
-			<a href="https://david-dm.org/AnandChowdhary/calendar-link?type=dev"><img src="https://david-dm.org/AnandChowdhary/calendar-link/dev-status.svg" alt="Dev Dependencies"></a></p>
+				<a href="https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE"><img src="https://img.shields.io/github/license/anandchowdhary/calendar-link.svg" alt="GitHub"></a>
+				<img src="https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/calendar-link.svg" alt="Vulnerabilities">
+			<a href="https://cityofenschede.com/"><img src="https://img.shields.io/badge/made%20in-Enschede-brightgreen.svg" alt="Made in Enschede"></a></p>
 			<p>JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.</p>
 			<p><a href="https://npm.im/calendar-link/"><img src="https://nodei.co/npm/calendar-link.png" alt="NPM"></a></p>
 			<h3 id="usage">Usage</h3>
 			<pre><code class="language-js"><span class="hljs-keyword">import</span> calendarLink <span class="hljs-keyword">from</span> <span class="hljs-string">'calendar-link'</span>
 
-calendarLink.google({
+<span class="hljs-comment">// Set event as an object</span>
+<span class="hljs-keyword">const</span> event = {
   <span class="hljs-attr">title</span>: <span class="hljs-string">'My birthday party'</span>,
   <span class="hljs-attr">description</span>: <span class="hljs-string">'Be there!'</span>,
   <span class="hljs-attr">starts</span>: <span class="hljs-string">'2019-12-29 18:00:00 +0100'</span>,
   <span class="hljs-attr">duration</span>: [<span class="hljs-number">3</span>, <span class="hljs-string">'hours'</span>]
-}); <span class="hljs-comment">// Returns a link to add this event to your Google Calendar</span></code></pre>
+};
+
+<span class="hljs-comment">// Then fetch the link</span>
+calendarLink.google(event); <span class="hljs-comment">// https://calendar.google.com/calendar/render...</span>
+calendarLink.outook(event); <span class="hljs-comment">// https://outlook.live.com/owa/...</span>
+calendarLink.yahoo(event); <span class="hljs-comment">// https://calendar.yahoo.com/?v=60&amp;title=...</span></code></pre>
+			<h3 id="options">Options</h3>
+			<p>Property | Description | Allowed values
+				--- | --- | --- | ---
+				<code>title</code> 👍 | Event title | String
+				<code>start</code> 👍 | Start time | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">JS Date</a> / <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> / Unix Timestamp
+				<code>end</code> 🤙 | End time | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">JS Date</a> / <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> / Unix Timestamp
+				<code>duration</code> 🤙 | Event duration | Array with value (Number) and unit (String)
+				<code>description</code> 👌 | Information about the event | String
+				<code>location</code> 👌 | Event location in words | String
+				<code>busy</code> 👌 | Mark on calendar as busy? | Boolean
+			<code>guests</code> 🤞 | Emails of other guests | Array of emails (String)</p>
+			<h4 id="support-key">Support key</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Emoji</th>
+						<th>Meaning</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+						<td>👍</td>
+						<td>Required</td>
+					</tr>
+					<tr>
+						<td>🤙</td>
+						<td>Any one is required</td>
+					</tr>
+					<tr>
+						<td>👌</td>
+						<td>Supported but not required</td>
+					</tr>
+					<tr>
+						<td>🤞</td>
+						<td>Not all calendars support</td>
+					</tr>
+			</tbody></table>
 			<h2 id="license">License</h2>
 			<p>MIT © <a href="https://anandchowdhary.com/?utm_source=github&amp;utm_medium=calendar-link&amp;utm_campaign=readme">Anand Chowdhary</a></p>
 		</div>
@@ -997,7 +1041,7 @@ calendarLink.google({
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/417ebda/src/calendar-link.ts#L48">calendar-link.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/AnandChowdhary/calendar-link/blob/26e93be/src/calendar-link.ts#L48">calendar-link.ts:48</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

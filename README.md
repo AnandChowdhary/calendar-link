@@ -16,13 +16,41 @@ JavaScript library to generate an event link for Google Calendar, Yahoo! Calenda
 ```js
 import calendarLink from 'calendar-link'
 
-calendarLink.google({
+// Set event as an object
+const event = {
   title: 'My birthday party',
   description: 'Be there!',
   starts: '2019-12-29 18:00:00 +0100',
   duration: [3, 'hours']
-}); // Returns a link to add this event to your Google Calendar
+};
+
+// Then fetch the link
+calendarLink.google(event); // https://calendar.google.com/calendar/render...
+calendarLink.outook(event); // https://outlook.live.com/owa/...
+calendarLink.yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
 ```
+
+### Options
+
+Property | Description | Allowed values
+--- | --- | --- | ---
+`title` 👍 | Event title | String
+`start` 👍 | Start time | [JS Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) / [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) / Unix Timestamp
+`end` 🤙 | End time | [JS Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) / [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) / Unix Timestamp
+`duration` 🤙 | Event duration | Array with value (Number) and unit (String)
+`description` 👌 | Information about the event | String
+`location` 👌 | Event location in words | String
+`busy` 👌 | Mark on calendar as busy? | Boolean
+`guests` 🤞 | Emails of other guests | Array of emails (String)
+
+#### Support key
+
+Emoji | Meaning
+--- | --- 
+👍 | Required
+🤙 | Any one is required
+👌 | Supported but not required
+🤞 | Not all calendars support
 
 ## License
 

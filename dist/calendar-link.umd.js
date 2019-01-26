@@ -58,8 +58,10 @@
 	function sanitizeEvent(event) {
 	    event.start = dayjs_min(event.start).toDate();
 	    if (event.duration && event.duration.length && !event.end) {
+	        var duration = +event.duration[0];
+	        var unit = event.duration[0];
 	        event.end = dayjs_min(event.start)
-	            .add(4, 'minute')
+	            .add(duration, unit)
 	            .toDate();
 	    }
 	    return event;
