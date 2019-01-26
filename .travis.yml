@@ -7,6 +7,9 @@ notifications:
 node_js:
   - '10'
   - '11'
+before_script:
+  - echo 'Europe/Amsterdam' | sudo tee /etc/timezone
+  - sudo dpkg-reconfigure --frontend noninteractive tzdata
 script:
   - npm run test:prod && npm run build
 after_success:
