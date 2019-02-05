@@ -120,7 +120,7 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "dayjs": "^1.8.0",
+    "dayjs": "^1.8.4",
     "object-to-querystring": "^1.0.8"
   }
 }
