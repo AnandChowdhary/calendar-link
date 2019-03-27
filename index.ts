@@ -41,5 +41,5 @@ export const google = (event: CalendarEvent) => {
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
   }
-  return `https://calendar.google.com/calendar/render${stringify(details)}`;
+  return `https://calendar.google.com/calendar/render?${stringify(details)}`;
 };

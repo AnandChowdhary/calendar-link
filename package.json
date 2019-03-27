@@ -13,7 +13,7 @@
     "build": "tsc",
     "build-test": "yarn build && yarn test-without-coverage",
     "start": "concurrently 'yarn prettier-watch' 'yarn watch'",
-    "watch": "onchange '*.{ts,json}' -- yarn build-test",
+    "watch": "onchange '*.{ts,json}' -- yarn test-without-coverage",
     "prettier-watch": "onchange '**/*.{ts,json}' -- prettier --write {{changed}}",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-without-reporting": "jest --coverage",
