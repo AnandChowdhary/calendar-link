@@ -44,5 +44,9 @@
       "json",
       "node"
     ]
+  },
+  "dependencies": {
+    "dayjs": "^1.8.11",
+    "query-string": "^6.4.2"
   }
 }
