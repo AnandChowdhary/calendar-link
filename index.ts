@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { stringify } from "querystring";
-import { CalendarEvent, Google } from "./interfaces";
+import { CalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
 
 export const eventify = (event: CalendarEvent) => {
   event.start = dayjs(event.start).toDate();
@@ -42,4 +42,31 @@ export const google = (event: CalendarEvent) => {
     details.add = event.guests.join();
   }
   return `https://calendar.google.com/calendar/render?${stringify(details)}`;
+};
+
+export const outlook = (event: CalendarEvent) => {
+  event = eventify(event);
+  const details: Outlook = {
+    path: "/calendar/action/compose",
+    rru: "addevent",
+    startdt: dayjs(event.start).format("YYYYMMDD[T]HHmmss"),
+    enddt: dayjs(event.end).format("YYYYMMDD[T]HHmmss"),
+    subject: event.title,
+    body: event.description,
+    location: event.location
+  };
+  return `https://outlook.live.com/owa/?${stringify(details)}`;
+};
+
+export const yahoo = (event: CalendarEvent) => {
+  event = eventify(event);
+  const details: Yahoo = {
+    v: 60,
+    title: event.title,
+    st: dayjs(event.start).format("YYYYMMDD[T]HHmmss"),
+    et: dayjs(event.end).format("YYYYMMDD[T]HHmmss"),
+    desc: event.description,
+    in_loc: event.location
+  };
+  return `https://calendar.yahoo.com/?${stringify(details)}`;
 };
