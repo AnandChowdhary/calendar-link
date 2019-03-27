@@ -4,8 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/AnandChowdhary/calendar-link/badge.svg?branch=master)](https://coveralls.io/github/AnandChowdhary/calendar-link?branch=master)
 [![GitHub](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/calendar-link.svg)
-![NPM type definitions](https://img.shields.io/npm/types/auto-i18n.svg)
-[![NPM](https://img.shields.io/npm/v/auto-i18n.svg)](https://www.npmjs.com/package/auto-i18n)
+![NPM type definitions](https://img.shields.io/npm/types/calendar-link.svg)
+[![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link)
 
 JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.
 
