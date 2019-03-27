@@ -1,6 +1,5 @@
 # Calendar Link
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/AnandChowdhary/calendar-link.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/AnandChowdhary/calendar-link.svg)](https://travis-ci.org/AnandChowdhary/calendar-link)
 [![Coverage Status](https://coveralls.io/repos/github/AnandChowdhary/calendar-link/badge.svg?branch=master)](https://coveralls.io/github/AnandChowdhary/calendar-link?branch=master)
 [![GitHub](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE)
@@ -14,20 +13,20 @@ JavaScript library to generate an event link for Google Calendar, Yahoo! Calenda
 ### Usage
 
 ```js
-import calendarLink from 'calendar-link'
+import { google, outlook, yahoo } from "calendar-link"
 
 // Set event as an object
 const event = {
-  title: 'My birthday party',
-  description: 'Be there!',
-  starts: '2019-12-29 18:00:00 +0100',
-  duration: [3, 'hours']
+  title: "My birthday party",
+  description: "Be there!",
+  starts: "2019-12-29 18:00:00 +0100",
+  duration: [3, "hour"]
 };
 
 // Then fetch the link
-calendarLink.google(event); // https://calendar.google.com/calendar/render...
-calendarLink.outook(event); // https://outlook.live.com/owa/...
-calendarLink.yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
+google(event); // https://calendar.google.com/calendar/render...
+outook(event); // https://outlook.live.com/owa/...
+yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
 ```
 
 ### Options
