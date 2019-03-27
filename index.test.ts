@@ -11,6 +11,18 @@ test("generate a google link", () => {
   );
 });
 
+test("generate a google link with guests", () => {
+  const link = google({
+    title: "Birthday party",
+    start: "2019-12-29",
+    duration: [2, "hour"],
+    guests: ["hello@example.com", "another@example.com"]
+  });
+  expect(link).toBe(
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=20191228T230000Z%2F20191229T010000Z&add=hello%40example.com%2Canother%40example.com"
+  );
+});
+
 test("generate a yahoo link", () => {
   const link = yahoo({
     title: "Birthday party",
