@@ -7,17 +7,19 @@ dayjs.extend(utc);
 
 export const eventify = (event: CalendarEvent) => {
   event.start = dayjs(event.start).toDate();
-  if (event.duration && event.duration.length && !event.end) {
-    const duration = Number(event.duration[0]);
-    const unit = event.duration[1];
-    event.end = dayjs(event.start)
-      .add(duration, unit)
-      .toDate();
-  }
-  if (event.allDay) {
-    event.end = dayjs(event.start)
-      .add(1, "day")
-      .toDate();
+  if (event.end == null) {
+    if (event.duration && event.duration.length) {
+      const duration = Number(event.duration[0]);
+      const unit = event.duration[1];
+      event.end = dayjs(event.start)
+        .add(duration, unit)
+        .toDate();
+    }
+    if (event.allDay) {
+      event.end = dayjs(event.start)
+        .add(1, "day")
+        .toDate();
+    }
   }
   return event;
 };

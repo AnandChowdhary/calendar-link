@@ -33,6 +33,18 @@ test("generate an all day google link", () => {
   );
 });
 
+test("generate a multi day google link", () => {
+  const link = google({
+    title: "Birthday party",
+    start: "2019-12-29",
+    end: "2020-01-12",
+    allDay: true
+  });
+  expect(link).toBe(
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=20191229%2F20200112"
+  );
+});
+
 test("generate a google link with guests", () => {
   const link = google({
     title: "Birthday party",
