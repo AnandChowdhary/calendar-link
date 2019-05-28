@@ -1,4 +1,5 @@
 # Calendar Link
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Travis](https://img.shields.io/travis/AnandChowdhary/calendar-link.svg)](https://travis-ci.org/AnandChowdhary/calendar-link)
 [![Coverage Status](https://coveralls.io/repos/github/AnandChowdhary/calendar-link/badge.svg?branch=master)](https://coveralls.io/github/AnandChowdhary/calendar-link?branch=master)
@@ -55,3 +56,15 @@ yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
 ## License
 
 MIT © [Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://anandchowdhary.com/?utm_source=github&utm_campaign=about-link"><img src="https://avatars3.githubusercontent.com/u/2841780?v=4" width="100px;" alt="Anand Chowdhary"/><br /><sub><b>Anand Chowdhary</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Code">💻</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
