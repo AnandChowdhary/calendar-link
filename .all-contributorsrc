@@ -15,6 +15,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "lachenmayer",
+      "name": "Harry Lachenmayer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38614?v=4",
+      "profile": "https://keybase.io/lachenmayer",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
