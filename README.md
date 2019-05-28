@@ -6,7 +6,7 @@
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/calendar-link.svg)
 ![NPM type definitions](https://img.shields.io/npm/types/calendar-link.svg)
 [![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
+[![All contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors)
 
 JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.
 
@@ -63,7 +63,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://anandchowdhary.com/?utm_source=github&utm_campaign=about-link"><img src="https://avatars3.githubusercontent.com/u/2841780?v=4" width="100px;" alt="Anand Chowdhary"/><br /><sub><b>Anand Chowdhary</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://anandchowdhary.com/?utm_source=github&utm_campaign=about-link"><img src="https://avatars3.githubusercontent.com/u/2841780?v=4" width="100px;" alt="Anand Chowdhary"/><br /><sub><b>Anand Chowdhary</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Documentation">📖</a></td><td align="center"><a href="https://keybase.io/lachenmayer"><img src="https://avatars1.githubusercontent.com/u/38614?v=4" width="100px;" alt="Harry Lachenmayer"/><br /><sub><b>Harry Lachenmayer</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=lachenmayer" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=lachenmayer" title="Documentation">📖</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
