@@ -1,6 +1,9 @@
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import { stringify } from "querystring";
 import { CalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
+
+dayjs.extend(utc);
 
 export const eventify = (event: CalendarEvent) => {
   event.start = dayjs(event.start).toDate();
@@ -11,32 +14,36 @@ export const eventify = (event: CalendarEvent) => {
       .add(duration, unit)
       .toDate();
   }
+  if (event.allDay) {
+    event.end = dayjs(event.start)
+      .add(1, "day")
+      .toDate();
+  }
   return event;
+};
+
+const formats = {
+  dateTime: "YYYYMMDD[T]HHmmss",
+  dateTimeUTC: "YYYYMMDD[T]HHmmss[Z]",
+  allDay: "YYYYMMDD"
 };
 
 export const google = (event: CalendarEvent) => {
   event = eventify(event);
-  const startDate: string = dayjs(event.start)
-    .toISOString()
-    .replace(/-/g, "")
-    .replace(/:/g, "")
-    .replace(/\./g, "");
-  const endDate: string = dayjs(event.end)
-    .toISOString()
-    .replace(/-/g, "")
-    .replace(/:/g, "")
-    .replace(/\./g, "");
+  const format = event.allDay ? formats.allDay : formats.dateTimeUTC;
+  const start: string = dayjs(event.start)
+    .utc()
+    .format(format);
+  const end: string = dayjs(event.end)
+    .utc()
+    .format(format);
   const details: Google = {
     action: "TEMPLATE",
     text: event.title,
     details: event.description,
     location: event.location,
     trp: event.busy,
-    dates:
-      startDate.substring(0, startDate.length - 4) +
-      "Z/" +
-      endDate.substring(0, endDate.length - 4) +
-      "Z"
+    dates: start + "/" + end
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
@@ -46,11 +53,18 @@ export const google = (event: CalendarEvent) => {
 
 export const outlook = (event: CalendarEvent) => {
   event = eventify(event);
+  const format = event.allDay ? formats.allDay : formats.dateTime;
+  const start: string = dayjs(event.start)
+    .utc()
+    .format(format);
+  const end: string = dayjs(event.end)
+    .utc()
+    .format(format);
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
-    startdt: dayjs(event.start).format("YYYYMMDD[T]HHmmss"),
-    enddt: dayjs(event.end).format("YYYYMMDD[T]HHmmss"),
+    startdt: start,
+    enddt: end,
     subject: event.title,
     body: event.description,
     location: event.location
@@ -60,11 +74,18 @@ export const outlook = (event: CalendarEvent) => {
 
 export const yahoo = (event: CalendarEvent) => {
   event = eventify(event);
+  const format = event.allDay ? formats.allDay : formats.dateTimeUTC;
+  const start: string = dayjs(event.start)
+    .utc()
+    .format(format);
+  const end: string = dayjs(event.end)
+    .utc()
+    .format(format);
   const details: Yahoo = {
     v: 60,
     title: event.title,
-    st: dayjs(event.start).format("YYYYMMDD[T]HHmmss"),
-    et: dayjs(event.end).format("YYYYMMDD[T]HHmmss"),
+    st: start,
+    et: end,
     desc: event.description,
     in_loc: event.location
   };
