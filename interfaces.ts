@@ -5,6 +5,7 @@ interface CalendarEvent {
   start: any;
   end?: any;
   duration?: [number, dayjs.UnitType];
+  allDay?: boolean;
   description?: string;
   location?: string;
   busy?: boolean;

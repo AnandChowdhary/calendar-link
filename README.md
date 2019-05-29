@@ -39,10 +39,13 @@ yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
 | `start` 👍       | Start time                  | JS Date / ISO 8601 string / Unix Timestamp  |
 | `end` 🤙         | End time                    | JS Date / ISO 8601 string / Unix Timestamp  |
 | `duration` 🤙    | Event duration              | Array with value (Number) and unit (String) |
+| `allDay` 🤙      | All day event               | Boolean                                     |
 | `description` 👌 | Information about the event | String                                      |
 | `location` 👌    | Event location in words     | String                                      |
 | `busy` 👌        | Mark on calendar as busy?   | Boolean                                     |
 | `guests` 🤞      | Emails of other guests      | Array of emails (String)                    |
+
+The `duration` field is ignored if `allDay` is used.
 
 #### Support key
 
