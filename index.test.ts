@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { google, yahoo, outlook } from "./index";
+import { google, yahoo, outlook, ics } from "./index";
 import { TimeFormats } from "./utils";
 import { CalendarEvent } from "./interfaces";
 
@@ -146,4 +146,44 @@ describe('Calendar Links', () => {
       );
     });
   });
+  
+  describe('ICS', () => {
+    test('should generate an all day ics link', () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        allDay: true
+      }
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay)
+      const eTime: string = dayjs(event.start).add(1, 'day').utc().format(TimeFormats.allDay)
+
+      const link = ics(event)
+      expect(link).toBe(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${document.URL}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0ADESCRIPTION:%0ALOCATION:undefined%0AEND:VEVENT%0AEND:VCALENDAR`)
+    })
+    test('should generate an ics link', () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "day"]
+      }
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay)
+      const eTime: string = dayjs(event.start).add(2, 'day').utc().format(TimeFormats.allDay)
+
+      const link = ics(event)
+      expect(link).toBe(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${document.URL}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0ADESCRIPTION:%0ALOCATION:undefined%0AEND:VEVENT%0AEND:VCALENDAR`)
+    })
+    
+    test('should generate an ics link with end date', () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-23",
+        end: "2019-12-29"
+      }
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay)
+      const eTime: string = dayjs(event.end).utc().format(TimeFormats.allDay)
+
+      const link = ics(event)
+      expect(link).toBe(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${document.URL}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0ADESCRIPTION:%0ALOCATION:undefined%0AEND:VEVENT%0AEND:VCALENDAR`)
+    })
+  })
 })

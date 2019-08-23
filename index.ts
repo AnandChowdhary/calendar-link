@@ -89,3 +89,32 @@ export const yahoo = (event: CalendarEvent) => {
   };
   return `https://calendar.yahoo.com/?${stringify(details)}`;
 };
+
+export const ics = (event: CalendarEvent) => {
+  event = eventify(event);
+  const formattedDescription: string = (event.description || "")
+    .replace(/\n/gm, "\\n")
+    .replace(/(\\n)[\s\t]+/gm, "\\n");
+
+  const start: string = dayjs(event.start)
+    .utc()
+    .format(TimeFormats.allDay);
+  const end: string = dayjs(event.end)
+    .utc()
+    .format(TimeFormats.allDay);
+  const calendarUrl: string = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "BEGIN:VEVENT",
+    `URL:${document.URL}`,
+    `DTSTART:${start}`,
+    `DTEND:${end}`,
+    `SUMMARY:${event.title}`,
+    `DESCRIPTION:${formattedDescription}`,
+    `LOCATION:${event.location}`,
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\n");
+
+  return encodeURI("data:text/calendar;charset=utf8," + calendarUrl);
+};
