@@ -1,7 +1,9 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { stringify } from "querystring";
+
 import { CalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
+import { TimeFormats } from './utils'
 
 dayjs.extend(utc);
 
@@ -24,15 +26,9 @@ export const eventify = (event: CalendarEvent) => {
   return event;
 };
 
-const formats = {
-  dateTime: "YYYYMMDD[T]HHmmss",
-  dateTimeUTC: "YYYYMMDD[T]HHmmss[Z]",
-  allDay: "YYYYMMDD"
-};
-
 export const google = (event: CalendarEvent) => {
   event = eventify(event);
-  const format = event.allDay ? formats.allDay : formats.dateTimeUTC;
+  const format = event.allDay ? TimeFormats.allDay : TimeFormats.dateTimeUTC;
   const start: string = dayjs(event.start)
     .utc()
     .format(format);
@@ -55,7 +51,7 @@ export const google = (event: CalendarEvent) => {
 
 export const outlook = (event: CalendarEvent) => {
   event = eventify(event);
-  const format = event.allDay ? formats.allDay : formats.dateTime;
+  const format = event.allDay ? TimeFormats.allDay : TimeFormats.dateTime;
   const start: string = dayjs(event.start)
     .utc()
     .format(format);
@@ -76,7 +72,7 @@ export const outlook = (event: CalendarEvent) => {
 
 export const yahoo = (event: CalendarEvent) => {
   event = eventify(event);
-  const format = event.allDay ? formats.allDay : formats.dateTimeUTC;
+  const format = event.allDay ? TimeFormats.allDay : TimeFormats.dateTimeUTC;
   const start: string = dayjs(event.start)
     .utc()
     .format(format);
