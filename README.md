@@ -15,7 +15,7 @@ JavaScript library to generate an event link for Google Calendar, Yahoo! Calenda
 ### Usage
 
 ```js
-import { google, outlook, yahoo } from "calendar-link"
+import { google, outlook, yahoo, ics } from "calendar-link"
 
 // Set event as an object
 const event = {
@@ -29,6 +29,7 @@ const event = {
 google(event); // https://calendar.google.com/calendar/render...
 outook(event); // https://outlook.live.com/owa/...
 yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
+ics(event); // standard ICS calendar base on https://icalendar.org/
 ```
 
 ### Options
