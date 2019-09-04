@@ -166,8 +166,8 @@ describe('Calendar Links', () => {
         start: "2019-12-29",
         duration: [2, "day"]
       }
-      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay)
-      const eTime: string = dayjs(event.start).add(2, 'day').utc().format(TimeFormats.allDay)
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC)
+      const eTime: string = dayjs(event.start).add(2, 'day').utc().format(TimeFormats.dateTimeUTC)
 
       const link = ics(event)
       expect(link).toBe(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${document.URL}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0ADESCRIPTION:%0ALOCATION:undefined%0AEND:VEVENT%0AEND:VCALENDAR`)
@@ -179,8 +179,8 @@ describe('Calendar Links', () => {
         start: "2019-12-23",
         end: "2019-12-29"
       }
-      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay)
-      const eTime: string = dayjs(event.end).utc().format(TimeFormats.allDay)
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC)
+      const eTime: string = dayjs(event.end).utc().format(TimeFormats.dateTimeUTC)
 
       const link = ics(event)
       expect(link).toBe(`data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${document.URL}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0ADESCRIPTION:%0ALOCATION:undefined%0AEND:VEVENT%0AEND:VCALENDAR`)
