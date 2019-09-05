@@ -43,6 +43,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Paul-Hebert",
+      "name": "Paul Hebert",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5798536?v=4",
+      "profile": "http://paulhebertdesigns.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
