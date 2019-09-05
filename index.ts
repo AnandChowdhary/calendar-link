@@ -96,12 +96,13 @@ export const ics = (event: CalendarEvent) => {
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
+  const format = event.allDay ? TimeFormats.allDay : TimeFormats.dateTimeUTC;
   const start: string = dayjs(event.start)
     .utc()
-    .format(TimeFormats.allDay);
+    .format(format);
   const end: string = dayjs(event.end)
     .utc()
-    .format(TimeFormats.allDay);
+    .format(format);
   const calendarUrl: string = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
