@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import { stringify } from "query-string";
+import { stringify } from "querystring";
 
 import { CalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
 import { TimeFormats } from './utils'
