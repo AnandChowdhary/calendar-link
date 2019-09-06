@@ -17,7 +17,7 @@ describe('Calendar Links', () => {
       const eTime = dayjs(event.start).add(2, 'hour').utc().format(TimeFormats.dateTimeUTC)
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`)
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=${expectedDates}`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
       );
     });
 
@@ -32,7 +32,7 @@ describe('Calendar Links', () => {
       const eTime = dayjs(event.start).add(2, 'hour').utc().format(TimeFormats.dateTimeUTC)
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`)
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=${expectedDates}`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
       );
     });
 
@@ -47,7 +47,7 @@ describe('Calendar Links', () => {
       const eTime = dayjs(event.start).add(1, 'day').utc().format(TimeFormats.allDay)
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`)
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=${expectedDates}`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
       );
     });
 
@@ -63,7 +63,7 @@ describe('Calendar Links', () => {
       const eTime = dayjs(event.end).utc().format(TimeFormats.allDay)
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`)
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=${expectedDates}`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
       );
     });
 
@@ -80,7 +80,7 @@ describe('Calendar Links', () => {
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`)
       const expectedGuests = encodeURIComponent(event.guests ? event.guests.join() : '')
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Birthday%20party&details=&location=&trp=&dates=${expectedDates}&add=${expectedGuests}`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&add=${expectedGuests}&dates=${expectedDates}&text=Birthday%20party`
       );
     });
   });
@@ -96,7 +96,7 @@ describe('Calendar Links', () => {
       const eTime: String = dayjs(event.start).add(2, 'hour').utc().format(TimeFormats.dateTimeUTC)
 
       expect(link).toBe(
-        `https://calendar.yahoo.com/?v=60&title=Birthday%20party&st=${sTime}&et=${eTime}&desc=&in_loc=`
+        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
       );
     });
 
@@ -111,7 +111,7 @@ describe('Calendar Links', () => {
       const eTime: String = dayjs(event.start).add(1, 'day').utc().format(TimeFormats.allDay)
 
       expect(link).toBe(
-        `https://calendar.yahoo.com/?v=60&title=Birthday%20party&st=${sTime}&et=${eTime}&desc=&in_loc=`
+        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
       );
     });
   });
@@ -127,7 +127,7 @@ describe('Calendar Links', () => {
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/owa/?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&enddt=${eTime}&subject=Birthday%20party&body=&location=`
+        `https://outlook.live.com/owa/?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
       );
     });
 
@@ -142,7 +142,7 @@ describe('Calendar Links', () => {
       const eTime: String = dayjs(event.start).add(1, 'day').utc().format(TimeFormats.allDay)
 
       expect(link).toBe(
-        `https://outlook.live.com/owa/?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&enddt=${eTime}&subject=Birthday%20party&body=&location=`
+        `https://outlook.live.com/owa/?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
       );
     });
   });
