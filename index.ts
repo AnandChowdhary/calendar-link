@@ -103,19 +103,60 @@ export const ics = (event: CalendarEvent) => {
   const end: string = dayjs(event.end)
     .utc()
     .format(format);
-  const calendarUrl: string = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "BEGIN:VEVENT",
-    `URL:${document.URL}`,
-    `DTSTART:${start}`,
-    `DTEND:${end}`,
-    `SUMMARY:${event.title}`,
-    `DESCRIPTION:${formattedDescription}`,
-    `LOCATION:${event.location}`,
-    "END:VEVENT",
-    "END:VCALENDAR"
-  ].join("\n");
+  const calendarChunks = [
+    {
+      key: 'BEGIN',
+      value: 'VCALENDAR'
+    },
+    {
+      key: 'VERSION',
+      value: '2.0'
+    },
+    {
+      key: 'BEGIN',
+      value: 'VEVENT'
+    },
+    {
+      key: 'URL',
+      value: document.URL
+    },
+    {
+      key: 'DTSTART',
+      value: start
+    },
+    {
+      key: 'DTEND',
+      value: end
+    },
+    {
+      key: 'SUMMARY',
+      value: event.title
+    },
+    {
+      key: 'DESCRIPTION',
+      value: formattedDescription
+    },
+    {
+      key: 'LOCATION',
+      value: event.location
+    },
+    {
+      key: 'END',
+      value: 'VEVENT'
+    },
+    {
+      key: 'END',
+      value: 'VCALENDAR'
+    },
+  ];
 
-  return encodeURI("data:text/calendar;charset=utf8," + calendarUrl);
+  let calendarUrl: string = '';
+
+  calendarChunks.forEach(chunk => {
+    if(chunk.value) {
+      calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+    }
+  });
+
+  return `data:text/calendar;charset=utf8,${calendarUrl}`;
 };
