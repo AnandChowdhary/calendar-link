@@ -21,7 +21,7 @@ import { google, outlook, yahoo, ics } from "calendar-link"
 const event = {
   title: "My birthday party",
   description: "Be there!",
-  starts: "2019-12-29 18:00:00 +0100",
+  start: "2019-12-29 18:00:00 +0100",
   duration: [3, "hour"]
 };
 
