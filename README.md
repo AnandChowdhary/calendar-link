@@ -8,20 +8,21 @@
 [![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link)
 [![All contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors)
 
-JavaScript library to generate an event link for Google Calendar, Yahoo! Calendar, Microsoft Outlook, etc.
+JavaScript library to generate an event link for Google Calendar, Yahoo!
+Calendar, Microsoft Outlook, etc.
 
 [![NPM](https://nodei.co/npm/calendar-link.png)](https://npm.im/calendar-link/)
 
 ### Usage
 
 ```js
-import { google, outlook, yahoo, ics } from "calendar-link"
+import { google, outlook, yahoo, ics } from "calendar-link";
 
 // Set event as an object
 const event = {
   title: "My birthday party",
   description: "Be there!",
-  starts: "2019-12-29 18:00:00 +0100",
+  start: "2019-12-29 18:00:00 +0100",
   duration: [3, "hour"]
 };
 
@@ -35,7 +36,7 @@ ics(event); // standard ICS calendar base on https://icalendar.org/
 ### Options
 
 | Property         | Description                 | Allowed values                              |
-|------------------|-----------------------------|---------------------------------------------|
+| ---------------- | --------------------------- | ------------------------------------------- |
 | `title` 👍       | Event title                 | String                                      |
 | `start` 👍       | Start time                  | JS Date / ISO 8601 string / Unix Timestamp  |
 | `end` 🤙         | End time                    | JS Date / ISO 8601 string / Unix Timestamp  |
@@ -50,20 +51,22 @@ The `duration` field is ignored if `allDay` is used.
 
 #### Support key
 
-| Emoji | Meaning |
-| --- | --- |
-| 👍 | Required |
-| 🤙 | Any one is required |
-| 👌 | Supported but not required |
-| 🤞 | Not all calendars support |
+| Emoji | Meaning                    |
+| ----- | -------------------------- |
+| 👍    | Required                   |
+| 🤙    | Any one is required        |
+| 👌    | Supported but not required |
+| 🤞    | Not all calendars support  |
 
 ## License
 
-MIT © [Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
+MIT ©
+[Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
@@ -79,4 +82,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
