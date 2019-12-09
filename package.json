@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.0.1",
     "coveralls": "^3.0.9",
     "jest": "^24.5.0",
     "onchange": "^6.1.0",
