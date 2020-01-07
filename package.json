@@ -26,7 +26,7 @@
     "jest": "^24.5.0",
     "onchange": "^6.1.0",
     "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^24.3.0",
     "typescript": "^3.7.4"
   },
   "jest": {
