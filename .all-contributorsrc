@@ -53,11 +53,21 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "omazin",
+      "name": "Osman Mazinov",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/53472807?v=4",
+      "profile": "https://github.com/omazin",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "calendar-link",
   "projectOwner": "AnandChowdhary",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
