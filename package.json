@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "concurrently": "^5.1.0",
-    "coveralls": "^3.0.10",
+    "coveralls": "^3.0.11",
     "jest": "^24.5.0",
     "onchange": "^6.1.0",
     "prettier": "^2.0.2",

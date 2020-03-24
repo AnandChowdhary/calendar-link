@@ -945,10 +945,10 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-coveralls@^3.0.10:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.10.tgz#165a0f3395a58c26036ada82cbc81cac618a2d73"
-  integrity sha512-HW0W5p9F95ww1mHyZP+mvIbHtz7VVwafngnR4HbNjedoH33QSpcl86hdCGBvMwnMV4ut8/Tp4IAIFpX05Kr92g==
+coveralls@^3.0.11:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.11.tgz#e141da0922b632fcc66620f334460c3f0026a4ce"
+  integrity sha512-LZPWPR2NyGKyaABnc49dR0fpeP6UqhvGq4B5nUrTQ1UBy55z96+ga7r+/ChMdMJUwBgyJDXBi88UBgz2rs9IiQ==
   dependencies:
     js-yaml "^3.13.1"
     lcov-parse "^1.0.0"
