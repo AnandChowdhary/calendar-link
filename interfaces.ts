@@ -10,6 +10,13 @@ interface CalendarEvent {
   location?: string;
   busy?: boolean;
   guests?: string[];
+  url?: string;
+}
+
+interface NormalizedCalendarEvent
+  extends Omit<CalendarEvent, "start" | "end" | "duration"> {
+  startUtc: dayjs.Dayjs;
+  endUtc: dayjs.Dayjs;
 }
 
 interface Google {
@@ -45,4 +52,4 @@ interface Yahoo {
   in_loc?: string;
 }
 
-export { CalendarEvent, Outlook, Yahoo, Google };
+export { CalendarEvent, NormalizedCalendarEvent, Outlook, Yahoo, Google };
