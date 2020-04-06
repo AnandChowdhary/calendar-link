@@ -82,6 +82,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/k4mr4n"><img src="https://avatars1.githubusercontent.com/u/5468009?v=4" width="100px;" alt=""/><br /><sub><b>Kamran Gh</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=k4mr4n" title="Code">💻</a></td>
     <td align="center"><a href="http://paulhebertdesigns.com"><img src="https://avatars3.githubusercontent.com/u/5798536?v=4" width="100px;" alt=""/><br /><sub><b>Paul Hebert</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/issues?q=author%3APaul-Hebert" title="Bug reports">🐛</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=Paul-Hebert" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/omazin"><img src="https://avatars0.githubusercontent.com/u/53472807?v=4" width="100px;" alt=""/><br /><sub><b>Osman Mazinov</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=omazin" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://bob.ippoli.to/"><img src="https://avatars0.githubusercontent.com/u/26596?v=4" width="100px;" alt=""/><br /><sub><b>Bob Ippolito</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Documentation">📖</a></td>
   </tr>
 </table>
 
