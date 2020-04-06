@@ -46,8 +46,11 @@ ics(event); // standard ICS calendar base on https://icalendar.org/
 | `location` 👌    | Event location in words     | String                                      |
 | `busy` 👌        | Mark on calendar as busy?   | Boolean                                     |
 | `guests` 🤞      | Emails of other guests      | Array of emails (String)                    |
+| `url` 🤞         | Calendar document URL       | String                                      |
 
 The `duration` field is ignored if `allDay` is used.
+
+The `url` field defaults to `document.URL` if a document global exists.
 
 #### Support key
 
