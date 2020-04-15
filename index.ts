@@ -76,7 +76,9 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     body: event.description,
     location: event.location,
   };
-  return `https://outlook.live.com/owa/?${stringify(details)}`;
+  return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(
+    details
+  )}`;
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
