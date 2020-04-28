@@ -30,36 +30,29 @@ const event = {
 google(event); // https://calendar.google.com/calendar/render...
 outlook(event); // https://outlook.live.com/owa/...
 yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
-ics(event); // standard ICS calendar base on https://icalendar.org/
+ics(event); // standard ICS file based on https://icalendar.org
 ```
 
 ### Options
 
-| Property         | Description                 | Allowed values                              |
-| ---------------- | --------------------------- | ------------------------------------------- |
-| `title` 👍       | Event title                 | String                                      |
-| `start` 👍       | Start time                  | JS Date / ISO 8601 string / Unix Timestamp  |
-| `end` 🤙         | End time                    | JS Date / ISO 8601 string / Unix Timestamp  |
-| `duration` 🤙    | Event duration              | Array with value (Number) and unit (String) |
-| `allDay` 🤙      | All day event               | Boolean                                     |
-| `description` 👌 | Information about the event | String                                      |
-| `location` 👌    | Event location in words     | String                                      |
-| `busy` 👌        | Mark on calendar as busy?   | Boolean                                     |
-| `guests` 🤞      | Emails of other guests      | Array of emails (String)                    |
-| `url` 🤞         | Calendar document URL       | String                                      |
+| Property           | Description                 | Allowed values                              |
+| ------------------ | --------------------------- | ------------------------------------------- |
+| `title` (required) | Event title                 | String                                      |
+| `start` (required) | Start time                  | JS Date / ISO 8601 string / Unix Timestamp  |
+| `end`              | End time                    | JS Date / ISO 8601 string / Unix Timestamp  |
+| `duration`         | Event duration              | Array with value (Number) and unit (String) |
+| `allDay`           | All day event               | Boolean                                     |
+| `description`      | Information about the event | String                                      |
+| `location`         | Event location in words     | String                                      |
+| `busy`             | Mark on calendar as busy?   | Boolean                                     |
+| `guests`           | Emails of other guests      | Array of emails (String)                    |
+| `url`              | Calendar document URL       | String                                      |
 
-The `duration` field is ignored if `allDay` is used.
+Any one of the fields `end`, `duration`, or `allDay` is required.
 
-The `url` field defaults to `document.URL` if a document global exists.
+The `url` field defaults to `document.URL` if a global `document` object exists. For server-side rendering, you should supply the `url` manually.
 
-#### Support key
-
-| Emoji | Meaning                    |
-| ----- | -------------------------- |
-| 👍    | Required                   |
-| 🤙    | Any one is required        |
-| 👌    | Supported but not required |
-| 🤞    | Not all calendars support  |
+Not all calendars support the `guests` and `url` fields.
 
 ## License
 
