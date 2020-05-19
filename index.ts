@@ -81,6 +81,23 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
   )}`;
 };
 
+export const office365 = (calendarEvent: CalendarEvent): string => {
+  const event = eventify(calendarEvent);
+  const { start, end } = formatTimes(event, "dateTime");
+  const details: Outlook = {
+    path: "/calendar/action/compose",
+    rru: "addevent",
+    startdt: start,
+    enddt: end,
+    subject: event.title,
+    body: event.description,
+    location: event.location,
+  };
+  return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(
+    details
+  )}`;
+};
+
 export const yahoo = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
   const { start, end } = formatTimes(event, "dateTimeUTC");
