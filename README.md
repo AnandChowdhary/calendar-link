@@ -78,6 +78,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/omazin"><img src="https://avatars0.githubusercontent.com/u/53472807?v=4" width="100px;" alt=""/><br /><sub><b>Osman Mazinov</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=omazin" title="Documentation">📖</a></td>
     <td align="center"><a href="https://bob.ippoli.to/"><img src="https://avatars0.githubusercontent.com/u/26596?v=4" width="100px;" alt=""/><br /><sub><b>Bob Ippolito</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://rhellenes.me"><img src="https://avatars0.githubusercontent.com/u/16990441?v=4" width="100px;" alt=""/><br /><sub><b>René Hellenes</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=RHellenes" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
