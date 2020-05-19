@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { google, yahoo, outlook, ics } from "./index";
+import { google, yahoo, outlook, office365, ics } from "./index";
 import { TimeFormats } from "./utils";
 import { CalendarEvent } from "./interfaces";
 
@@ -13,9 +13,7 @@ describe("Calendar Links", () => {
         duration: [2, "hour"],
       };
       const link = google(event);
-      const sTime = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
       const eTime = dayjs(event.start)
         .add(2, "hour")
         .utc()
@@ -33,9 +31,7 @@ describe("Calendar Links", () => {
         duration: [2, "hour"],
       };
       const link = google(event);
-      const sTime = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
       const eTime = dayjs(event.start)
         .add(2, "hour")
         .utc()
@@ -53,9 +49,7 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const link = google(event);
-      const sTime = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime = dayjs(event.start)
         .add(1, "day")
         .utc()
@@ -74,12 +68,8 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const link = google(event);
-      const sTime = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
-      const eTime = dayjs(event.end)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.allDay);
+      const eTime = dayjs(event.end).utc().format(TimeFormats.allDay);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
       expect(link).toBe(
         `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
@@ -94,9 +84,7 @@ describe("Calendar Links", () => {
         guests: ["hello@example.com", "another@example.com"],
       };
       const link = google(event);
-      const sTime = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
       const eTime = dayjs(event.start)
         .add(2, "hour")
         .utc()
@@ -138,9 +126,7 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const link = yahoo(event);
-      const sTime: String = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: String = dayjs(event.start)
         .add(1, "day")
         .utc()
@@ -179,9 +165,7 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const link = outlook(event);
-      const sTime: String = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: String = dayjs(event.start)
         .add(1, "day")
         .utc()
@@ -193,6 +177,46 @@ describe("Calendar Links", () => {
     });
   });
 
+  describe("Office365", () => {
+    test("generate a office365 link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+      };
+      const sTime: String = dayjs(event.start)
+        .utc()
+        .format(TimeFormats.dateTime);
+      const eTime: String = dayjs(event.start)
+        .add(2, "hour")
+        .utc()
+        .format(TimeFormats.dateTime);
+      const link = office365(event);
+
+      expect(link).toBe(
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+      );
+    });
+
+    test("generate an all day office365 link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        allDay: true,
+      };
+      const link = office365(event);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
+      const eTime: String = dayjs(event.start)
+        .add(1, "day")
+        .utc()
+        .format(TimeFormats.allDay);
+
+      expect(link).toBe(
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+      );
+    });
+  });
+
   describe("ICS", () => {
     test("should generate an all day ics link", () => {
       const event: CalendarEvent = {
@@ -200,9 +224,7 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         allDay: true,
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: string = dayjs(event.start)
         .add(1, "day")
         .utc()
@@ -289,9 +311,7 @@ describe("Calendar Links", () => {
         allDay: true,
         url,
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: string = dayjs(event.start)
         .add(1, "day")
         .utc()
@@ -312,9 +332,7 @@ describe("Calendar Links", () => {
         allDay: true,
         duration: [2, "day"],
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.allDay);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: string = dayjs(event.start)
         .add(1, "day")
         .utc()

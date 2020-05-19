@@ -16,7 +16,7 @@ Calendar, Microsoft Outlook, etc.
 ### Usage
 
 ```js
-import { google, outlook, yahoo, ics } from "calendar-link";
+import { google, outlook, office365, yahoo,  ics } from "calendar-link";
 
 // Set event as an object
 const event = {
@@ -29,6 +29,7 @@ const event = {
 // Then fetch the link
 google(event); // https://calendar.google.com/calendar/render...
 outlook(event); // https://outlook.live.com/owa/...
+office365(event); // https://outlook.office.com/owa/...
 yahoo(event); // https://calendar.yahoo.com/?v=60&title=...
 ics(event); // standard ICS file based on https://icalendar.org
 ```
