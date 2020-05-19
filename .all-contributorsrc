@@ -72,6 +72,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "RHellenes",
+      "name": "René Hellenes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16990441?v=4",
+      "profile": "https://rhellenes.me",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
