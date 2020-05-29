@@ -115,6 +115,14 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
 export const ics = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
   const formattedDescription: string = (event.description || "")
+    .replace(/,/gm, "\,")
+    .replace(/;/gm, "\;")
+    .replace(/\n/gm, "\\n")
+    .replace(/(\\n)[\s\t]+/gm, "\\n");
+
+  const formattedLocation: string = (event.location || "")
+    .replace(/,/gm, "\,")
+    .replace(/;/gm, "\;")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
@@ -154,7 +162,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "LOCATION",
-      value: event.location,
+      value: formattedLocation,
     },
     {
       key: "END",
