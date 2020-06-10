@@ -20,7 +20,7 @@
     "test-without-coverage": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.0",
     "concurrently": "^5.2.0",
     "coveralls": "^3.1.0",
     "jest": "^24.5.0",
