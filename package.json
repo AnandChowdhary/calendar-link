@@ -27,7 +27,7 @@
     "onchange": "^7.0.2",
     "prettier": "^2.0.5",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "jest": {
     "roots": [
