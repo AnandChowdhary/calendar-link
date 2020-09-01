@@ -154,7 +154,7 @@ describe("Calendar Links", () => {
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
       );
     });
 
@@ -172,7 +172,7 @@ describe("Calendar Links", () => {
         .format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
       );
     });
   });
@@ -194,7 +194,7 @@ describe("Calendar Links", () => {
       const link = office365(event);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
       );
     });
 
@@ -212,7 +212,7 @@ describe("Calendar Links", () => {
         .format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
       );
     });
   });
