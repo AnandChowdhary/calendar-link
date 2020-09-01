@@ -78,7 +78,7 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
   };
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(
     details
-  )}`;
+  )}`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6");
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
@@ -95,7 +95,7 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
   };
   return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(
     details
-  )}`;
+  )}`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6");
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
