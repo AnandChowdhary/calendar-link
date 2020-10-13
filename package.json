@@ -46,7 +46,7 @@
     ]
   },
   "dependencies": {
-    "dayjs": "^1.9.0",
+    "dayjs": "^1.9.3",
     "query-string": "^6.13.3"
   }
 }
