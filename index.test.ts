@@ -232,9 +232,7 @@ describe("Calendar Links", () => {
 
       const link = ics(event);
       expect(link).toBe(
-        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${encodeURIComponent(
-          document.URL
-        )}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
     test("should generate an ics link", () => {
@@ -253,9 +251,7 @@ describe("Calendar Links", () => {
 
       const link = ics(event);
       expect(link).toBe(
-        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${encodeURIComponent(
-          document.URL
-        )}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
 
@@ -274,9 +270,7 @@ describe("Calendar Links", () => {
 
       const link = ics(event);
       expect(link).toBe(
-        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${encodeURIComponent(
-          document.URL
-        )}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
 
@@ -297,9 +291,7 @@ describe("Calendar Links", () => {
 
       const link = ics(event);
       expect(link).toBe(
-        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${encodeURIComponent(
-          document.URL
-        )}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20Birthday%20party%0ADESCRIPTION:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20My%20birthday!%0ALOCATION:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20My%20birthday!%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20Birthday%20party%0ADESCRIPTION:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20My%20birthday!%0ALOCATION:!%23%24%25%26'()*%2B%2C%2F%3A%3B%3D%3F%40%5B%5D%20%E2%80%94%20My%20birthday!%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
 
@@ -340,9 +332,7 @@ describe("Calendar Links", () => {
 
       const link = ics(event);
       expect(link).toBe(
-        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AURL:${encodeURIComponent(
-          document.URL
-        )}%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
   });
