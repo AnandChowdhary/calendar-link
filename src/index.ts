@@ -2,13 +2,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { stringify } from "query-string";
 
-import {
-  CalendarEvent,
-  NormalizedCalendarEvent,
-  Google,
-  Outlook,
-  Yahoo,
-} from "./interfaces";
+import { CalendarEvent, NormalizedCalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
 import { TimeFormats } from "./utils";
 
 dayjs.extend(utc);
@@ -73,9 +67,10 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     body: event.description,
     location: event.location,
   };
-  return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(
-    details
-  )}`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6");
+  return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`.replace(
+    /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+    "$1-$2-$3T$4:$5:$6"
+  );
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
@@ -90,9 +85,10 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
     body: event.description,
     location: event.location,
   };
-  return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(
-    details
-  )}`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6");
+  return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`.replace(
+    /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+    "$1-$2-$3T$4:$5:$6"
+  );
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
@@ -112,14 +108,14 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
 export const ics = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
   const formattedDescription: string = (event.description || "")
-    .replace(/,/gm, "\,")
-    .replace(/;/gm, "\;")
+    .replace(/,/gm, ",")
+    .replace(/;/gm, ";")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
   const formattedLocation: string = (event.location || "")
-    .replace(/,/gm, "\,")
-    .replace(/;/gm, "\;")
+    .replace(/,/gm, ",")
+    .replace(/;/gm, ";")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 

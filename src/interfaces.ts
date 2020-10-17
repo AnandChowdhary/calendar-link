@@ -13,13 +13,12 @@ interface CalendarEvent {
   url?: string;
 }
 
-interface NormalizedCalendarEvent
-  extends Omit<CalendarEvent, "start" | "end" | "duration"> {
+interface NormalizedCalendarEvent extends Omit<CalendarEvent, "start" | "end" | "duration"> {
   startUtc: dayjs.Dayjs;
   endUtc: dayjs.Dayjs;
 }
 
-interface Google {
+interface Google extends Record<string, string | boolean | number | undefined> {
   action: string;
   text: string;
   dates: string;
@@ -32,7 +31,7 @@ interface Google {
   recur?: string;
 }
 
-interface Outlook {
+interface Outlook extends Record<string, string | boolean | number | undefined> {
   path: string;
   rru: string;
   startdt: string;
@@ -43,7 +42,7 @@ interface Outlook {
   location?: string;
 }
 
-interface Yahoo {
+interface Yahoo extends Record<string, string | boolean | number | undefined> {
   v: number;
   title: string;
   st: string;

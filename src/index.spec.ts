@@ -14,10 +14,7 @@ describe("Calendar Links", () => {
       };
       const link = google(event);
       const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
-      const eTime = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
       expect(link).toBe(
         `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
@@ -32,10 +29,7 @@ describe("Calendar Links", () => {
       };
       const link = google(event);
       const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
-      const eTime = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
       expect(link).toBe(
         `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
@@ -50,10 +44,7 @@ describe("Calendar Links", () => {
       };
       const link = google(event);
       const sTime = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
       expect(link).toBe(
         `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&text=Birthday%20party`
@@ -85,14 +76,9 @@ describe("Calendar Links", () => {
       };
       const link = google(event);
       const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
-      const eTime = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
-      const expectedGuests = encodeURIComponent(
-        event.guests ? event.guests.join() : ""
-      );
+      const expectedGuests = encodeURIComponent(event.guests ? event.guests.join() : "");
       expect(link).toBe(
         `https://calendar.google.com/calendar/render?action=TEMPLATE&add=${expectedGuests}&dates=${expectedDates}&text=Birthday%20party`
       );
@@ -106,13 +92,8 @@ describe("Calendar Links", () => {
         duration: [2, "hour"],
       };
       const link = yahoo(event);
-      const sTime: String = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
-      const eTime: String = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
 
       expect(link).toBe(
         `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
@@ -127,10 +108,7 @@ describe("Calendar Links", () => {
       };
       const link = yahoo(event);
       const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
         `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
@@ -144,17 +122,15 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         duration: [2, "hour"],
       };
-      const sTime: String = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTime);
-      const eTime: String = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTime);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTime);
+      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTime);
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
+        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
+          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+          "$1-$2-$3T$4:$5:$6"
+        )
       );
     });
 
@@ -166,13 +142,13 @@ describe("Calendar Links", () => {
       };
       const link = outlook(event);
       const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
+        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
+          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+          "$1-$2-$3T$4:$5:$6"
+        )
       );
     });
   });
@@ -184,17 +160,15 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         duration: [2, "hour"],
       };
-      const sTime: String = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTime);
-      const eTime: String = dayjs(event.start)
-        .add(2, "hour")
-        .utc()
-        .format(TimeFormats.dateTime);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTime);
+      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTime);
       const link = office365(event);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
+          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+          "$1-$2-$3T$4:$5:$6"
+        )
       );
     });
 
@@ -206,13 +180,13 @@ describe("Calendar Links", () => {
       };
       const link = office365(event);
       const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g, "$1-$2-$3T$4:$5:$6")
+        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
+          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
+          "$1-$2-$3T$4:$5:$6"
+        )
       );
     });
   });
@@ -225,10 +199,7 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: string = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: string = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       const link = ics(event);
       expect(link).toBe(
@@ -241,13 +212,8 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         duration: [2, "day"],
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
-      const eTime: string = dayjs(event.start)
-        .add(2, "day")
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: string = dayjs(event.start).add(2, "day").utc().format(TimeFormats.dateTimeUTC);
 
       const link = ics(event);
       expect(link).toBe(
@@ -261,12 +227,8 @@ describe("Calendar Links", () => {
         start: "2019-12-23",
         end: "2019-12-29",
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
-      const eTime: string = dayjs(event.end)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: string = dayjs(event.end).utc().format(TimeFormats.dateTimeUTC);
 
       const link = ics(event);
       expect(link).toBe(
@@ -282,12 +244,8 @@ describe("Calendar Links", () => {
         start: "2019-12-23",
         end: "2019-12-29",
       };
-      const sTime: string = dayjs(event.start)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
-      const eTime: string = dayjs(event.end)
-        .utc()
-        .format(TimeFormats.dateTimeUTC);
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: string = dayjs(event.end).utc().format(TimeFormats.dateTimeUTC);
 
       const link = ics(event);
       expect(link).toBe(
@@ -304,10 +262,7 @@ describe("Calendar Links", () => {
         url,
       };
       const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: string = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: string = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       const link = ics(event);
       expect(link).toBe(
@@ -325,10 +280,7 @@ describe("Calendar Links", () => {
         duration: [2, "day"],
       };
       const sTime: string = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: string = dayjs(event.start)
-        .add(1, "day")
-        .utc()
-        .format(TimeFormats.allDay);
+      const eTime: string = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       const link = ics(event);
       expect(link).toBe(

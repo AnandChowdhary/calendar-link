@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "esnext",
     "module": "commonjs",
-    "lib": ["es2015", "es2016", "es2017", "es2018", "dom"],
+    "lib": ["dom", "esnext"],
     "strict": true,
     "sourceMap": true,
     "declaration": true,
@@ -13,8 +13,8 @@
     "emitDecoratorMetadata": true,
     "declarationDir": "./dist",
     "outDir": "./dist",
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types", "@types"]
   },
-  "include": ["index.ts"],
-  "exclude": ["node_modues"]
+  "include": ["src", "tooling"],
+  "exclude": ["node_modules"]
 }
