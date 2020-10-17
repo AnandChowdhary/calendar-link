@@ -4,7 +4,7 @@
 |   | Status |
 | - | - |
 | Build | [![Node CI](https://github.com/AnandChowdhary/calendar-link/workflows/Node%20CI/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Node+CI%22) [![Dependencies](https://img.shields.io/librariesio/github/AnandChowdhary/calendar-link)](https://libraries.io/github/AnandChowdhary/calendar-link) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/AnandChowdhary/calendar-link)](https://github.com/AnandChowdhary/calendar-link/releases) [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/calendar-link)](https://snyk.io/test/github/AnandChowdhary/calendar-link) |
-| Health | [![GitHub](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE) [![License CI](https://github.com/AnandChowdhary/calendar-link/workflows/License%20CI/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22License+CI%22) [![CLA Assistant](https://github.com/AnandChowdhary/calendar-link/workflows/CLA%20Assistant/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22CLA+Assistant%22) [![Pull Request Labeler](https://github.com/AnandChowdhary/calendar-link/workflows/Pull%20Request%20Labeler/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Pull+Request+Labeler%22) |
+| Health | [![License](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE) [![Coverage](https://img.shields.io/coveralls/github/AnandChowdhary/calendar-link)](https://coveralls.io/github/AnandChowdhary/calendar-link) [![Pull Request Labeler](https://github.com/AnandChowdhary/calendar-link/workflows/Pull%20Request%20Labeler/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Pull+Request+Labeler%22) |
 | PRs | [![Feature Branch Pull Request](https://github.com/AnandChowdhary/calendar-link/workflows/Feature%20Branch%20Pull%20Request/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Feature+Branch+Pull+Request%22) [![Hotfix Branch Pull Request](https://github.com/AnandChowdhary/calendar-link/workflows/Hotfix%20Branch%20Pull%20Request/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Hotfix+Branch+Pull+Request%22) [![Merge PRs](https://github.com/AnandChowdhary/calendar-link/workflows/Merge%20PRs/badge.svg)](https://github.com/AnandChowdhary/calendar-link/actions?query=workflow%3A%22Merge+PRs%22) |
 | Community | ![NPM type definitions](https://img.shields.io/npm/types/calendar-link.svg) [![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link) [![All contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors) |
 <!-- prettier-ignore-end -->
@@ -87,6 +87,7 @@ Thanks goes to these wonderful people
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
