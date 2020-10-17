@@ -1,0 +1,35 @@
+name: License CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Check licenses
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.3
+      - name: Setup license
+        uses: jonabc/setup-licensed@v1.0.1
+        with:
+          version: 2.x
+      - run: npm ci
+      - id: licensed
+        uses: jonabc/licensed-ci@v1
+        with:
+          config_file: .github/licensed.yml
+          github_token: ${{ secrets.GH_PAT }}
+          user_name: "KojBot"
+          user_email: "bot@koj.co"
+          commit_message: ":page_facing_up: Update dependency license file [skip ci]"
+      - uses: actions/github-script@v3
+        if: always() && steps.licensed.outputs.pr_number
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            github.issues.createComment({
+              ...context.repo,
+              issue_number: ${{ steps.licensed.outputs.pr_number }}
+              body: "I've checked the license of your new dependency and it looks good!"
+            })
