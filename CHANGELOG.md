@@ -1,3 +1,9 @@
+# [v2.0.0](https://github.com/AnandChowdhary/calendar-link/compare/v1.0.0...v2.0.0) (2020-10-17)
+
+## 💥 Breaking changes
+
+- [`008de9a`](https://github.com/AnandChowdhary/calendar-link/commit/008de9a)  Trigger major release
+
 # v1.0.0 (2020-10-17)
 
 ## ✨ New features
