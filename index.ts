@@ -37,9 +37,6 @@ export const eventify = (event: CalendarEvent): NormalizedCalendarEvent => {
         }
         return dayjs().utc();
       })();
-  if (!rest.url && typeof document == "object") {
-    rest.url = document.URL;
-  }
   return {
     ...rest,
     startUtc,
