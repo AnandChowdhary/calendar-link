@@ -20,7 +20,11 @@ jobs:
       - name: Build TypeScript
         run: npm run build
       - name: Run tests
-        run: npm run test
+        run: npm run coverage
+      - name: Coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         run: npx semantic-release
         env:
