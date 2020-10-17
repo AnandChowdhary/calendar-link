@@ -81,12 +81,12 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://rhellenes.me"><img src="https://avatars0.githubusercontent.com/u/16990441?v=4" width="100px;" alt=""/><br /><sub><b>René Hellenes</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=RHellenes" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/fidelman"><img src="https://avatars0.githubusercontent.com/u/15198653?v=4" width="100px;" alt=""/><br /><sub><b>Andrei Fidelman</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=fidelman" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
