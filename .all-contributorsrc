@@ -81,6 +81,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fidelman",
+      "name": "Andrei Fidelman",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15198653?v=4",
+      "profile": "https://github.com/fidelman",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
