@@ -1,4 +1,4 @@
-# Calendar Link
+# 📅 Calendar Link
 
 <!-- prettier-ignore-start -->
 |   | Status |
@@ -17,6 +17,10 @@ Calendar, Microsoft Outlook, etc.
 ### Usage
 
 ```js
+// Usage with Node.js
+const { google, outlook, office365, yahoo, ics } = require("calendar-link");
+
+// Usage with TypeScript or ES6
 import { google, outlook, office365, yahoo, ics } from "calendar-link";
 
 // Set event as an object
