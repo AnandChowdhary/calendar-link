@@ -1,6 +1,6 @@
 {
   "name": "@mgara/calendar-link",
-  "version": "2.1.0",
+  "version": "2.4.0",
   "description": "📅 Calendar link generator for popular services, like Google, Outlook, and Yahoo.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,9 +8,12 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "npm run lint",
+    "prepublish": "npm run build",
     "build": "tsc",
     "test": "jest",
     "test-watch": "jest --watch",
+    "lint": "tslint --project . {examples,src,test}/**/*.ts",
     "coverage": "jest --coverage",
     "update-template": "npx update-template https://github.com/AnandChowdhary/calendar-link",
     "semantic-release": "semantic-release"

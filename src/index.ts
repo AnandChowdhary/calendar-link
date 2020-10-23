@@ -150,7 +150,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: (() => {
         const eventAlarm = event.reminderAlarm;
         if (eventAlarm) {
-          return "PT" + eventAlarm.value + eventAlarm.unit[0].toUpperCase();
+          return "-P" + eventAlarm.value + eventAlarm.unit[0].toUpperCase();
         }
       })(),
     },
