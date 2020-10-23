@@ -150,7 +150,8 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: (() => {
         const eventAlarm = event.reminderAlarm;
         if (eventAlarm) {
-          return "-P" + eventAlarm.value + eventAlarm.unit[0].toUpperCase();
+          //https://www.kanzaki.com/docs/ical/trigger.html
+          return "-PT" + eventAlarm.value + eventAlarm.unit[0].toUpperCase();
         }
       })(),
     },
