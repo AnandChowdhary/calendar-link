@@ -287,5 +287,47 @@ describe("Calendar Links", () => {
         `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
+
+    test("should place an alarm for an event before 1 day", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [1, "day"],
+        reminder: [1, "day"],
+      };
+
+      const link = ics(event);
+      expect(link).toBe(
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20191229T050000Z%0ADTEND:20191230T050000Z%0ASUMMARY:Birthday%20party%0ABEGIN:VALARM%0ATRIGGER:PT1D%0AACTION:DISPLAY%0ADESCRIPTION:Birthday%20party%0AEND:VALARM%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+      );
+    });
+
+    test("should place an alarm for an event before 1 minute", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [1, "day"],
+        reminder: [1, "minute"],
+      };
+
+      const link = ics(event);
+      expect(link).toBe(
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20191229T050000Z%0ADTEND:20191230T050000Z%0ASUMMARY:Birthday%20party%0ABEGIN:VALARM%0ATRIGGER:PT1M%0AACTION:DISPLAY%0ADESCRIPTION:Birthday%20party%0AEND:VALARM%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+      );
+    });
+
+    test("should place an alarm for an event before 15 minute and repeat 2 times", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [1, "day"],
+        reminder: [15, "minute", 2],
+      };
+
+      const link = ics(event);
+      expect(link).toBe(
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20191229T050000Z%0ADTEND:20191230T050000Z%0ASUMMARY:Birthday%20party%0ABEGIN:VALARM%0ATRIGGER:PT15M%0AREPEAT:2%0AACTION:DISPLAY%0ADESCRIPTION:Birthday%20party%0AEND:VALARM%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+      );
+    });
   });
 });

@@ -16,7 +16,7 @@ function formatTimes(
 }
 
 export const eventify = (event: CalendarEvent): NormalizedCalendarEvent => {
-  const { start, end, duration, ...rest } = event;
+  const { start, end, duration, reminder, ...rest } = event;
   const startUtc = dayjs(start).utc();
   const endUtc = end
     ? dayjs(end).utc()
@@ -31,10 +31,29 @@ export const eventify = (event: CalendarEvent): NormalizedCalendarEvent => {
         }
         return dayjs().utc();
       })();
+
+  const reminderAlarm = reminder
+    ? (() => {
+        if (reminder && reminder.length) {
+          const value = Number(reminder[0]);
+          const unit = reminder[1];
+          const when = startUtc.subtract(value, unit);
+          const repeat = reminder[2];
+
+          return {
+            value,
+            unit,
+            when,
+            repeat,
+          };
+        }
+      })()
+    : undefined;
   return {
     ...rest,
     startUtc,
     endUtc,
+    reminderAlarm,
   };
 };
 
@@ -120,6 +139,42 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
   const { start, end } = formatTimes(event, "dateTimeUTC");
+
+  const alarmChuncks = [
+    {
+      key: "BEGIN",
+      value: "VALARM",
+    },
+    {
+      key: "TRIGGER",
+      value: (() => {
+        const eventAlarm = event.reminderAlarm;
+        if (eventAlarm) {
+          return "PT" + eventAlarm.value + eventAlarm.unit[0].toUpperCase();
+        }
+      })(),
+    },
+    {
+      key: "REPEAT",
+      value: (() => {
+        const eventAlarm = event.reminderAlarm;
+        if (eventAlarm) return eventAlarm.repeat;
+      })(),
+    },
+    {
+      key: "ACTION",
+      value: "DISPLAY",
+    },
+    {
+      key: "DESCRIPTION",
+      value: event.title,
+    },
+    {
+      key: "END",
+      value: "VALARM",
+    },
+  ];
+
   const calendarChunks = [
     {
       key: "BEGIN",
@@ -157,6 +212,9 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       key: "LOCATION",
       value: formattedLocation,
     },
+  ];
+
+  const calendarSuffix = [
     {
       key: "END",
       value: "VEVENT",
@@ -170,6 +228,18 @@ export const ics = (calendarEvent: CalendarEvent): string => {
   let calendarUrl: string = "";
 
   calendarChunks.forEach((chunk) => {
+    if (chunk.value) {
+      calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+    }
+  });
+  if (event.reminderAlarm) {
+    alarmChuncks.forEach((chunk) => {
+      if (chunk.value) {
+        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+      }
+    });
+  }
+  calendarSuffix.forEach((chunk) => {
     if (chunk.value) {
       calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
     }
