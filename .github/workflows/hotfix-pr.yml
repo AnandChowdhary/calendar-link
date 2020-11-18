@@ -44,7 +44,7 @@ jobs:
       - name: Set PR body
         run: echo "PULL_REQUEST_BODY=${{steps.set-pr-body.outputs.result}}" >> $GITHUB_ENV
       - name: pull-request-action
-        uses: vsoch/pull-request-action@1.0.11
+        uses: vsoch/pull-request-action@1.0.12
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           BRANCH_PREFIX: "hotfix-"
