@@ -119,36 +119,26 @@ describe("Calendar Links", () => {
     test("generate a outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29",
+        start: "2019-12-29Z",
         duration: [2, "hour"],
       };
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTime);
-      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTime);
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
-          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-          "$1-$2-$3T$4:$5:$6"
-        )
+        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
       );
     });
 
     test("generate an all day outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29",
+        start: "2019-12-29Z",
         allDay: true,
       };
       const link = outlook(event);
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
-          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-          "$1-$2-$3T$4:$5:$6"
-        )
+        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
       );
     });
   });
@@ -157,36 +147,26 @@ describe("Calendar Links", () => {
     test("generate a office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29",
+        start: "2019-12-29Z",
         duration: [2, "hour"],
       };
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTime);
-      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTime);
       const link = office365(event);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
-          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-          "$1-$2-$3T$4:$5:$6"
-        )
+        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
       );
     });
 
     test("generate an all day office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29",
+        start: "2019-12-29Z",
         allDay: true,
       };
       const link = office365(event);
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://outlook.office.com/calendar/0/deeplink/compose?enddt=${eTime}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=${sTime}&subject=Birthday%20party`.replace(
-          /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-          "$1-$2-$3T$4:$5:$6"
-        )
+        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
       );
     });
   });

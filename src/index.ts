@@ -57,7 +57,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
 
 export const outlook = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTime");
+  const { start, end } = formatTimes(event, "dateTimeWithOffset");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
@@ -67,15 +67,12 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     body: event.description,
     location: event.location,
   };
-  return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`.replace(
-    /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-    "$1-$2-$3T$4:$5:$6"
-  );
+  return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTime");
+  const { start, end } = formatTimes(event, "dateTimeWithOffset");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
@@ -85,10 +82,7 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
     body: event.description,
     location: event.location,
   };
-  return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`.replace(
-    /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/g,
-    "$1-$2-$3T$4:$5:$6"
-  );
+  return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {

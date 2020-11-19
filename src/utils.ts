@@ -1,5 +1,5 @@
 export const TimeFormats = {
-  dateTime: "YYYYMMDD[T]HHmmss",
+  dateTimeWithOffset: "YYYY-MM-DD[T]HH:mm:ssZ",
   dateTimeUTC: "YYYYMMDD[T]HHmmss[Z]",
   allDay: "YYYYMMDD",
 };
