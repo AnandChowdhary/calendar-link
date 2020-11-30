@@ -1,3 +1,9 @@
+## [v2.0.2](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.1...v2.0.2) (2020-11-30)
+
+### ⬆️ Dependency updates
+
+- [`066b3dd`](https://github.com/AnandChowdhary/calendar-link/commit/066b3dd)  Bump semantic-release from 17.2.4 to 17.3.0
+
 ## [v2.0.1](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.0...v2.0.1) (2020-11-23)
 
 ### ⬆️ Dependency updates
