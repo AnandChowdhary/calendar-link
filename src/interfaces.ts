@@ -33,7 +33,6 @@ interface Google extends Record<string, string | boolean | number | undefined> {
 
 interface Outlook extends Record<string, string | boolean | number | undefined> {
   path: string;
-  rru: string;
   startdt: string;
   enddt: string;
   subject: string;
