@@ -60,7 +60,6 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
   const { start, end } = formatTimes(event, "dateTimeWithOffset");
   const details: Outlook = {
     path: "/calendar/action/compose",
-    rru: "addevent",
     startdt: start,
     enddt: end,
     subject: event.title,
@@ -75,7 +74,6 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
   const { start, end } = formatTimes(event, "dateTimeWithOffset");
   const details: Outlook = {
     path: "/calendar/action/compose",
-    rru: "addevent",
     startdt: start,
     enddt: end,
     subject: event.title,
