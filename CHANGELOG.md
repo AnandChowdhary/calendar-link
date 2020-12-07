@@ -1,3 +1,13 @@
+## v2.0.3 (2020-12-07)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.3) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.2...v2.0.3) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.3.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.3.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`5f507d8`](https://github.com/AnandChowdhary/calendar-link/commit/5f507d8)  Bump @types/jest from 26.0.15 to 26.0.16
+- [`db9f07d`](https://github.com/AnandChowdhary/calendar-link/commit/db9f07d)  Bump @koj/config from 1.2.9 to 1.2.11
+- [`2a1a283`](https://github.com/AnandChowdhary/calendar-link/commit/2a1a283)  Bump @semantic-release/npm from 7.0.8 to 7.0.9
+
 ## [v2.0.2](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.1...v2.0.2) (2020-11-30)
 
 ### ⬆️ Dependency updates
