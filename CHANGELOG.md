@@ -1,3 +1,16 @@
+## v2.0.4 (2020-12-14)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.4) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.3...v2.0.4) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.4) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.4.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.4.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`454f6d5`](https://github.com/AnandChowdhary/calendar-link/commit/454f6d5)  Bump dayjs from 1.9.6 to 1.9.7
+- [`d658954`](https://github.com/AnandChowdhary/calendar-link/commit/d658954)  Bump @types/jest from 26.0.16 to 26.0.17
+- [`e89c536`](https://github.com/AnandChowdhary/calendar-link/commit/e89c536)  Bump @types/jest from 26.0.17 to 26.0.18
+- [`d75c79b`](https://github.com/AnandChowdhary/calendar-link/commit/d75c79b)  Bump @types/jest from 26.0.18 to 26.0.19
+- [`3f5cb35`](https://github.com/AnandChowdhary/calendar-link/commit/3f5cb35)  Bump actions/setup-node from v2.1.2 to v2.1.3
+- [`ac8f283`](https://github.com/AnandChowdhary/calendar-link/commit/ac8f283)  Bump ini from 1.3.5 to 1.3.7
+
 ## v2.0.3 (2020-12-07)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.3) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.2...v2.0.3) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.3.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.3.tar.gz))
