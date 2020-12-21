@@ -1,3 +1,12 @@
+## v2.0.5 (2020-12-21)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.5) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.4...v2.0.5) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.5) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.5.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.5.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`03b581f`](https://github.com/AnandChowdhary/calendar-link/commit/03b581f)  Bump typescript from 4.1.2 to 4.1.3
+- [`5a098e5`](https://github.com/AnandChowdhary/calendar-link/commit/5a098e5)  Bump actions/setup-node from v2.1.3 to v2.1.4
+
 ## v2.0.4 (2020-12-14)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.4) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.3...v2.0.4) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.4) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.4.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.4.tar.gz))
