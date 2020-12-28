@@ -1,3 +1,12 @@
+## v2.0.6 (2020-12-28)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.6) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.5...v2.0.6) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.6) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.6.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.6.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`96a46eb`](https://github.com/AnandChowdhary/calendar-link/commit/96a46eb)  Bump vsoch/pull-request-action from 1.0.12 to 1.0.13
+- [`afabdce`](https://github.com/AnandChowdhary/calendar-link/commit/afabdce)  Bump pascalgn/automerge-action from v0.12.0 to v0.13.0
+
 ## v2.0.5 (2020-12-21)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.5) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.4...v2.0.5) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.5) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.5.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.5.tar.gz))
