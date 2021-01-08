@@ -46,9 +46,10 @@ interface Yahoo extends Record<string, string | boolean | number | undefined> {
   v: number;
   title: string;
   st: string;
-  et: string;
+  et?: string;
   desc?: string;
   in_loc?: string;
+  dur?: string;
 }
 
 export { CalendarEvent, NormalizedCalendarEvent, Outlook, Yahoo, Google };

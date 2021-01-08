@@ -96,6 +96,10 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
     desc: event.description,
     in_loc: event.location,
   };
+  if (calendarEvent.allDay) {
+    details.dur = 'allday';
+    details.et = undefined;
+  }
   return `https://calendar.yahoo.com/?${stringify(details)}`;
 };
 

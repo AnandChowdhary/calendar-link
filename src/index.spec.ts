@@ -111,7 +111,7 @@ describe("Calendar Links", () => {
       const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
+        `https://calendar.yahoo.com/?dur=allday&st=${sTime}&title=Birthday%20party&v=60`
       );
     });
   });
