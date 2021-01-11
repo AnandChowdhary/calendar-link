@@ -1,3 +1,13 @@
+## v2.0.8 (2021-01-11)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.8) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.7...v2.0.8) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.8) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.8.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.8.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`70dccdb`](https://github.com/AnandChowdhary/calendar-link/commit/70dccdb)  Bump dayjs from 1.9.8 to 1.10.1
+- [`cefc6f3`](https://github.com/AnandChowdhary/calendar-link/commit/cefc6f3)  Bump dayjs from 1.10.1 to 1.10.2
+- [`b38bb28`](https://github.com/AnandChowdhary/calendar-link/commit/b38bb28)  Bump @types/jest from 26.0.19 to 26.0.20
+
 ## v2.0.7 (2021-01-04)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.7) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.6...v2.0.7) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.7) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.7.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.7.tar.gz))
