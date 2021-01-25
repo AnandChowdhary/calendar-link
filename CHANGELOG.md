@@ -1,3 +1,14 @@
+## v2.0.10 (2021-01-25)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.10) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.9...v2.0.10) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.10) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.10.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.10.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`98bd892`](https://github.com/AnandChowdhary/calendar-link/commit/98bd892)  Bump semantic-release from 17.3.2 to 17.3.3
+- [`927646c`](https://github.com/AnandChowdhary/calendar-link/commit/927646c)  Bump @semantic-release/npm from 7.0.9 to 7.0.10
+- [`57d7bc3`](https://github.com/AnandChowdhary/calendar-link/commit/57d7bc3)  Bump semantic-release from 17.3.3 to 17.3.4
+- [`08299b8`](https://github.com/AnandChowdhary/calendar-link/commit/08299b8)  Bump semantic-release from 17.3.4 to 17.3.6
+
 ## v2.0.9 (2021-01-18)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.9) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.8...v2.0.9) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.9) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.9.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.9.tar.gz))
