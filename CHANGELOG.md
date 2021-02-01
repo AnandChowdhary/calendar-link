@@ -1,3 +1,12 @@
+## v2.0.11 (2021-02-01)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.11) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.10...v2.0.11) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.11) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.11.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.11.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`7d1d848`](https://github.com/AnandChowdhary/calendar-link/commit/7d1d848)  Bump dayjs from 1.10.3 to 1.10.4
+- [`20c87ca`](https://github.com/AnandChowdhary/calendar-link/commit/20c87ca)  Bump semantic-release from 17.3.6 to 17.3.7
+
 ## v2.0.10 (2021-01-25)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.10) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.9...v2.0.10) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.10) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.10.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.10.tar.gz))
