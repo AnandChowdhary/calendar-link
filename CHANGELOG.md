@@ -1,3 +1,15 @@
+## v2.0.13 (2021-02-15)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.13) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.12...v2.0.13) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.13) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.13.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.13.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`e78919b`](https://github.com/AnandChowdhary/calendar-link/commit/e78919b)  Bump semantic-release from 17.3.7 to 17.3.8
+- [`e3f8340`](https://github.com/AnandChowdhary/calendar-link/commit/e3f8340)  Bump ts-jest from 26.5.0 to 26.5.1
+- [`8eaf178`](https://github.com/AnandChowdhary/calendar-link/commit/8eaf178)  Bump typescript from 4.1.3 to 4.1.4
+- [`d00ae83`](https://github.com/AnandChowdhary/calendar-link/commit/d00ae83)  Bump query-string from 6.13.8 to 6.14.0
+- [`e86754a`](https://github.com/AnandChowdhary/calendar-link/commit/e86754a)  Bump typescript from 4.1.4 to 4.1.5
+
 ## v2.0.12 (2021-02-08)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.12) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.11...v2.0.12) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.12) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.12.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.12.tar.gz))
