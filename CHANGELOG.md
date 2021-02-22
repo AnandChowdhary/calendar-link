@@ -1,3 +1,14 @@
+## v2.0.14 (2021-02-22)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.14) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.13...v2.0.14) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.14) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.14.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.14.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`bffd4aa`](https://github.com/AnandChowdhary/calendar-link/commit/bffd4aa)  Bump semantic-release from 17.3.8 to 17.3.9
+- [`654d5eb`](https://github.com/AnandChowdhary/calendar-link/commit/654d5eb)  Bump vsoch/pull-request-action from 1.0.13 to 1.0.14
+- [`3f28822`](https://github.com/AnandChowdhary/calendar-link/commit/3f28822)  Bump pascalgn/automerge-action from v0.13.0 to v0.13.1
+- [`dbd5da9`](https://github.com/AnandChowdhary/calendar-link/commit/dbd5da9)  Bump vsoch/pull-request-action from 1.0.14 to 1.0.15
+
 ## v2.0.13 (2021-02-15)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.13) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.12...v2.0.13) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.13) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.13.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.13.tar.gz))
