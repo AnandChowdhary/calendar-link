@@ -1,3 +1,14 @@
+## v2.0.15 (2021-03-01)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.15) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.14...v2.0.15) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.15) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.15.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.15.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`4dc96f3`](https://github.com/AnandChowdhary/calendar-link/commit/4dc96f3)  Bump actions/setup-node from v2.1.4 to v2.1.5
+- [`74e463b`](https://github.com/AnandChowdhary/calendar-link/commit/74e463b)  Bump typescript from 4.1.5 to 4.2.2
+- [`cd9e252`](https://github.com/AnandChowdhary/calendar-link/commit/cd9e252)  Bump ts-jest from 26.5.1 to 26.5.2
+- [`e1fc524`](https://github.com/AnandChowdhary/calendar-link/commit/e1fc524)  Bump semantic-release from 17.3.9 to 17.4.0
+
 ## v2.0.14 (2021-02-22)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.14) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.13...v2.0.14) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.14) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.14.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.14.tar.gz))
