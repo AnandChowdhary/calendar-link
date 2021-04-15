@@ -62,38 +62,4 @@ Not all calendars support the `guests` and `url` fields.
 
 ## License
 
-MIT ©
-[Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
-
-## Contributors
-
-Thanks goes to these wonderful people
-([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://anandchowdhary.com/?utm_source=github&utm_campaign=about-link"><img src="https://avatars3.githubusercontent.com/u/2841780?v=4" width="100px;" alt=""/><br /><sub><b>Anand Chowdhary</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AnandChowdhary" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://keybase.io/lachenmayer"><img src="https://avatars1.githubusercontent.com/u/38614?v=4" width="100px;" alt=""/><br /><sub><b>Harry Lachenmayer</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=lachenmayer" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=lachenmayer" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://AlexImbrea.com"><img src="https://avatars2.githubusercontent.com/u/4534299?v=4" width="100px;" alt=""/><br /><sub><b>Alexandru-Ionut Imbrea</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=AlexImb" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/k4mr4n"><img src="https://avatars1.githubusercontent.com/u/5468009?v=4" width="100px;" alt=""/><br /><sub><b>Kamran Gh</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=k4mr4n" title="Code">💻</a></td>
-    <td align="center"><a href="http://paulhebertdesigns.com"><img src="https://avatars3.githubusercontent.com/u/5798536?v=4" width="100px;" alt=""/><br /><sub><b>Paul Hebert</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/issues?q=author%3APaul-Hebert" title="Bug reports">🐛</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=Paul-Hebert" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/omazin"><img src="https://avatars0.githubusercontent.com/u/53472807?v=4" width="100px;" alt=""/><br /><sub><b>Osman Mazinov</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=omazin" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://bob.ippoli.to/"><img src="https://avatars0.githubusercontent.com/u/26596?v=4" width="100px;" alt=""/><br /><sub><b>Bob Ippolito</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Code">💻</a> <a href="https://github.com/AnandChowdhary/calendar-link/commits?author=etrepum" title="Documentation">📖</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://rhellenes.me"><img src="https://avatars0.githubusercontent.com/u/16990441?v=4" width="100px;" alt=""/><br /><sub><b>René Hellenes</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=RHellenes" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/fidelman"><img src="https://avatars0.githubusercontent.com/u/15198653?v=4" width="100px;" alt=""/><br /><sub><b>Andrei Fidelman</b></sub></a><br /><a href="https://github.com/AnandChowdhary/calendar-link/commits?author=fidelman" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the
-[all-contributors](https://github.com/all-contributors/all-contributors)
-specification. Contributions of any kind welcome!
+MIT © [Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
