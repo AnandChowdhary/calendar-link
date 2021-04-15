@@ -1,3 +1,11 @@
+## v2.1.0 (2021-04-15)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.1.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.16...v2.1.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.1.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.0.tar.gz))
+
+### ✨ New features
+
+- [`376ae97`](https://github.com/AnandChowdhary/calendar-link/commit/376ae97)  Deploy new UMD/ES modules
+
 ## v2.0.16 (2021-03-08)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.0.16) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.15...v2.0.16) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.0.16) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.16.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.0.16.tar.gz))
