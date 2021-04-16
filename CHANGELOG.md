@@ -1,3 +1,12 @@
+## v2.1.1 (2021-04-16)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.1.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.1.0...v2.1.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.1.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.1.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`7ff87dc`](https://github.com/AnandChowdhary/calendar-link/commit/7ff87dc)  Add docs for units (fixed #286)
+(Issues: [`#286`](https://github.com/AnandChowdhary/calendar-link/issues/286))
+
 ## v2.1.0 (2021-04-15)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.1.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.0.16...v2.1.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.1.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.1.0.tar.gz))
