@@ -5,7 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
-  "exports": "dist/index.modern.js",
+  "exports": {
+    "import": "./dist/index.modern.js",
+    "require": "./dist/index.js"
+  },
   "umd:main": "dist/index.umd.js",
   "files": [
     "dist"
