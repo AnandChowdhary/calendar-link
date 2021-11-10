@@ -9,9 +9,9 @@ dayjs.extend(utc);
 
 function formatTimes(
   { allDay, startUtc, endUtc }: NormalizedCalendarEvent,
-  dateTimeFormat: Exclude<keyof typeof TimeFormats, "allDay">
+  dateTimeFormat: keyof typeof TimeFormats
 ): { start: string; end: string } {
-  const format = TimeFormats[allDay ? "allDay" : dateTimeFormat];
+  const format = TimeFormats[dateTimeFormat];
   return { start: startUtc.format(format), end: endUtc.format(format) };
 }
 
@@ -40,7 +40,7 @@ export const eventify = (event: CalendarEvent): NormalizedCalendarEvent => {
 
 export const google = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const details: Google = {
     action: "TEMPLATE",
     text: event.title,
@@ -66,6 +66,7 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     subject: event.title,
     body: event.description,
     location: event.location,
+    allday: event.allDay || false
   };
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
@@ -81,13 +82,14 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
     subject: event.title,
     body: event.description,
     location: event.location,
+    allday: event.allDay || false
   };
   return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const details: Yahoo = {
     v: 60,
     title: event.title,
@@ -113,7 +115,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const calendarChunks = [
     {
       key: "BEGIN",
