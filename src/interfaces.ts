@@ -8,9 +8,15 @@ interface CalendarEvent {
   allDay?: boolean;
   description?: string;
   location?: string;
+  organizer?: CalendarEventOrganizer;
   busy?: boolean;
   guests?: string[];
   url?: string;
+}
+
+interface CalendarEventOrganizer {
+  name: string;
+  email: string;
 }
 
 interface NormalizedCalendarEvent extends Omit<CalendarEvent, "start" | "end" | "duration"> {
@@ -51,4 +57,4 @@ interface Yahoo extends Record<string, string | boolean | number | undefined> {
   in_loc?: string;
 }
 
-export { CalendarEvent, NormalizedCalendarEvent, Outlook, Yahoo, Google };
+export { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Outlook, Yahoo, Google };

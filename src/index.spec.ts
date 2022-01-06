@@ -267,5 +267,24 @@ describe("Calendar Links", () => {
         `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
+
+    test("should generate an ics link with a organizer", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "day"],
+        organizer: {
+          name: 'John Doe',
+          email: 'john.doe@example.com'
+        }
+      };
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: string = dayjs(event.start).add(2, "day").utc().format(TimeFormats.dateTimeUTC);
+
+      const link = ics(event);
+      expect(link).toBe(
+          `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20191229T050000Z%0ADTEND:20191231T050000Z%0ASUMMARY:Birthday%20party%0AORGANIZER;CN%3DJohn%20Doe%3AMAILTO%3Ajohn.doe%40example.com%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+      );
+    });
   });
 });
