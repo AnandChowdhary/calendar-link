@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { stringify } from "query-string";
 
-import { CalendarEvent, NormalizedCalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
+import { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
 import { TimeFormats } from "./utils";
 
 dayjs.extend(utc);
@@ -155,6 +155,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: formattedLocation,
     },
     {
+      key: "ORGANIZER",
+      value: event.organizer,
+    },
+    {
       key: "END",
       value: "VEVENT",
     },
@@ -168,7 +172,12 @@ export const ics = (calendarEvent: CalendarEvent): string => {
 
   calendarChunks.forEach((chunk) => {
     if (chunk.value) {
-      calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+      if (chunk.key == "ORGANIZER") {
+        const value = chunk.value as CalendarEventOrganizer;
+        calendarUrl += `${chunk.key};${encodeURIComponent(`CN=${value.name}:MAILTO:${value.email}\n`)}`;
+      } else {
+        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+      }
     }
   });
 
