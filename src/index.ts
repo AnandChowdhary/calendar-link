@@ -107,12 +107,14 @@ export const ics = (calendarEvent: CalendarEvent): string => {
   const formattedDescription: string = (event.description || "")
     .replace(/,/gm, ",")
     .replace(/;/gm, ";")
+    .replace(/\r\n/gm, "\n")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
   const formattedLocation: string = (event.location || "")
     .replace(/,/gm, ",")
     .replace(/;/gm, ";")
+    .replace(/\r\n/gm, "\n")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
