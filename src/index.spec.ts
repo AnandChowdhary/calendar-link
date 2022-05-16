@@ -143,34 +143,6 @@ describe("Calendar Links", () => {
     });
   });
 
-  describe("Office365", () => {
-    test("generate a office365 link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29Z",
-        duration: [2, "hour"],
-      };
-      const link = office365(event);
-
-      expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
-      );
-    });
-
-    test("generate an all day office365 link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29Z",
-        allDay: true,
-      };
-      const link = office365(event);
-
-      expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
-      );
-    });
-  });
-
   describe("ICS", () => {
     test("should generate an all day ics link", () => {
       const event: CalendarEvent = {
