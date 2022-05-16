@@ -1,6 +1,6 @@
 {
   "name": "calendar-link",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "📅 Calendar link generator for popular services, like Google, Outlook, and Yahoo.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
