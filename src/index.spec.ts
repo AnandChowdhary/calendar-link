@@ -84,64 +84,6 @@ describe("Calendar Links", () => {
       );
     });
   });
-  describe("Yahoo", () => {
-    test("generate a yahoo link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29",
-        duration: [2, "hour"],
-      };
-      const link = yahoo(event);
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
-      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
-
-      expect(link).toBe(
-        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
-      );
-    });
-
-    test("generate an all day yahoo link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29",
-        allDay: true,
-      };
-      const link = yahoo(event);
-      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
-      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
-
-      expect(link).toBe(
-        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
-      );
-    });
-  });
-  describe("Outlook", () => {
-    test("generate a outlook link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29Z",
-        duration: [2, "hour"],
-      };
-      const link = outlook(event);
-
-      expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
-      );
-    });
-
-    test("generate an all day outlook link", () => {
-      const event: CalendarEvent = {
-        title: "Birthday party",
-        start: "2019-12-29Z",
-        allDay: true,
-      };
-      const link = outlook(event);
-
-      expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
-      );
-    });
-  });
 
   describe("ICS", () => {
     test("should generate an all day ics link", () => {
