@@ -5,18 +5,21 @@ export const TimeFormats = {
 };
 
 export const wrapHttpUrlInAnchorTag = (body?: string) => {
-  if(!body) return;
-  return body.split(' ').map(word => (isValidHttpUrl(word)?`<a href='${word}'>${word}</a>`:word)).join(' ');
-}
+  if (!body) return;
+  return body
+    .split(" ")
+    .map((word) => (isValidHttpUrl(word) ? `<a href='${word}'>${word}</a>` : word))
+    .join(" ");
+};
 
 const isValidHttpUrl = (word: string) => {
-let url;
+  let url;
 
-try {
-  url = new URL(word);
-} catch (_) {
-  return false;  
-}
+  try {
+    url = new URL(word);
+  } catch (_) {
+    return false;
+  }
 
-return url.protocol === "http:" || url.protocol === "https:";
-}
+  return url.protocol === "http:" || url.protocol === "https:";
+};
