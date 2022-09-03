@@ -3,7 +3,7 @@ import utc from "dayjs/plugin/utc";
 import { stringify } from "query-string";
 
 import { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
-import { TimeFormats } from "./utils";
+import { TimeFormats, wrapHttpUrlInAnchorTag } from "./utils";
 
 dayjs.extend(utc);
 
@@ -64,7 +64,7 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     startdt: start,
     enddt: end,
     subject: event.title,
-    body: event.description,
+    body: wrapHttpUrlInAnchorTag(event.description),
     location: event.location,
     allday: event.allDay || false
   };
