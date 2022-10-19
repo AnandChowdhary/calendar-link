@@ -6,6 +6,7 @@ interface CalendarEvent {
   end?: any;
   duration?: [number, dayjs.UnitType];
   allDay?: boolean;
+  rRule?: string;
   description?: string;
   location?: string;
   organizer?: CalendarEventOrganizer;

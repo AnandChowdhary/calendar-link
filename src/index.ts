@@ -48,6 +48,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     trp: event.busy,
     dates: start + "/" + end,
+    recur: event.rRule,
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
@@ -143,6 +144,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "DTEND",
       value: end,
+    },
+    {
+      key: "RRULE",
+      value: event.rRule,
     },
     {
       key: "SUMMARY",
