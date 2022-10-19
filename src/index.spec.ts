@@ -79,7 +79,7 @@ describe("Calendar Links", () => {
       const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
       const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
       expect(link).toBe(
-        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&recur=FREQ%3DYEARLY%3BINTERVAL%3D1&text=Birthday%20party`
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&recur=RRULE%3AFREQ%3DYEARLY%3BINTERVAL%3D1&text=Birthday%20party`
       );
     });
 
