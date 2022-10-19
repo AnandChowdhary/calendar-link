@@ -67,6 +67,22 @@ describe("Calendar Links", () => {
       );
     });
 
+    test("generate a recurring google link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+        rRule: "FREQ=YEARLY;INTERVAL=1"
+      };
+      const link = google(event);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
+      const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
+      expect(link).toBe(
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&recur=FREQ%3DYEARLY%3BINTERVAL%3D1&text=Birthday%20party`
+      );
+    });
+
     test("generate a google link with guests", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
