@@ -1,3 +1,12 @@
+## v2.3.1 (2022-10-20)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.3.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.3.0...v2.3.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.3.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.1.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`339e6e4`](https://github.com/AnandChowdhary/calendar-link/commit/339e6e4)  missing RRULE prefix for google (#489)
+(Issues: [`#489`](https://github.com/AnandChowdhary/calendar-link/issues/489))
+
 ## v2.3.0 (2022-10-19)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.3.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.2.0...v2.3.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.3.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.0.tar.gz))
