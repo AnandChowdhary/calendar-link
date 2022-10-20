@@ -21,8 +21,8 @@ interface CalendarEventOrganizer {
 }
 
 interface NormalizedCalendarEvent extends Omit<CalendarEvent, "start" | "end" | "duration"> {
-  startUtc: dayjs.Dayjs;
-  endUtc: dayjs.Dayjs;
+  startTime: dayjs.Dayjs;
+  endTime: dayjs.Dayjs;
 }
 
 interface Google extends Record<string, string | boolean | number | undefined> {

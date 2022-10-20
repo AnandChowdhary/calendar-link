@@ -135,26 +135,30 @@ describe("Calendar Links", () => {
     test("generate a outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         duration: [2, "hour"],
       };
+      const expectedOffsetString = dayjs(new Date()).format("Z");
+      const expectedOffsetStringEncoded = encodeURIComponent(expectedOffsetString);
       const link = outlook(event);
 
       expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00${expectedOffsetStringEncoded}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00${expectedOffsetStringEncoded}&subject=Birthday%20party`
       );
     });
 
     test("generate an all day outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         allDay: true,
       };
+      const expectedOffsetString = dayjs(new Date()).format("Z");
+      const expectedOffsetStringEncoded = encodeURIComponent(expectedOffsetString);
       const link = outlook(event);
 
       expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00${expectedOffsetStringEncoded}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00${expectedOffsetStringEncoded}&subject=Birthday%20party`
       );
     });
   });
@@ -163,26 +167,30 @@ describe("Calendar Links", () => {
     test("generate a office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         duration: [2, "hour"],
       };
+      const expectedOffsetString = dayjs(new Date()).format("Z");
+      const expectedOffsetStringEncoded = encodeURIComponent(expectedOffsetString);
       const link = office365(event);
 
       expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00${expectedOffsetStringEncoded}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00${expectedOffsetStringEncoded}&subject=Birthday%20party`
       );
     });
 
     test("generate an all day office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         allDay: true,
       };
+      const expectedOffsetString = dayjs(new Date()).format("Z");
+      const expectedOffsetStringEncoded = encodeURIComponent(expectedOffsetString);
       const link = office365(event);
 
       expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00${expectedOffsetStringEncoded}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00${expectedOffsetStringEncoded}&subject=Birthday%20party`
       );
     });
   });
