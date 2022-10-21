@@ -67,7 +67,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
 
 export const outlook = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent, false);
-  const { start, end } = formatTimes(event, "dateTimeWithOffset");
+  const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
@@ -83,7 +83,7 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent, false);
-  const { start, end } = formatTimes(event, "dateTimeWithOffset");
+  const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
