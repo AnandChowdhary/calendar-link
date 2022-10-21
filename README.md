@@ -54,13 +54,13 @@ ics(event); // standard ICS file based on https://icalendar.org
 | `guests`           | Emails of other guests      | Array of emails (String)                                                                                                                  |
 | `url`              | Calendar document URL       | String                                                                                                                                    |
 
-Any one of the fields `end`, `duration`, or `allDay` is required.
+#### Notes
 
-The allowed units in `duration` are listed here: https://day.js.org/docs/en/durations/creating#list-of-all-available-units.
-
-The `url` field defaults to `document.URL` if a global `document` object exists. For server-side rendering, you should supply the `url` manually.
-
+- Any one of the fields `end`, `duration`, or `allDay` is required.
+- The allowed units in `duration` are listed here: https://day.js.org/docs/en/durations/creating#list-of-all-available-units.
+- The `url` field defaults to `document.URL` if a global `document` object exists. For server-side rendering, you should supply the `url` manually.
 Not all calendars support the `guests` and `url` fields.
+- If you don't pass the start and end time in UTC, Google will convert it to UTC but Outlook won't, so it's a good idea to use UTC when passing dates and times
 
 ## License
 
