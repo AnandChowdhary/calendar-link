@@ -1,3 +1,22 @@
+## v2.4.0 (2022-10-21)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.4.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.3.1...v2.4.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.4.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.4.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.4.0.tar.gz))
+
+### ✨ New features
+
+- [`9b3efb4`](https://github.com/AnandChowdhary/calendar-link/commit/9b3efb4)  Add support for local time in Outlook and Office365
+
+### ⬆️ Dependency updates
+
+- [`4d551e8`](https://github.com/AnandChowdhary/calendar-link/commit/4d551e8)  Bump parse-path from 4.0.2 to 7.0.0 (#488)
+(Issues: [`#488`](https://github.com/AnandChowdhary/calendar-link/issues/488))- [`dc0df9e`](https://github.com/AnandChowdhary/calendar-link/commit/dc0df9e)  Bump actions/setup-node from 2.1.5 to 3.5.1 (#486)
+(Issues: [`#486`](https://github.com/AnandChowdhary/calendar-link/issues/486))- [`da3fa08`](https://github.com/AnandChowdhary/calendar-link/commit/da3fa08)  Bump actions/checkout from 2.3.4 to 3.1.0 (#485)
+(Issues: [`#485`](https://github.com/AnandChowdhary/calendar-link/issues/485))- [`6756c4b`](https://github.com/AnandChowdhary/calendar-link/commit/6756c4b)  Bump typescript from 4.2.3 to 4.8.4 (#481)
+(Issues: [`#481`](https://github.com/AnandChowdhary/calendar-link/issues/481))- [`c184373`](https://github.com/AnandChowdhary/calendar-link/commit/c184373)  Bump actions/stale from 3 to 6 (#478)
+(Issues: [`#478`](https://github.com/AnandChowdhary/calendar-link/issues/478))- [`7ea8657`](https://github.com/AnandChowdhary/calendar-link/commit/7ea8657)  Bump ansi-regex, ansi-regex and ansi-regex (#490)
+(Issues: [`#490`](https://github.com/AnandChowdhary/calendar-link/issues/490))- [`5755074`](https://github.com/AnandChowdhary/calendar-link/commit/5755074)  Bump actions/cache from 2 to 3.0.11 (#493)
+(Issues: [`#493`](https://github.com/AnandChowdhary/calendar-link/issues/493))
+
 ## v2.3.1 (2022-10-20)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.3.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.3.0...v2.3.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.3.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.3.1.tar.gz))
