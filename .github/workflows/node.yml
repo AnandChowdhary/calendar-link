@@ -10,13 +10,13 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v3.1.0
       - name: Setup Node.js
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v3.5.1
         with:
           node-version: 14
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         env:
           cache-name: cache-node-modules
         with:

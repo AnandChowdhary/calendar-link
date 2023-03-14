@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import * as dayjs from "dayjs";
 
 interface CalendarEvent {
   title: string;
@@ -6,16 +6,23 @@ interface CalendarEvent {
   end?: any;
   duration?: [number, dayjs.UnitType];
   allDay?: boolean;
+  rRule?: string;
   description?: string;
   location?: string;
+  organizer?: CalendarEventOrganizer;
   busy?: boolean;
   guests?: string[];
   url?: string;
 }
 
+interface CalendarEventOrganizer {
+  name: string;
+  email: string;
+}
+
 interface NormalizedCalendarEvent extends Omit<CalendarEvent, "start" | "end" | "duration"> {
-  startUtc: dayjs.Dayjs;
-  endUtc: dayjs.Dayjs;
+  startTime: dayjs.Dayjs;
+  endTime: dayjs.Dayjs;
 }
 
 interface Google extends Record<string, string | boolean | number | undefined> {
@@ -51,4 +58,4 @@ interface Yahoo extends Record<string, string | boolean | number | undefined> {
   in_loc?: string;
 }
 
-export { CalendarEvent, NormalizedCalendarEvent, Outlook, Yahoo, Google };
+export { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Outlook, Yahoo, Google };

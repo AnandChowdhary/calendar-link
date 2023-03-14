@@ -67,6 +67,22 @@ describe("Calendar Links", () => {
       );
     });
 
+    test("generate a recurring google link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+        rRule: "FREQ=YEARLY;INTERVAL=1",
+      };
+      const link = google(event);
+      const sTime = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
+      const expectedDates = encodeURIComponent(`${sTime}/${eTime}`);
+      expect(link).toBe(
+        `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${expectedDates}&recur=RRULE%3AFREQ%3DYEARLY%3BINTERVAL%3D1&text=Birthday%20party`
+      );
+    });
+
     test("generate a google link with guests", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
@@ -96,7 +112,7 @@ describe("Calendar Links", () => {
       const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
 
       expect(link).toBe(
-        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
+        `https://calendar.yahoo.com/?dur=false&et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
       );
     });
 
@@ -111,7 +127,7 @@ describe("Calendar Links", () => {
       const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
       expect(link).toBe(
-        `https://calendar.yahoo.com/?et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
+        `https://calendar.yahoo.com/?dur=allday&et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
       );
     });
   });
@@ -119,26 +135,26 @@ describe("Calendar Links", () => {
     test("generate a outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         duration: [2, "hour"],
       };
       const link = outlook(event);
 
       expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
 
     test("generate an all day outlook link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         allDay: true,
       };
       const link = outlook(event);
 
       expect(link).toBe(
-        "https://outlook.live.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
   });
@@ -147,26 +163,26 @@ describe("Calendar Links", () => {
     test("generate a office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         duration: [2, "hour"],
       };
       const link = office365(event);
 
       expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=2019-12-29T02%3A00%3A00%2B00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00%2B00%3A00&subject=Birthday%20party"
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
 
     test("generate an all day office365 link", () => {
       const event: CalendarEvent = {
         title: "Birthday party",
-        start: "2019-12-29Z",
+        start: "2019-12-29",
         allDay: true,
       };
       const link = office365(event);
 
       expect(link).toBe(
-        "https://outlook.office.com/calendar/0/deeplink/compose?enddt=20191230&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=20191229&subject=Birthday%20party"
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
   });
@@ -265,6 +281,25 @@ describe("Calendar Links", () => {
       const link = ics(event);
       expect(link).toBe(
         `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AEND:VEVENT%0AEND:VCALENDAR%0A`
+      );
+    });
+
+    test("should generate an ics link with an organizer", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "day"],
+        organizer: {
+          name: "John Doe",
+          email: "john.doe@example.com",
+        },
+      };
+      const sTime: string = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: string = dayjs(event.start).add(2, "day").utc().format(TimeFormats.dateTimeUTC);
+
+      const link = ics(event);
+      expect(link).toBe(
+        `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${sTime}%0ADTEND:${eTime}%0ASUMMARY:Birthday%20party%0AORGANIZER;CN%3DJohn%20Doe%3AMAILTO%3Ajohn.doe%40example.com%0AEND:VEVENT%0AEND:VCALENDAR%0A`
       );
     });
   });

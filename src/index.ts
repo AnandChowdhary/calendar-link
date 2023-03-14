@@ -2,45 +2,54 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import { stringify } from "query-string";
 
-import { CalendarEvent, NormalizedCalendarEvent, Google, Outlook, Yahoo } from "./interfaces";
+import {
+  CalendarEvent,
+  CalendarEventOrganizer,
+  NormalizedCalendarEvent,
+  Google,
+  Outlook,
+  Yahoo,
+} from "./interfaces";
 import { TimeFormats } from "./utils";
 
 dayjs.extend(utc);
 
 function formatTimes(
-  { allDay, startUtc, endUtc }: NormalizedCalendarEvent,
-  dateTimeFormat: Exclude<keyof typeof TimeFormats, "allDay">
+  { startTime, endTime }: NormalizedCalendarEvent,
+  dateTimeFormat: keyof typeof TimeFormats
 ): { start: string; end: string } {
-  const format = TimeFormats[allDay ? "allDay" : dateTimeFormat];
-  return { start: startUtc.format(format), end: endUtc.format(format) };
+  const format = TimeFormats[dateTimeFormat];
+  return { start: startTime.format(format), end: endTime.format(format) };
 }
 
-export const eventify = (event: CalendarEvent): NormalizedCalendarEvent => {
+export const eventify = (event: CalendarEvent, toUtc: boolean = true): NormalizedCalendarEvent => {
   const { start, end, duration, ...rest } = event;
-  const startUtc = dayjs(start).utc();
-  const endUtc = end
-    ? dayjs(end).utc()
+  const startTime = toUtc ? dayjs(start).utc() : dayjs(start);
+  const endTime = end
+    ? toUtc
+      ? dayjs(end).utc()
+      : dayjs(end)
     : (() => {
         if (event.allDay) {
-          return startUtc.add(1, "day");
+          return startTime.add(1, "day");
         }
         if (duration && duration.length == 2) {
           const value = Number(duration[0]);
           const unit = duration[1];
-          return startUtc.add(value, unit);
+          return startTime.add(value, unit);
         }
-        return dayjs().utc();
+        return toUtc ? dayjs().utc() : dayjs();
       })();
   return {
     ...rest,
-    startUtc,
-    endUtc,
+    startTime: startTime,
+    endTime: endTime,
   };
 };
 
 export const google = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const details: Google = {
     action: "TEMPLATE",
     text: event.title,
@@ -48,6 +57,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     trp: event.busy,
     dates: start + "/" + end,
+    recur: event.rRule ? "RRULE:" + event.rRule : undefined,
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
@@ -56,8 +66,8 @@ export const google = (calendarEvent: CalendarEvent): string => {
 };
 
 export const outlook = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeWithOffset");
+  const event = eventify(calendarEvent, false);
+  const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
@@ -66,13 +76,14 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     subject: event.title,
     body: event.description,
     location: event.location,
+    allday: event.allDay || false,
   };
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeWithOffset");
+  const event = eventify(calendarEvent, false);
+  const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
     rru: "addevent",
@@ -81,13 +92,14 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
     subject: event.title,
     body: event.description,
     location: event.location,
+    allday: event.allDay || false,
   };
   return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const details: Yahoo = {
     v: 60,
     title: event.title,
@@ -95,6 +107,7 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
     et: end,
     desc: event.description,
     in_loc: event.location,
+    dur: event.allDay ? "allday" : false,
   };
   return `https://calendar.yahoo.com/?${stringify(details)}`;
 };
@@ -104,16 +117,18 @@ export const ics = (calendarEvent: CalendarEvent): string => {
   const formattedDescription: string = (event.description || "")
     .replace(/,/gm, ",")
     .replace(/;/gm, ";")
+    .replace(/\r\n/gm, "\n")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
   const formattedLocation: string = (event.location || "")
     .replace(/,/gm, ",")
     .replace(/;/gm, ";")
+    .replace(/\r\n/gm, "\n")
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
-  const { start, end } = formatTimes(event, "dateTimeUTC");
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const calendarChunks = [
     {
       key: "BEGIN",
@@ -140,6 +155,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: end,
     },
     {
+      key: "RRULE",
+      value: event.rRule,
+    },
+    {
       key: "SUMMARY",
       value: event.title,
     },
@@ -150,6 +169,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "LOCATION",
       value: formattedLocation,
+    },
+    {
+      key: "ORGANIZER",
+      value: event.organizer,
     },
     {
       key: "END",
@@ -165,7 +188,14 @@ export const ics = (calendarEvent: CalendarEvent): string => {
 
   calendarChunks.forEach((chunk) => {
     if (chunk.value) {
-      calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+      if (chunk.key == "ORGANIZER") {
+        const value = chunk.value as CalendarEventOrganizer;
+        calendarUrl += `${chunk.key};${encodeURIComponent(
+          `CN=${value.name}:MAILTO:${value.email}\n`
+        )}`;
+      } else {
+        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+      }
     }
   });
 
