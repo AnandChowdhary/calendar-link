@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3.5.1
         with:
-          node-version: 14
+          node-version: 16
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
