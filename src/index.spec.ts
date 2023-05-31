@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { google, yahoo, outlook, office365, ics } from "./index";
+import { google, yahoo, outlook, outlookMobile, office365, office365Mobile, ics } from "./index";
 import { TimeFormats } from "./utils";
 import { CalendarEvent } from "./interfaces";
 
@@ -159,6 +159,34 @@ describe("Calendar Links", () => {
     });
   });
 
+  describe("OutlookMobile", () => {
+    test("generate a outlookMobile link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+      };
+      const link = outlookMobile(event);
+
+      expect(link).toBe(
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+      );
+    });
+
+    test("generate an all day outlookMobile link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        allDay: true,
+      };
+      const link = outlookMobile(event);
+
+      expect(link).toBe(
+        `https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+      );
+    });
+  });
+
   describe("Office365", () => {
     test("generate a office365 link", () => {
       const event: CalendarEvent = {
@@ -180,6 +208,34 @@ describe("Calendar Links", () => {
         allDay: true,
       };
       const link = office365(event);
+
+      expect(link).toBe(
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+      );
+    });
+  });
+
+  describe("Office365Mobile", () => {
+    test("generate a office365Mobile link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+      };
+      const link = office365Mobile(event);
+
+      expect(link).toBe(
+        `https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+      );
+    });
+
+    test("generate an all day office365Mobile link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        allDay: true,
+      };
+      const link = office365Mobile(event);
 
       expect(link).toBe(
         `https://outlook.office.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`

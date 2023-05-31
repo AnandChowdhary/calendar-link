@@ -78,10 +78,42 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  return `https://outlook.live.com/calendar/0/action/compose?${stringify(details)}`;
+};
+
+export const outlookMobile = (calendarEvent: CalendarEvent): string => {
+  const event = eventify(calendarEvent, false);
+  const { start, end } = formatTimes(event, "dateTimeLocal");
+  const details: Outlook = {
+    path: "/calendar/action/compose",
+    rru: "addevent",
+    startdt: start,
+    enddt: end,
+    subject: event.title,
+    body: event.description,
+    location: event.location,
+    allday: event.allDay || false,
+  };
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
+  const event = eventify(calendarEvent, false);
+  const { start, end } = formatTimes(event, "dateTimeLocal");
+  const details: Outlook = {
+    path: "/calendar/action/compose",
+    rru: "addevent",
+    startdt: start,
+    enddt: end,
+    subject: event.title,
+    body: event.description,
+    location: event.location,
+    allday: event.allDay || false,
+  };
+  return `https://outlook.office.com/calendar/0/action/compose?${stringify(details)}`;
+};
+
+export const office365Mobile = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent, false);
   const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
