@@ -6,6 +6,7 @@ import {
   CalendarEvent,
   CalendarEventOrganizer,
   NormalizedCalendarEvent,
+  Aol,
   Google,
   Outlook,
   Yahoo,
@@ -142,6 +143,21 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
     dur: event.allDay ? "allday" : false,
   };
   return `https://calendar.yahoo.com/?${stringify(details)}`;
+};
+
+export const aol = (calendarEvent: CalendarEvent): string => {
+    const event = eventify(calendarEvent);
+    const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+    const details: Aol = {
+      v: 60,
+      title: event.title,
+      st: start,
+      et: end,
+      desc: event.description,
+      in_loc: event.location,
+      dur: event.allDay ? "allday" : false,
+    };
+    return `https://calendar.aol.com/?${stringify(details)}`;
 };
 
 export const ics = (calendarEvent: CalendarEvent): string => {
