@@ -242,6 +242,38 @@ describe("Calendar Links", () => {
       );
     });
   });
+  
+  describe("Aol", () => {
+    test("generate a aol link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+      };
+      const link = yahoo(event);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
+      const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
+
+      expect(link).toBe(
+        `https://calendar.aol.com/?dur=false&et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
+      );
+    });
+
+    test("generate an all day aol link", () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        allDay: true,
+      };
+      const link = yahoo(event);
+      const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
+      const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
+
+      expect(link).toBe(
+        `https://calendar.aol.com/?dur=allday&et=${eTime}&st=${sTime}&title=Birthday%20party&v=60`
+      );
+    });
+  });
 
   describe("ICS", () => {
     test("should generate an all day ics link", () => {
