@@ -30,10 +30,6 @@ jobs:
         run: npm ci
       - name: Build TypeScript
         run: npm run build
-      - name: Coverage
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         run: npx semantic-release
         env:
