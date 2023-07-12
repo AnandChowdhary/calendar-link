@@ -141,7 +141,7 @@ describe("Calendar Links", () => {
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
 
@@ -154,7 +154,7 @@ describe("Calendar Links", () => {
       const link = outlook(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/action/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
   });
@@ -169,7 +169,7 @@ describe("Calendar Links", () => {
       const link = outlookMobile(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
 
@@ -182,7 +182,7 @@ describe("Calendar Links", () => {
       const link = outlookMobile(event);
 
       expect(link).toBe(
-        `https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
+        `https://outlook.live.com/calendar/0/action/compose?allday=true&enddt=2019-12-30T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party`
       );
     });
   });
