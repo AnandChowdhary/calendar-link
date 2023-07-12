@@ -59,8 +59,9 @@ ics(event); // standard ICS file based on https://icalendar.org
 - Any one of the fields `end`, `duration`, or `allDay` is required.
 - The allowed units in `duration` are listed here: https://day.js.org/docs/en/durations/creating#list-of-all-available-units.
 - The `url` field defaults to `document.URL` if a global `document` object exists. For server-side rendering, you should supply the `url` manually.
-Not all calendars support the `guests` and `url` fields.
+  Not all calendars support the `guests` and `url` fields.
 - If you don't pass the start and end time in UTC, Google will convert it to UTC but Outlook won't, so it's a good idea to use UTC when passing dates and times
+- There are some known issues in Office 365 because of which we can't generate a consistent link in all devices (#542)
 
 ## License
 
