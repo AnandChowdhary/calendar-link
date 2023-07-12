@@ -1,3 +1,12 @@
+## v2.5.0 (2023-07-12)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.5.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.4.0...v2.5.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.5.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.5.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.5.0.tar.gz))
+
+### ✨ New features
+
+- [`4828504`](https://github.com/AnandChowdhary/calendar-link/commit/4828504)  Use ubuntu-latest for CI
+- [`0ac72d5`](https://github.com/AnandChowdhary/calendar-link/commit/0ac72d5)  Release new version
+
 ## v2.4.0 (2022-10-21)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.4.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.3.1...v2.4.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.4.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.4.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.4.0.tar.gz))
