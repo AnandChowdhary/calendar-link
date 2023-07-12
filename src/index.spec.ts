@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { google, yahoo, outlook, outlookMobile, office365, office365Mobile, ics } from "./index";
+import { google, yahoo, aol, outlook, outlookMobile, office365, office365Mobile, ics } from "./index";
 import { TimeFormats } from "./utils";
 import { CalendarEvent } from "./interfaces";
 
@@ -250,7 +250,7 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         duration: [2, "hour"],
       };
-      const link = yahoo(event);
+      const link = aol(event);
       const sTime: String = dayjs(event.start).utc().format(TimeFormats.dateTimeUTC);
       const eTime: String = dayjs(event.start).add(2, "hour").utc().format(TimeFormats.dateTimeUTC);
 
@@ -265,7 +265,7 @@ describe("Calendar Links", () => {
         start: "2019-12-29",
         allDay: true,
       };
-      const link = yahoo(event);
+      const link = aol(event);
       const sTime: String = dayjs(event.start).utc().format(TimeFormats.allDay);
       const eTime: String = dayjs(event.start).add(1, "day").utc().format(TimeFormats.allDay);
 
