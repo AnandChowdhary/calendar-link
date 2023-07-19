@@ -177,6 +177,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
   const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+  const dateStamp = dayjs(new Date()).utc().format(TimeFormats["dateTimeUTC"]);
   const calendarChunks = [
     {
       key: "BEGIN",
@@ -185,6 +186,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "VERSION",
       value: "2.0",
+    },
+    {
+      key: "PRODID",
+      value: event.title
     },
     {
       key: "BEGIN",
@@ -201,6 +206,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "DTEND",
       value: end,
+    },
+    {
+      key: "DTSTAMP",
+      value: dateStamp,
     },
     {
       key: "RRULE",
@@ -223,6 +232,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: event.organizer,
     },
     {
+      key: "UID",
+      value: Math.floor(Math.random() * 100000).toString().replace(".", ""),
+    },
+    {
       key: "END",
       value: "VEVENT",
     },
@@ -239,10 +252,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       if (chunk.key == "ORGANIZER") {
         const value = chunk.value as CalendarEventOrganizer;
         calendarUrl += `${chunk.key};${encodeURIComponent(
-          `CN=${value.name}:MAILTO:${value.email}\n`
+          `CN=${value.name}:MAILTO:${value.email}\r\n`
         )}`;
       } else {
-        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\n`)}`;
+        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\r\n`)}`;
       }
     }
   });
