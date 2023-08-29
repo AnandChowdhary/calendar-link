@@ -6,8 +6,11 @@
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "exports": {
-    "import": "./dist/index.modern.mjs",
-    "require": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.modern.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "umd:main": "dist/index.umd.js",
   "files": [
