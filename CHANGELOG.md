@@ -1,3 +1,11 @@
+## v2.6.0 (2023-09-29)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.6.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.5.1...v2.6.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.6.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.0.tar.gz))
+
+### ✨ New features
+
+- [`2d2067f`](https://github.com/AnandChowdhary/calendar-link/commit/2d2067f)  Trigger release manually
+
 ## v2.5.1 (2023-07-19)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.5.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.5.0...v2.5.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.5.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.5.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.5.1.tar.gz))
