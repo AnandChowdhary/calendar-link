@@ -79,6 +79,10 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+
+  if(event.to){
+    details.to = event.to.join(',');
+  }
   return `https://outlook.live.com/calendar/0/action/compose?${stringify(details)}`;
 };
 
@@ -95,6 +99,9 @@ export const outlookMobile = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  if(event.to){
+    details.to = event.to.join(',');
+  }
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 

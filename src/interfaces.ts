@@ -12,6 +12,7 @@ interface CalendarEvent {
   organizer?: CalendarEventOrganizer;
   busy?: boolean;
   guests?: string[];
+  to?: string[];
   url?: string;
 }
 
@@ -47,6 +48,7 @@ interface Outlook extends Record<string, string | boolean | number | undefined> 
   allday?: boolean;
   body?: string;
   location?: string;
+  to?: string;
 }
 
 interface Yahoo extends Record<string, string | boolean | number | undefined> {
