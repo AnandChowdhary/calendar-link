@@ -12,7 +12,6 @@ interface CalendarEvent {
   organizer?: CalendarEventOrganizer;
   busy?: boolean;
   guests?: string[];
-  to?: string[];
   url?: string;
 }
 
