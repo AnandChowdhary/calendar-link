@@ -53,6 +53,7 @@ ics(event); // standard ICS file based on https://icalendar.org
 | `busy`             | Mark on calendar as busy?   | Boolean                                                                                                                                   |
 | `guests`           | Emails of other guests      | Array of emails (String)                                                                                                                  |
 | `url`              | Calendar document URL       | String                                                                                                                                    |
+| `uid`              | A unique event id      | String                                                                                                                                    |
 
 #### Notes
 

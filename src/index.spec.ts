@@ -11,6 +11,8 @@ import {
 } from "./index";
 import { CalendarEvent } from "./interfaces";
 
+const uid = '4e23f079-6835-4ce0-a6dd-6efda61c165f'
+
 for (const service of [
   aol,
   google,
@@ -36,6 +38,7 @@ for (const service of [
   describe(`${service.name} service`, () => {
     test(`generate a ${service.name} link`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         duration: [2, "hour"],
@@ -46,6 +49,7 @@ for (const service of [
 
     test(`generate a ${service.name} link with description`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         duration: [2, "hour"],
@@ -57,6 +61,7 @@ for (const service of [
 
     test(`generate a ${service.name} link with time & timezone`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29T12:00:00.000+01:00",
         duration: [2, "hour"],
@@ -67,6 +72,7 @@ for (const service of [
 
     test(`generate an all day ${service.name} link`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         allDay: true,
@@ -77,6 +83,7 @@ for (const service of [
 
     test(`generate a multi day ${service.name} link`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         end: "2020-01-12",
@@ -88,6 +95,7 @@ for (const service of [
 
     test(`generate a recurring ${service.name} link`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         duration: [2, "hour"],
@@ -99,6 +107,7 @@ for (const service of [
 
     test(`generate a ${service.name} link with guests`, () => {
       const event: CalendarEvent = {
+        uid,
         title: "Birthday party",
         start: "2019-12-29",
         duration: [2, "hour"],
