@@ -46,7 +46,7 @@ exports[`msTeams service generate a msTeams link 1`] = `"https://teams.microsoft
 
 exports[`msTeams service generate a msTeams link with description 1`] = `"https://teams.microsoft.com/l/meeting/new?content=Bring%20gifts%21&endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
 
-exports[`msTeams service generate a msTeams link with guests 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+exports[`msTeams service generate a msTeams link with guests 1`] = `"https://teams.microsoft.com/l/meeting/new?attendees=hello%40example.com%2Canother%40example.com&endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
 
 exports[`msTeams service generate a msTeams link with time & timezone 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-29T13%3A00%3A00.000Z&startTime=2019-12-29T11%3A00%3A00.000Z&subject=Birthday%20party"`;
 

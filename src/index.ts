@@ -169,6 +169,9 @@ export const msTeams = (calendarEvent: CalendarEvent): string => {
     startTime: event.startTime.toISOString(),
     endTime: event.endTime.toISOString(),
   };
+  if (event.guests && event.guests.length) {
+    details.attendees = event.guests.join();
+  }
   return `https://teams.microsoft.com/l/meeting/new?${stringify(details)}`;
 };
 
