@@ -1,3 +1,12 @@
+## v2.7.0 (2024-07-31)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.7.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.6.1...v2.7.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.7.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.7.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.7.0.tar.gz))
+
+### ✨ New features
+
+- [`003905a`](https://github.com/AnandChowdhary/calendar-link/commit/003905a)  Add Microsoft Teams Calendar Event Generation Feature (#604)
+(Issues: [`#604`](https://github.com/AnandChowdhary/calendar-link/issues/604))
+
 ## v2.6.1 (2024-07-31)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.6.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.6.0...v2.6.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.6.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.1.tar.gz))
