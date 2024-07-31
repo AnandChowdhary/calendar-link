@@ -2,6 +2,8 @@
 
 exports[`aol service generate a aol link 1`] = `"https://calendar.aol.com/?dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
 
+exports[`aol service generate a aol link with description 1`] = `"https://calendar.aol.com/?desc=Bring%20gifts%21&dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
+
 exports[`aol service generate a aol link with guests 1`] = `"https://calendar.aol.com/?dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
 
 exports[`aol service generate a aol link with time & timezone 1`] = `"https://calendar.aol.com/?dur=false&et=20191229T130000Z&st=20191229T110000Z&title=Birthday%20party&v=60"`;
@@ -13,6 +15,8 @@ exports[`aol service generate a recurring aol link 1`] = `"https://calendar.aol.
 exports[`aol service generate an all day aol link 1`] = `"https://calendar.aol.com/?dur=allday&et=20191230&st=20191229&title=Birthday%20party&v=60"`;
 
 exports[`google service generate a google link 1`] = `"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20191229T000000Z%2F20191229T020000Z&text=Birthday%20party"`;
+
+exports[`google service generate a google link with description 1`] = `"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20191229T000000Z%2F20191229T020000Z&details=Bring%20gifts%21&text=Birthday%20party"`;
 
 exports[`google service generate a google link with guests 1`] = `"https://calendar.google.com/calendar/render?action=TEMPLATE&add=hello%40example.com%2Canother%40example.com&dates=20191229T000000Z%2F20191229T020000Z&text=Birthday%20party"`;
 
@@ -26,6 +30,8 @@ exports[`google service generate an all day google link 1`] = `"https://calendar
 
 exports[`ics service generate a ics link 1`] = `"data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Birthday%20party%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20191229T000000Z%0D%0ADTEND:20191229T020000Z%0D%0ADTSTAMP:20191228T120000Z%0D%0ASUMMARY:Birthday%20party%0D%0AUID:12345%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A"`;
 
+exports[`ics service generate a ics link with description 1`] = `"data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Birthday%20party%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20191229T000000Z%0D%0ADTEND:20191229T020000Z%0D%0ADTSTAMP:20191228T120000Z%0D%0ASUMMARY:Birthday%20party%0D%0ADESCRIPTION:Bring%20gifts!%0D%0AUID:12345%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A"`;
+
 exports[`ics service generate a ics link with guests 1`] = `"data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Birthday%20party%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20191229T000000Z%0D%0ADTEND:20191229T020000Z%0D%0ADTSTAMP:20191228T120000Z%0D%0ASUMMARY:Birthday%20party%0D%0AUID:12345%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A"`;
 
 exports[`ics service generate a ics link with time & timezone 1`] = `"data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Birthday%20party%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20191229T110000Z%0D%0ADTEND:20191229T130000Z%0D%0ADTSTAMP:20191228T120000Z%0D%0ASUMMARY:Birthday%20party%0D%0AUID:12345%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A"`;
@@ -36,9 +42,25 @@ exports[`ics service generate a recurring ics link 1`] = `"data:text/calendar;ch
 
 exports[`ics service generate an all day ics link 1`] = `"data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:Birthday%20party%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20191229%0D%0ADTEND:20191230%0D%0ADTSTAMP:20191228T120000Z%0D%0ASUMMARY:Birthday%20party%0D%0AUID:12345%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR%0D%0A"`;
 
+exports[`msTeams service generate a msTeams link 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate a msTeams link with description 1`] = `"https://teams.microsoft.com/l/meeting/new?content=Bring%20gifts%21&endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate a msTeams link with guests 1`] = `"https://teams.microsoft.com/l/meeting/new?attendees=hello%40example.com%2Canother%40example.com&endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate a msTeams link with time & timezone 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-29T13%3A00%3A00.000Z&startTime=2019-12-29T11%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate a multi day msTeams link 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2020-01-12T00%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate a recurring msTeams link 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-29T02%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
+exports[`msTeams service generate an all day msTeams link 1`] = `"https://teams.microsoft.com/l/meeting/new?endTime=2019-12-30T00%3A00%3A00.000Z&startTime=2019-12-29T00%3A00%3A00.000Z&subject=Birthday%20party"`;
+
 exports[`office365 service generate a multi day office365 link 1`] = `"https://outlook.office.com/calendar/0/action/compose?allday=true&enddt=2020-01-12T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`office365 service generate a office365 link 1`] = `"https://outlook.office.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
+
+exports[`office365 service generate a office365 link with description 1`] = `"https://outlook.office.com/calendar/0/action/compose?allday=false&body=Bring%20gifts%21&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`office365 service generate a office365 link with guests 1`] = `"https://outlook.office.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
@@ -52,6 +74,8 @@ exports[`office365Mobile service generate a multi day office365Mobile link 1`] =
 
 exports[`office365Mobile service generate a office365Mobile link 1`] = `"https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
+exports[`office365Mobile service generate a office365Mobile link with description 1`] = `"https://outlook.office.com/calendar/0/deeplink/compose?allday=false&body=Bring%20gifts%21&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
+
 exports[`office365Mobile service generate a office365Mobile link with guests 1`] = `"https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`office365Mobile service generate a office365Mobile link with time & timezone 1`] = `"https://outlook.office.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T13%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T11%3A00%3A00&subject=Birthday%20party"`;
@@ -64,6 +88,8 @@ exports[`outlook service generate a multi day outlook link 1`] = `"https://outlo
 
 exports[`outlook service generate a outlook link 1`] = `"https://outlook.live.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
+exports[`outlook service generate a outlook link with description 1`] = `"https://outlook.live.com/calendar/0/action/compose?allday=false&body=Bring%20gifts%21&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
+
 exports[`outlook service generate a outlook link with guests 1`] = `"https://outlook.live.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`outlook service generate a outlook link with time & timezone 1`] = `"https://outlook.live.com/calendar/0/action/compose?allday=false&enddt=2019-12-29T13%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T11%3A00%3A00&subject=Birthday%20party"`;
@@ -75,6 +101,8 @@ exports[`outlook service generate an all day outlook link 1`] = `"https://outloo
 exports[`outlookMobile service generate a multi day outlookMobile link 1`] = `"https://outlook.live.com/calendar/0/deeplink/compose?allday=true&enddt=2020-01-12T00%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`outlookMobile service generate a outlookMobile link 1`] = `"https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
+
+exports[`outlookMobile service generate a outlookMobile link with description 1`] = `"https://outlook.live.com/calendar/0/deeplink/compose?allday=false&body=Bring%20gifts%21&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
 exports[`outlookMobile service generate a outlookMobile link with guests 1`] = `"https://outlook.live.com/calendar/0/deeplink/compose?allday=false&enddt=2019-12-29T02%3A00%3A00&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2019-12-29T00%3A00%3A00&subject=Birthday%20party"`;
 
@@ -89,6 +117,8 @@ exports[`yahoo service generate a multi day yahoo link 1`] = `"https://calendar.
 exports[`yahoo service generate a recurring yahoo link 1`] = `"https://calendar.yahoo.com/?dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
 
 exports[`yahoo service generate a yahoo link 1`] = `"https://calendar.yahoo.com/?dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
+
+exports[`yahoo service generate a yahoo link with description 1`] = `"https://calendar.yahoo.com/?desc=Bring%20gifts%21&dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
 
 exports[`yahoo service generate a yahoo link with guests 1`] = `"https://calendar.yahoo.com/?dur=false&et=20191229T020000Z&st=20191229T000000Z&title=Birthday%20party&v=60"`;
 
