@@ -1,3 +1,12 @@
+## v2.6.1 (2024-07-31)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.6.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.6.0...v2.6.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.6.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.1.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`6da873c`](https://github.com/AnandChowdhary/calendar-link/commit/6da873c)  Fix Snapshot Tests for ICS Links (#600)
+(Issues: [`#600`](https://github.com/AnandChowdhary/calendar-link/issues/600))
+
 ## v2.6.0 (2023-09-29)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.6.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.5.1...v2.6.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.6.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.6.0.tar.gz))
