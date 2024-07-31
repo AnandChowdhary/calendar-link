@@ -67,4 +67,12 @@ interface Aol extends Record<string, string | boolean | number | undefined> {
     in_loc?: string;
  }
 
-export { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Outlook, Yahoo, Google, Aol };
+interface MsTeams extends Record<string, string | boolean | number | undefined> {
+  subject?: string;
+  content?: string;
+  startTime?: string;
+  endTime?: string;
+  attendees?: string;
+}
+
+export { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Outlook, Yahoo, Google, Aol, MsTeams };

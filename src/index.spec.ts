@@ -2,6 +2,7 @@ import {
   aol,
   google,
   ics,
+  msTeams,
   office365,
   office365Mobile,
   outlook,
@@ -14,6 +15,7 @@ for (const service of [
   aol,
   google,
   ics,
+  msTeams,
   office365,
   office365Mobile,
   outlook,
@@ -37,6 +39,17 @@ for (const service of [
         title: "Birthday party",
         start: "2019-12-29",
         duration: [2, "hour"],
+      };
+      const link = service(event);
+      expect(link).toMatchSnapshot();
+    });
+
+    test(`generate a ${service.name} link with description`, () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2019-12-29",
+        duration: [2, "hour"],
+        description: "Bring gifts!",
       };
       const link = service(event);
       expect(link).toMatchSnapshot();

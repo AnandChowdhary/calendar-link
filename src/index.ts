@@ -8,6 +8,7 @@ import {
   NormalizedCalendarEvent,
   Aol,
   Google,
+  MsTeams,
   Outlook,
   Yahoo,
 } from "./interfaces";
@@ -158,6 +159,17 @@ export const aol = (calendarEvent: CalendarEvent): string => {
       dur: event.allDay ? "allday" : false,
     };
     return `https://calendar.aol.com/?${stringify(details)}`;
+};
+
+export const msTeams = (calendarEvent: CalendarEvent): string => {
+  const event = eventify(calendarEvent);
+  const details: MsTeams = {
+    subject: event.title,
+    content: event.description,
+    startTime: event.startTime.toISOString(),
+    endTime: event.endTime.toISOString(),
+  };
+  return `https://teams.microsoft.com/l/meeting/new?${stringify(details)}`;
 };
 
 export const ics = (calendarEvent: CalendarEvent): string => {
