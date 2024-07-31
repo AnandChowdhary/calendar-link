@@ -161,6 +161,7 @@ export const aol = (calendarEvent: CalendarEvent): string => {
     return `https://calendar.aol.com/?${stringify(details)}`;
 };
 
+// https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow?tabs=teamsjs-v2#configure-deep-link-manually-to-open-a-meeting-scheduling-dialog
 export const msTeams = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
   const details: MsTeams = {
