@@ -11,10 +11,18 @@ import {
 } from "./index";
 import { CalendarEvent } from "./interfaces";
 
+function icsWithId(event: CalendarEvent) {
+  return ics({
+    ...event,
+    uid: '4e23f079-6835-4ce0-a6dd-6efda61c165f'
+  })
+}
+
 for (const service of [
   aol,
   google,
   ics,
+  icsWithId,
   msTeams,
   office365,
   office365Mobile,

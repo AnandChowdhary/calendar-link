@@ -1,6 +1,7 @@
 import * as dayjs from "dayjs";
 
 interface CalendarEvent {
+  uid?: string;
   title: string;
   start: any;
   end?: any;
