@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import { stringify } from "query-string";
 
 import {
   CalendarEvent,
@@ -15,6 +14,19 @@ import {
 import { TimeFormats } from "./utils";
 
 dayjs.extend(utc);
+
+function stringify(input: Record<string, any>): string {
+  const params = new URLSearchParams();
+  Object.keys(input)
+    .sort()
+    .forEach((key) => {
+      const value = input[key];
+      if (value != null) {
+        params.append(key, value);
+      }
+    });
+  return params.toString().replace(/\+/g, "%20");
+}
 
 function formatTimes(
   { startTime, endTime }: NormalizedCalendarEvent,
