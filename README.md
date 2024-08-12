@@ -63,6 +63,10 @@ ics(event); // standard ICS file based on https://icalendar.org
 - If you don't pass the start and end time in UTC, Google will convert it to UTC but Outlook won't, so it's a good idea to use UTC when passing dates and times
 - There are some known issues in Office 365 because of which we can't generate a consistent link in all devices (#542)
 
+## Compatibility
+
+This package uses [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) (Node.js >= 10, 97%+ browsers), but if you need to include a polyfill, you can include [url-search-params-polyfill](https://www.npmjs.com/package/url-search-params-polyfill) first.
+
 ## License
 
 MIT © [Anand Chowdhary](https://anandchowdhary.com/?utm_source=github&utm_medium=calendar-link&utm_campaign=readme)
