@@ -30,7 +30,7 @@ function stringify(input: Record<string, any>): string {
 
 function formatTimes(
   { startTime, endTime }: NormalizedCalendarEvent,
-  dateTimeFormat: keyof typeof TimeFormats
+  dateTimeFormat: keyof typeof TimeFormats,
 ): { start: string; end: string } {
   const format = TimeFormats[dateTimeFormat];
   return { start: startTime.format(format), end: endTime.format(format) };
@@ -161,18 +161,18 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
 };
 
 export const aol = (calendarEvent: CalendarEvent): string => {
-    const event = eventify(calendarEvent);
-    const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
-    const details: Aol = {
-      v: 60,
-      title: event.title,
-      st: start,
-      et: end,
-      desc: event.description,
-      in_loc: event.location,
-      dur: event.allDay ? "allday" : false,
-    };
-    return `https://calendar.aol.com/?${stringify(details)}`;
+  const event = eventify(calendarEvent);
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+  const details: Aol = {
+    v: 60,
+    title: event.title,
+    st: start,
+    et: end,
+    desc: event.description,
+    in_loc: event.location,
+    dur: event.allDay ? "allday" : false,
+  };
+  return `https://calendar.aol.com/?${stringify(details)}`;
 };
 
 // https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow?tabs=teamsjs-v2#configure-deep-link-manually-to-open-a-meeting-scheduling-dialog
@@ -219,7 +219,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "PRODID",
-      value: event.title
+      value: event.title,
     },
     {
       key: "BEGIN",
@@ -263,7 +263,9 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "UID",
-      value: Math.floor(Math.random() * 100000).toString().replace(".", ""),
+      value: Math.floor(Math.random() * 100000)
+        .toString()
+        .replace(".", ""),
     },
     {
       key: "END",
@@ -282,7 +284,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       if (chunk.key == "ORGANIZER") {
         const value = chunk.value as CalendarEventOrganizer;
         calendarUrl += `${chunk.key};${encodeURIComponent(
-          `CN=${value.name}:MAILTO:${value.email}\r\n`
+          `CN=${value.name}:MAILTO:${value.email}\r\n`,
         )}`;
       } else {
         calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\r\n`)}`;
