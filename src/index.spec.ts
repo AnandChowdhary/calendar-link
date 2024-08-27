@@ -107,5 +107,17 @@ for (const service of [
       const link = service(event);
       expect(link).toMatchSnapshot();
     });
+
+    test(`generate a ${service.name} link different timezones`, () => {
+      const event: CalendarEvent = {
+        title: "Flight",
+        start: "2018-04-04T16:00:00.000Z",
+        end: "2018-04-05T16:00:00.000Z",
+        stz: "Europe/Madrid",
+        etz: "America/New_York",
+      };
+      const link = service(event);
+      expect(link).toMatchSnapshot();
+    });
   });
 }

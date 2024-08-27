@@ -13,6 +13,8 @@ interface CalendarEvent {
   busy?: boolean;
   guests?: string[];
   url?: string;
+  stz?: string;
+  etz?: string;
 }
 
 interface CalendarEventOrganizer {
@@ -36,6 +38,8 @@ interface Google extends Record<string, string | boolean | number | undefined> {
   add?: string;
   src?: string;
   recur?: string;
+  stz?: string;
+  etz?: string;
 }
 
 interface Outlook extends Record<string, string | boolean | number | undefined> {
