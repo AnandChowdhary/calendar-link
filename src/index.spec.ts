@@ -70,6 +70,7 @@ for (const service of [
         title: "Birthday party",
         start: "2019-12-29",
         allDay: true,
+        status: "CONFIRMED",
       };
       const link = service(event);
       expect(link).toMatchSnapshot();
