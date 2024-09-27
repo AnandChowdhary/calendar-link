@@ -13,6 +13,7 @@ interface CalendarEvent {
   busy?: boolean;
   guests?: string[];
   url?: string;
+  status?: 'CONFIRMED' | 'TENTATIVE' | 'CANCELLED';
 }
 
 interface CalendarEventOrganizer {
