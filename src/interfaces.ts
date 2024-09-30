@@ -13,6 +13,8 @@ interface CalendarEvent {
   busy?: boolean;
   guests?: string[];
   url?: string;
+  startTimeZone?: string;
+  endTimeZone?: string;
 }
 
 interface CalendarEventOrganizer {
@@ -36,6 +38,8 @@ interface Google extends Record<string, string | boolean | number | undefined> {
   add?: string;
   src?: string;
   recur?: string;
+  stz?: string;
+  etz?: string;
 }
 
 interface Outlook extends Record<string, string | boolean | number | undefined> {
@@ -59,13 +63,13 @@ interface Yahoo extends Record<string, string | boolean | number | undefined> {
 }
 
 interface Aol extends Record<string, string | boolean | number | undefined> {
-    v: number;
-    title: string;
-    st: string;
-    et: string;
-    desc?: string;
-    in_loc?: string;
- }
+  v: number;
+  title: string;
+  st: string;
+  et: string;
+  desc?: string;
+  in_loc?: string;
+}
 
 interface MsTeams extends Record<string, string | boolean | number | undefined> {
   subject?: string;
@@ -75,4 +79,13 @@ interface MsTeams extends Record<string, string | boolean | number | undefined> 
   attendees?: string;
 }
 
-export { CalendarEvent, CalendarEventOrganizer, NormalizedCalendarEvent, Outlook, Yahoo, Google, Aol, MsTeams };
+export {
+  CalendarEvent,
+  CalendarEventOrganizer,
+  NormalizedCalendarEvent,
+  Outlook,
+  Yahoo,
+  Google,
+  Aol,
+  MsTeams,
+};
