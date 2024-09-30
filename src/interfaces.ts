@@ -13,8 +13,8 @@ interface CalendarEvent {
   busy?: boolean;
   guests?: string[];
   url?: string;
-  stz?: string;
-  etz?: string;
+  startTimeZone?: string;
+  endTimeZone?: string;
 }
 
 interface CalendarEventOrganizer {

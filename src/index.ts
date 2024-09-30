@@ -72,8 +72,8 @@ export const google = (calendarEvent: CalendarEvent): string => {
     trp: event.busy,
     dates: start + "/" + end,
     recur: event.rRule ? "RRULE:" + event.rRule : undefined,
-    stz: event.stz,
-    etz: event.etz,
+    stz: event.startTimeZone,
+    etz: event.endTimeZone,
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();

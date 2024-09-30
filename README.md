@@ -54,8 +54,8 @@ ics(event); // standard ICS file based on https://icalendar.org
 | `busy`             | Mark on calendar as busy?   | Boolean                                                                                                                                   |
 | `guests`           | Emails of other guests      | Array of emails (String)                                                                                                                  |
 | `url`              | Calendar document URL       | String                                                                                                                                    |
-| `stz`              | Start timezone              | String <br />**NOTE:** Only supported by `google`                                                                                         |
-| `etz`              | End timezone                | String <br />**NOTE:** Only supported by `google`                                                                                         |
+| `startTimeZone`    | Start timezone              | String <br />**NOTE:** Only supported by `google`                                                                                         |
+| `endTimeZone`      | End timezone                | String <br />**NOTE:** Only supported by `google`                                                                                         |
 
 #### Notes
 

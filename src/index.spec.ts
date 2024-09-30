@@ -113,8 +113,8 @@ for (const service of [
         title: "Flight",
         start: "2018-04-04T16:00:00.000Z",
         end: "2018-04-05T16:00:00.000Z",
-        stz: "Europe/Madrid",
-        etz: "America/New_York",
+        startTimeZone: "Europe/Madrid",
+        endTimeZone: "America/New_York",
       };
       const link = service(event);
       expect(link).toMatchSnapshot();
