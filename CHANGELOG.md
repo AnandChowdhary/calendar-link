@@ -1,3 +1,11 @@
+## v2.8.0 (2024-12-23)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.8.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.7.0...v2.8.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.8.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.8.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.8.0.tar.gz))
+
+### ✨ New features
+
+- [`581db9f`](https://github.com/AnandChowdhary/calendar-link/commit/581db9f)  Add status X-MICROSOFT for allDay support
+
 ## v2.7.0 (2024-07-31)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.7.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.6.1...v2.7.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.7.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.7.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.7.0.tar.gz))
