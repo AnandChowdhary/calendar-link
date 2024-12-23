@@ -239,6 +239,15 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       key: "DTSTAMP",
       value: dateStamp,
     },
+    ...(event.allDay ? [
+      {
+        key: "X-MICROSOFT-CDO-ALLDAYEVENT",
+        value: "TRUE"
+      },
+      {
+        key: "X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT",
+        value: "TRUE"
+      }] : []),
     {
       key: "RRULE",
       value: event.rRule,
@@ -258,6 +267,10 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     {
       key: "ORGANIZER",
       value: event.organizer,
+    },
+    {
+      key: "STATUS",
+      value: event.status,
     },
     {
       key: "UID",
