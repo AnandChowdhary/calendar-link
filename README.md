@@ -5,8 +5,7 @@
 | - | - |
 | Build | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/AnandChowdhary/calendar-link/node.yml) [![Dependencies](https://img.shields.io/librariesio/github/AnandChowdhary/calendar-link)](https://libraries.io/github/AnandChowdhary/calendar-link) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/AnandChowdhary/calendar-link)](https://github.com/AnandChowdhary/calendar-link/releases) |
 | Health | [![License](https://img.shields.io/github/license/anandchowdhary/calendar-link.svg)](https://github.com/AnandChowdhary/calendar-link/blob/master/LICENSE) [![Coverage](https://img.shields.io/coveralls/github/AnandChowdhary/calendar-link)](https://coveralls.io/github/AnandChowdhary/calendar-link) |
-| Community | ![NPM type definitions](https://img.shields.io/npm/types/calendar-link.svg) [![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link) ![GitHub contributors](https://img.shields.io/github/contributors/AnandChowdhary/calendar-link)
- |
+| Community | ![NPM type definitions](https://img.shields.io/npm/types/calendar-link.svg) [![NPM](https://img.shields.io/npm/v/calendar-link.svg)](https://www.npmjs.com/package/calendar-link) ![GitHub contributors](https://img.shields.io/github/contributors/AnandChowdhary/calendar-link) |
 <!-- prettier-ignore-end -->
 
 JavaScript library to generate an event link for Google Calendar, Yahoo!
