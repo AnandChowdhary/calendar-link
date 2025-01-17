@@ -44,15 +44,12 @@ export const eventify = (event: CalendarEvent, toUtc: boolean = true): Normalize
       ? dayjs(end).utc()
       : dayjs(end)
     : (() => {
-        if (event.allDay) {
-          return startTime.add(1, "day");
-        }
         if (duration && duration.length == 2) {
           const value = Number(duration[0]);
           const unit = duration[1];
           return startTime.add(value, unit);
         }
-        return toUtc ? dayjs().utc() : dayjs();
+        return startTime;
       })();
   return {
     ...rest,
