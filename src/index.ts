@@ -217,7 +217,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "PRODID",
-      value: event.title
+      value: "-//AnandChowdhary//calendar-link//EN"
     },
     {
       key: "BEGIN",
