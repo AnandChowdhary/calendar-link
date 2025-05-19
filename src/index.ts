@@ -52,7 +52,7 @@ export const eventify = (event: CalendarEvent, toUtc: boolean = true): Normalize
           const unit = duration[1];
           return startTime.add(value, unit);
         }
-        return toUtc ? dayjs().utc() : dayjs();
+        return startTime;
       })();
   return {
     ...rest,
