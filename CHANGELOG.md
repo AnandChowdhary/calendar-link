@@ -1,3 +1,21 @@
+## v2.9.0 (2025-05-19)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.9.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.8.0...v2.9.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.9.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.9.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.9.0.tar.gz))
+
+### ✨ New features
+
+- [`dfd7975`](https://github.com/AnandChowdhary/calendar-link/commit/dfd7975)  Set ics PRODID correctly (#621)
+(Issues: [`#621`](https://github.com/AnandChowdhary/calendar-link/issues/621))
+
+### 🐛 Bug fixes
+
+- [`194118a`](https://github.com/AnandChowdhary/calendar-link/commit/194118a)  Events without end should not necessarily end &quot;now&quot; (#622)
+(Issues: [`#622`](https://github.com/AnandChowdhary/calendar-link/issues/622))
+
+### ⬆️ Dependency updates
+
+- [`dd4bc49`](https://github.com/AnandChowdhary/calendar-link/commit/dd4bc49)  Upgrade dependencies and workflows for improved CI performance
+
 ## v2.8.0 (2024-12-23)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.8.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.7.0...v2.8.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.8.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.8.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.8.0.tar.gz))
