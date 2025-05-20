@@ -1,3 +1,11 @@
+## v2.10.0 (2025-05-20)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.10.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.9.0...v2.10.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.10.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.10.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.10.0.tar.gz))
+
+### ✨ New features
+
+- [`a9581ed`](https://github.com/AnandChowdhary/calendar-link/commit/a9581ed)  Add support for ICS file&#x27;s UID field
+
 ## v2.9.0 (2025-05-19)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.9.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.8.0...v2.9.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.9.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.9.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.9.0.tar.gz))
