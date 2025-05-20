@@ -108,5 +108,18 @@ for (const service of [
       const link = service(event);
       expect(link).toMatchSnapshot();
     });
+
+    if (service.name === ics.name) {
+      test(`generate a ${service.name} link with uid`, () => {
+        const event: CalendarEvent = {
+          title: "Birthday party",
+          start: "2019-12-29",
+          duration: [2, "hour"],
+          uid: 'abc_123'
+        };
+        const link = service(event);
+        expect(link).toMatchSnapshot();
+      });
+    }
   });
 }

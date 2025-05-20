@@ -274,7 +274,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "UID",
-      value: Math.floor(Math.random() * 100000).toString().replace(".", ""),
+      value: event.uid || Math.floor(Math.random() * 100000).toString().replace(".", ""),
     },
     {
       key: "END",
