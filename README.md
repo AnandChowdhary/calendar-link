@@ -24,6 +24,7 @@ import { google, outlook, office365, yahoo, ics } from "calendar-link";
 
 // Set event as an object
 const event = {
+  uid: "your-unqiue-id",
   title: "My birthday party",
   description: "Be there!",
   start: "2019-12-29 18:00:00 +0100",
@@ -40,19 +41,20 @@ ics(event); // standard ICS file based on https://icalendar.org
 
 ### Options
 
-| Property           | Description                 | Allowed values                                                                                                                            |
-| ------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `title` (required) | Event title                 | String                                                                                                                                    |
-| `start` (required) | Start time                  | JS Date / ISO 8601 string / Unix Timestamp                                                                                                |
-| `end`              | End time                    | JS Date / ISO 8601 string / Unix Timestamp                                                                                                |
-| `duration`         | Event duration              | Array with value (Number) and unit (String)                                                                                               |
-| `allDay`           | All day event               | Boolean                                                                                                                                   |
-| `rRule`            | Recurring event             | iCal [recurrence rule](https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10) string <br />**NOTE:** Only supported by `google` and `ics` |
-| `description`      | Information about the event | String                                                                                                                                    |
-| `location`         | Event location in words     | String                                                                                                                                    |
-| `busy`             | Mark on calendar as busy?   | Boolean                                                                                                                                   |
-| `guests`           | Emails of other guests      | Array of emails (String)                                                                                                                  |
-| `url`              | Calendar document URL       | String                                                                                                                                    |
+| Property           | Description                     | Allowed values                                                                                                                            |
+| ------------------ | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `title` (required) | Event title                     | String                                                                                                                                    |
+| `start` (required) | Start time                      | JS Date / ISO 8601 string / Unix Timestamp                                                                                                |
+| `end`              | End time                        | JS Date / ISO 8601 string / Unix Timestamp                                                                                                |
+| `duration`         | Event duration                  | Array with value (Number) and unit (String)                                                                                               |
+| `allDay`           | All day event                   | Boolean                                                                                                                                   |
+| `rRule`            | Recurring event                 | iCal [recurrence rule](https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10) string <br />**NOTE:** Only supported by `google` and `ics` |
+| `description`      | Information about the event     | String                                                                                                                                    |
+| `location`         | Event location in words         | String                                                                                                                                    |
+| `busy`             | Mark on calendar as busy?       | Boolean                                                                                                                                   |
+| `guests`           | Emails of other guests          | Array of emails (String)                                                                                                                  |
+| `url`              | Calendar document URL           | String                                                                                                                                    |
+| `uid`              | Unique identifier for the event | String                                                                                                                                    |
 
 #### Notes
 
@@ -62,6 +64,7 @@ ics(event); // standard ICS file based on https://icalendar.org
   Not all calendars support the `guests` and `url` fields.
 - If you don't pass the start and end time in UTC, Google will convert it to UTC but Outlook won't, so it's a good idea to use UTC when passing dates and times
 - There are some known issues in Office 365 because of which we can't generate a consistent link in all devices (#542)
+- The `uid` field is currently optional and will generate a random ID if not provided. In a future version, this field will be required to ensure proper event identification and deduplication.
 
 ## Compatibility
 
