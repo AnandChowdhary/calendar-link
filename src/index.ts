@@ -92,6 +92,9 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  if (event.guests && event.guests.length) {
+    details.to = event.guests.join();
+  }
   return `https://outlook.live.com/calendar/0/action/compose?${stringify(details)}`;
 };
 
@@ -108,6 +111,9 @@ export const outlookMobile = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  if (event.guests && event.guests.length) {
+    details.to = event.guests.join();
+  }
   return `https://outlook.live.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 
@@ -124,6 +130,9 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  if (event.guests && event.guests.length) {
+    details.to = event.guests.join();
+  }
   return `https://outlook.office.com/calendar/0/action/compose?${stringify(details)}`;
 };
 
@@ -140,6 +149,9 @@ export const office365Mobile = (calendarEvent: CalendarEvent): string => {
     location: event.location,
     allday: event.allDay || false,
   };
+  if (event.guests && event.guests.length) {
+    details.to = event.guests.join();
+  }
   return `https://outlook.office.com/calendar/0/deeplink/compose?${stringify(details)}`;
 };
 

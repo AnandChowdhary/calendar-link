@@ -49,6 +49,7 @@ interface Outlook extends Record<string, string | boolean | number | undefined> 
   allday?: boolean;
   body?: string;
   location?: string;
+  to?: string;
 }
 
 interface Yahoo extends Record<string, string | boolean | number | undefined> {
