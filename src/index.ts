@@ -308,7 +308,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
           `CN=${value.name}:MAILTO:${value.email}\r\n`
         )}`;
       } else {
-        calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\r\n`)}`;
+        calendarUrl += `${chunk.key}${encodeURIComponent(`:${chunk.value}\r\n`)}`;
       }
     }
   });
