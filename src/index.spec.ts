@@ -65,6 +65,17 @@ for (const service of [
       expect(link).toMatchSnapshot();
     });
 
+    test(`generate a ${service.name} link with a named timezone`, () => {
+      const event: CalendarEvent = {
+        title: "Birthday party",
+        start: "2099-12-29T12:00:00.000",
+        duration: [2, "hour"],
+        tz: "Europe/Amsterdam",
+      };
+      const link = service(event);
+      expect(link).toMatchSnapshot();
+    });
+
     test(`generate an all day ${service.name} link`, () => {
       const event: CalendarEvent = {
         title: "Birthday party",

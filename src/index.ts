@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 import {
   CalendarEvent,
@@ -12,8 +13,10 @@ import {
   Yahoo,
 } from "./interfaces";
 import { TimeFormats } from "./utils";
+import { tzlib_get_ical_block } from "timezones-ical-library";
 
 dayjs.extend(utc);
+dayjs.extend(timezone);
 
 function stringify(input: Record<string, any>): string {
   const params = new URLSearchParams();
@@ -36,34 +39,69 @@ function formatTimes(
   return { start: startTime.format(format), end: endTime.format(format) };
 }
 
-export const eventify = (event: CalendarEvent, toUtc: boolean = true): NormalizedCalendarEvent => {
-  const { start, end, duration, ...rest } = event;
-  const startTime = toUtc ? dayjs(start).utc() : dayjs(start);
-  const endTime = end
-    ? toUtc
-      ? dayjs(end).utc()
-      : dayjs(end)
-    : (() => {
-        if (event.allDay) {
-          return startTime.add(1, "day");
-        }
-        if (duration && duration.length == 2) {
-          const value = Number(duration[0]);
-          const unit = duration[1];
-          return startTime.add(value, unit);
-        }
-        return startTime;
-      })();
+export const eventify = ({
+  event,
+  isLocalFloatingTime = false,
+  toUtc = true,
+}: {
+  event: CalendarEvent;
+  isLocalFloatingTime?: boolean;
+  toUtc?: boolean;
+}): NormalizedCalendarEvent => {
+  const { start, end, duration, tz, allDay, ...rest } = event;
+
+  if (isLocalFloatingTime && toUtc) {
+    // `isLocalFloatingTime` and `toUtc` params are mutually exclusive
+    toUtc = false;
+  }
+
+  if (duration && allDay) {
+    throw new Error("`duration` and `allDay` params are mutually exclusive");
+  }
+
+  if (end && duration) {
+    throw new Error("Cannot specify `duration` with `end`");
+  }
+
+  let startTime = tz ? dayjs.tz(start, tz) : dayjs(start);
+  let endTime;
+
+  if (end) {
+    endTime = tz ? dayjs.tz(end, tz) : dayjs(end);
+  } else {
+    if (allDay) {
+      endTime = startTime.add(1, "day");
+    } else if (duration) {
+      const value = Number(duration[0]);
+      const unit = duration[1];
+      endTime = startTime.add(value, unit);
+    } else {
+      endTime = startTime.clone();
+    }
+  }
+
+  if (isLocalFloatingTime) {
+    startTime = startTime.local();
+    endTime = endTime.local();
+  }
+
+  if (toUtc) {
+    startTime = startTime.utc();
+    endTime = endTime.utc();
+  }
+
   return {
     ...rest,
     startTime: startTime,
     endTime: endTime,
+    tz: tz,
+    allDay,
   };
 };
 
 export const google = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
-  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+  const event = eventify({ event: calendarEvent, toUtc: !calendarEvent.tz });
+  const { start, end } = formatTimes(event, event.allDay ? "allDay" : (event.tz ? "dateTimeTZ" : "dateTimeUTC"));
   const details: Google = {
     action: "TEMPLATE",
     text: event.title,
@@ -72,6 +110,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
     trp: event.busy,
     dates: start + "/" + end,
     recur: event.rRule ? "RRULE:" + event.rRule : undefined,
+    ctz: event.tz || undefined,
   };
   if (event.guests && event.guests.length) {
     details.add = event.guests.join();
@@ -80,7 +119,7 @@ export const google = (calendarEvent: CalendarEvent): string => {
 };
 
 export const outlook = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent, false);
+  const event = eventify({ event: calendarEvent, isLocalFloatingTime: true, toUtc: false });
   const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
@@ -99,7 +138,7 @@ export const outlook = (calendarEvent: CalendarEvent): string => {
 };
 
 export const outlookMobile = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent, false);
+  const event = eventify({ event: calendarEvent, isLocalFloatingTime: true, toUtc: false });
   const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
@@ -118,7 +157,7 @@ export const outlookMobile = (calendarEvent: CalendarEvent): string => {
 };
 
 export const office365 = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent, false);
+  const event = eventify({ event: calendarEvent, isLocalFloatingTime: true, toUtc: false });
   const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
@@ -137,7 +176,7 @@ export const office365 = (calendarEvent: CalendarEvent): string => {
 };
 
 export const office365Mobile = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent, false);
+  const event = eventify({ event: calendarEvent, isLocalFloatingTime: true, toUtc: false });
   const { start, end } = formatTimes(event, "dateTimeLocal");
   const details: Outlook = {
     path: "/calendar/action/compose",
@@ -156,7 +195,7 @@ export const office365Mobile = (calendarEvent: CalendarEvent): string => {
 };
 
 export const yahoo = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
+  const event = eventify({ event: calendarEvent, toUtc: true });
   const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const details: Yahoo = {
     v: 60,
@@ -171,8 +210,8 @@ export const yahoo = (calendarEvent: CalendarEvent): string => {
 };
 
 export const aol = (calendarEvent: CalendarEvent): string => {
-    const event = eventify(calendarEvent);
-    const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+  const event = eventify({ event: calendarEvent, toUtc: true });
+   const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
     const details: Aol = {
       v: 60,
       title: event.title,
@@ -187,7 +226,7 @@ export const aol = (calendarEvent: CalendarEvent): string => {
 
 // https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow?tabs=teamsjs-v2#configure-deep-link-manually-to-open-a-meeting-scheduling-dialog
 export const msTeams = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
+  const event = eventify({ event: calendarEvent, toUtc: true });
   const details: MsTeams = {
     subject: event.title,
     content: event.description,
@@ -201,7 +240,7 @@ export const msTeams = (calendarEvent: CalendarEvent): string => {
 };
 
 export const ics = (calendarEvent: CalendarEvent): string => {
-  const event = eventify(calendarEvent);
+  const event = eventify({ event: calendarEvent, toUtc: false });
   const formattedDescription: string = (event.description || "")
     .replace(/,/gm, ",")
     .replace(/;/gm, ";")
@@ -216,8 +255,22 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     .replace(/\n/gm, "\\n")
     .replace(/(\\n)[\s\t]+/gm, "\\n");
 
-  const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
+  const { start, end } = formatTimes(event,
+      event.allDay  ? "allDay"
+    : event.tz      ? "dateTimeTZ"
+    : "dateTimeUTC"
+  )
   const dateStamp = dayjs(new Date()).utc().format(TimeFormats["dateTimeUTC"]);
+
+  let vtimezoneBlock = '';
+  let dtStartKey = "DTSTART";
+  let dtEndKey = "DTEND";
+  if (event.tz) {
+    const [block, tzidLine] = tzlib_get_ical_block(event.tz);
+    vtimezoneBlock = block;
+    dtStartKey = `DTSTART;${tzidLine}`;
+    dtEndKey = `DTEND;${tzidLine}`;
+  }
   const calendarChunks = [
     {
       key: "BEGIN",
@@ -231,6 +284,12 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       key: "PRODID",
       value: "-//AnandChowdhary//calendar-link//EN"
     },
+    ...(vtimezoneBlock ? [
+      {
+        key: "VTIMEZONE_BLOCK",
+        value: vtimezoneBlock,
+      }
+    ] : []),
     {
       key: "BEGIN",
       value: "VEVENT",
@@ -240,11 +299,11 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: event.url,
     },
     {
-      key: "DTSTART",
+      key: dtStartKey,
       value: start,
     },
     {
-      key: "DTEND",
+      key: dtEndKey,
       value: end,
     },
     {
@@ -307,6 +366,8 @@ export const ics = (calendarEvent: CalendarEvent): string => {
         calendarUrl += `${chunk.key};${encodeURIComponent(
           `CN=${value.name}:MAILTO:${value.email}\r\n`
         )}`;
+      } else if (chunk.key === "VTIMEZONE_BLOCK") {
+        calendarUrl += `${encodeURIComponent(`${chunk.value}\r\n`)}`; // VTIMEZONE block is already formatted
       } else {
         calendarUrl += `${chunk.key}:${encodeURIComponent(`${chunk.value}\r\n`)}`;
       }

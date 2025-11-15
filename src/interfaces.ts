@@ -15,6 +15,7 @@ interface CalendarEvent {
   url?: string;
   status?: 'CONFIRMED' | 'TENTATIVE' | 'CANCELLED';
   uid?: string;
+  tz?: string;
 }
 
 interface CalendarEventOrganizer {
