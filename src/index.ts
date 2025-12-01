@@ -38,9 +38,9 @@ function formatTimes(
 
 export const eventify = (event: CalendarEvent, toUtc: boolean = true): NormalizedCalendarEvent => {
   const { start, end, duration, ...rest } = event;
-  const startTime = toUtc ? dayjs(start).utc() : dayjs(start);
+  const startTime = toUtc && !event.allDay ? dayjs(start).utc() : dayjs(start);
   const endTime = end
-    ? toUtc
+    ? toUtc && !event.allDay
       ? dayjs(end).utc()
       : dayjs(end)
     : (() => {
