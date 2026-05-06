@@ -14,8 +14,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 22
       - name: Install dependencies
-        run: npm ci
+        run: npx npm@latest ci
+      - name: Test
+        run: npm test -- --runInBand
       - name: Build TypeScript
         run: npm run build
