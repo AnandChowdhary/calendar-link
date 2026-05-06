@@ -1,3 +1,12 @@
+## v2.11.1 (2026-05-06)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.0...v2.11.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.1.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`1f55cdd`](https://github.com/AnandChowdhary/calendar-link/commit/1f55cdd)  Preserve all-day date-only events across timezones
+(Issues: [`#678`](https://github.com/AnandChowdhary/calendar-link/issues/678))
+
 ## v2.11.0 (2025-06-20)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.10.0...v2.11.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.0.tar.gz))
