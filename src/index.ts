@@ -36,13 +36,16 @@ function formatTimes(
   return { start: startTime.format(format), end: endTime.format(format) };
 }
 
+const parseDate = (date: CalendarEvent["start"], allDay?: boolean, toUtc: boolean = true) => {
+  if (allDay) return dayjs.utc(date);
+  return toUtc ? dayjs(date).utc() : dayjs(date);
+};
+
 export const eventify = (event: CalendarEvent, toUtc: boolean = true): NormalizedCalendarEvent => {
   const { start, end, duration, ...rest } = event;
-  const startTime = toUtc ? dayjs(start).utc() : dayjs(start);
+  const startTime = parseDate(start, event.allDay, toUtc);
   const endTime = end
-    ? toUtc
-      ? dayjs(end).utc()
-      : dayjs(end)
+    ? parseDate(end, event.allDay, toUtc)
     : (() => {
         if (event.allDay) {
           return startTime.add(1, "day");
