@@ -11,6 +11,15 @@ import {
 } from "./index";
 import { CalendarEvent } from "./interfaces";
 
+describe("all-day events", () => {
+  test("ics date-only events are timezone-stable", () => {
+    const link = ics({ title: "Dec 29", start: "2025-12-29", allDay: true });
+
+    expect(decodeURIComponent(link)).toContain("DTSTART:20251229");
+    expect(decodeURIComponent(link)).toContain("DTEND:20251230");
+  });
+});
+
 for (const service of [
   aol,
   google,
