@@ -32,10 +32,10 @@ for (const service of [
   yahoo,
 ]) {
   beforeAll(() => {
-    jest.useFakeTimers("modern");
+    jest.useFakeTimers();
     jest.setSystemTime(new Date("2019-12-28T12:00:00.000Z"));
 
-    jest.spyOn(global.Math, "random").mockReturnValue(0.12345);
+    jest.spyOn(Math, "random").mockReturnValue(0.12345);
   });
 
   afterAll(() => {

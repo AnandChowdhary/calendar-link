@@ -4,7 +4,7 @@ interface CalendarEvent {
   title: string;
   start: any;
   end?: any;
-  duration?: [number, dayjs.UnitType];
+  duration?: [number, dayjs.ManipulateType];
   allDay?: boolean;
   rRule?: string;
   description?: string;
