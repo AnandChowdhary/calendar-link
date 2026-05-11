@@ -1,3 +1,15 @@
+## v2.11.2 (2026-05-11)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.2) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.1...v2.11.2) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.2) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.2.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.2.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`43447fb`](https://github.com/AnandChowdhary/calendar-link/commit/43447fb)  Bump qs from 6.5.2 to 6.5.5 (#700)
+(Issues: [`#700`](https://github.com/AnandChowdhary/calendar-link/issues/700))- [`59dbd50`](https://github.com/AnandChowdhary/calendar-link/commit/59dbd50)  Bump decode-uri-component from 0.2.0 to 0.2.2 (#699)
+(Issues: [`#699`](https://github.com/AnandChowdhary/calendar-link/issues/699))- [`5e0db7a`](https://github.com/AnandChowdhary/calendar-link/commit/5e0db7a)  Update Jest dependency set and scope test discovery to source files (#701)
+(Issues: [`#701`](https://github.com/AnandChowdhary/calendar-link/issues/701))- [`7cb30e1`](https://github.com/AnandChowdhary/calendar-link/commit/7cb30e1)  Migrate all dependencies to latest versions (#702)
+(Issues: [`#702`](https://github.com/AnandChowdhary/calendar-link/issues/702))
+
 ## v2.11.1 (2026-05-06)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.1) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.0...v2.11.1) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.1) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.1.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.1.tar.gz))
