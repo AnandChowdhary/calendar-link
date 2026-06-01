@@ -1,3 +1,12 @@
+## v2.11.3 (2026-06-01)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.3) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.2...v2.11.3) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.3.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.3.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`c9ab227`](https://github.com/AnandChowdhary/calendar-link/commit/c9ab227)  Bump ts-jest from 29.4.9 to 29.4.10 (#707)
+(Issues: [`#707`](https://github.com/AnandChowdhary/calendar-link/issues/707))
+
 ## v2.11.2 (2026-05-11)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.2) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.1...v2.11.2) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.2) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.2.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.2.tar.gz))
