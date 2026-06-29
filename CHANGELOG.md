@@ -1,3 +1,11 @@
+## v2.11.4 (2026-06-29)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.4) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.3...v2.11.4) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.4) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.4.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.4.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`7b6d55b`](https://github.com/AnandChowdhary/calendar-link/commit/7b6d55b)  Bump actions/cache from 4 to 6
+
 ## v2.11.3 (2026-06-01)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.3) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.2...v2.11.3) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.3) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.3.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.3.tar.gz))
