@@ -1,3 +1,12 @@
+## v2.11.5 (2026-08-31)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.5) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.4...v2.11.5) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.5) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.5.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.5.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`c0ce9de`](https://github.com/AnandChowdhary/calendar-link/commit/c0ce9de)  Update js-yaml to patched releases
+- [`a967988`](https://github.com/AnandChowdhary/calendar-link/commit/a967988)  Bump actions/stale from 9 to 11
+
 ## v2.11.4 (2026-06-29)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.4) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.3...v2.11.4) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.4) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.4.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.4.tar.gz))
