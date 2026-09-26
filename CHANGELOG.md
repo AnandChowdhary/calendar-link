@@ -1,3 +1,12 @@
+## v2.11.6 (2026-09-26)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.6) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.5...v2.11.6) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.6) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.6.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.6.tar.gz))
+
+### 🐛 Bug fixes
+
+- [`893b6c0`](https://github.com/AnandChowdhary/calendar-link/commit/893b6c0)  Preserve local-midnight Date days in all-day events (#721)
+(Issues: [`#721`](https://github.com/AnandChowdhary/calendar-link/issues/721))
+
 ## v2.11.5 (2026-08-31)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.5) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.4...v2.11.5) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.5) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.5.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.5.tar.gz))
