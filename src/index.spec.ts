@@ -18,6 +18,35 @@ describe("all-day events", () => {
     expect(decodeURIComponent(link)).toContain("DTSTART:20251229");
     expect(decodeURIComponent(link)).toContain("DTEND:20251230");
   });
+
+  const berlinTest = Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/Berlin"
+    ? test
+    : test.skip;
+  berlinTest("local Date midnights keep their calendar dates for all-day events", () => {
+    const event: CalendarEvent = {
+      title: "Vacation",
+      start: new Date(2026, 8, 25),
+      end: new Date(2026, 8, 27),
+      allDay: true,
+    };
+    expect(event.start.toISOString()).toBe("2026-09-24T22:00:00.000Z");
+
+    const link = decodeURIComponent(ics(event));
+    expect(link).toContain("DTSTART:20260925");
+    expect(link).toContain("DTEND:20260927");
+    expect(new URL(google(event)).searchParams.get("dates")).toBe("20260925/20260927");
+  });
+
+  berlinTest("non-midnight Date instants retain their UTC day", () => {
+    const link = decodeURIComponent(ics({
+      title: "UTC instant",
+      start: new Date("2026-09-25T23:30:00Z"),
+      allDay: true,
+    }));
+
+    expect(link).toContain("DTSTART:20260925");
+    expect(link).toContain("DTEND:20260926");
+  });
 });
 
 for (const service of [
