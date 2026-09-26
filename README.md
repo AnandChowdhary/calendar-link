@@ -63,6 +63,7 @@ ics(event); // standard ICS file based on https://icalendar.org
 - The `url` field defaults to `document.URL` if a global `document` object exists. For server-side rendering, you should supply the `url` manually.
 - Not all calendars support the `guests` and `url` fields. For `guests` support in outlook/office calendar, this has been tested with `outlook` and `office365` [when this PR was implemented](https://github.com/AnandChowdhary/calendar-link/pull/648) but we weren't able to test this with `outlookMobile` and `office365Mobile` so it might not work as expected. However, all outlook/office calendar links have same path and query string structure so we just added them as even if the query string is invalid, it will just be ignored and won't break anything.
 - If you don't pass the start and end time in UTC, Google will convert it to UTC but Outlook won't, so it's a good idea to use UTC when passing dates and times
+- For `allDay` events, date-only strings and locally constructed midnight `Date` values use their calendar date; `end` is the exclusive end date (use the next day for a one-day event). Other `Date` times retain their UTC date.
 - There are some known issues in Office 365 because of which we can't generate a consistent link in all devices (#542)
 - The `uid` field is currently optional and will generate a random ID if not provided. In a future version, this field will be required to ensure proper event identification and deduplication.
 

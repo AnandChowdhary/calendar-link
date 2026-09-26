@@ -19,5 +19,12 @@ jobs:
         run: npx npm@latest ci
       - name: Test
         run: npm test -- --runInBand
+      - name: Test all-day dates in a positive-offset timezone
+        run: |
+          node -e 'if (Intl.DateTimeFormat().resolvedOptions().timeZone !== "Europe/Berlin") process.exit(1)'
+          npm test -- --runInBand -t 'local Date midnights|non-midnight Date'
+        env:
+          TZ: Europe/Berlin
+          CALENDAR_LINK_TEST_TZ: Europe/Berlin
       - name: Build TypeScript
         run: npm run build

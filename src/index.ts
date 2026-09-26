@@ -37,7 +37,14 @@ function formatTimes(
 }
 
 const parseDate = (date: CalendarEvent["start"], allDay?: boolean, toUtc: boolean = true) => {
-  if (allDay) return dayjs.utc(date);
+  if (allDay) {
+    // Local-midnight Dates represent calendar days; other Dates retain their UTC day.
+    if (date instanceof Date && date.getHours() === 0 && date.getMinutes() === 0 &&
+        date.getSeconds() === 0 && date.getMilliseconds() === 0) {
+      return dayjs.utc(dayjs(date).format("YYYY-MM-DD"));
+    }
+    return dayjs.utc(date);
+  }
   return toUtc ? dayjs(date).utc() : dayjs(date);
 };
 
