@@ -1,3 +1,11 @@
+## v2.11.7 (2026-11-02)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.7) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.6...v2.11.7) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.7) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.7.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.7.tar.gz))
+
+### ⬆️ Dependency updates
+
+- [`fd6d4ae`](https://github.com/AnandChowdhary/calendar-link/commit/fd6d4ae)  Bump actions/setup-node to v7
+
 ## v2.11.6 (2026-09-26)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.6) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.5...v2.11.6) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.6) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.6.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.6.tar.gz))
