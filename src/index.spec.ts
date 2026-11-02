@@ -11,6 +11,27 @@ import {
 } from "./index";
 import { CalendarEvent } from "./interfaces";
 
+describe("ics text values", () => {
+  test("escape backslashes, semicolons, commas and line breaks", () => {
+    const link = decodeURIComponent(
+      ics({
+        title: "Standup\nDTSTART:20300101T000000Z",
+        description: "Files are in C:\\new\\data; bring a laptop, charger",
+        location: "Room 4, Floor 2",
+        start: "2019-12-29T10:00:00Z",
+        duration: [1, "hour"],
+      })
+    );
+
+    expect(link).toContain("SUMMARY:Standup\\nDTSTART:20300101T000000Z\r\n");
+    expect(link).toContain(
+      "DESCRIPTION:Files are in C:\\\\new\\\\data\\; bring a laptop\\, charger\r\n"
+    );
+    expect(link).toContain("LOCATION:Room 4\\, Floor 2\r\n");
+    expect(link.match(/^DTSTART:/gm)).toHaveLength(1);
+  });
+});
+
 describe("all-day events", () => {
   test("ics date-only events are timezone-stable", () => {
     const link = ics({ title: "Dec 29", start: "2025-12-29", allDay: true });

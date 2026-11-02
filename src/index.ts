@@ -210,21 +210,22 @@ export const msTeams = (calendarEvent: CalendarEvent): string => {
   return `https://teams.microsoft.com/l/meeting/new?${stringify(details)}`;
 };
 
+// Escapes a TEXT property value (RFC 5545, section 3.3.11): a backslash, semicolon or comma
+// gets a backslash in front of it, and a line break becomes "\n" so that it can't end the
+// property line. Whitespace at the start of a line is dropped, as before.
+const escapeIcsText = (text: string): string =>
+  text
+    .replace(/\\/g, "\\\\")
+    .replace(/;/g, "\\;")
+    .replace(/,/g, "\\,")
+    .replace(/\r\n?/g, "\n")
+    .replace(/\n[^\S\n]+/g, "\n")
+    .replace(/\n/g, "\\n");
+
 export const ics = (calendarEvent: CalendarEvent): string => {
   const event = eventify(calendarEvent);
-  const formattedDescription: string = (event.description || "")
-    .replace(/,/gm, ",")
-    .replace(/;/gm, ";")
-    .replace(/\r\n/gm, "\n")
-    .replace(/\n/gm, "\\n")
-    .replace(/(\\n)[\s\t]+/gm, "\\n");
-
-  const formattedLocation: string = (event.location || "")
-    .replace(/,/gm, ",")
-    .replace(/;/gm, ";")
-    .replace(/\r\n/gm, "\n")
-    .replace(/\n/gm, "\\n")
-    .replace(/(\\n)[\s\t]+/gm, "\\n");
+  const formattedDescription: string = escapeIcsText(event.description || "");
+  const formattedLocation: string = escapeIcsText(event.location || "");
 
   const { start, end } = formatTimes(event, event.allDay ? "allDay" : "dateTimeUTC");
   const dateStamp = dayjs(new Date()).utc().format(TimeFormats["dateTimeUTC"]);
@@ -276,7 +277,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "SUMMARY",
-      value: event.title,
+      value: escapeIcsText(event.title || ""),
     },
     {
       key: "DESCRIPTION",
