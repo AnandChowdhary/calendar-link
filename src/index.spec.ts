@@ -12,11 +12,33 @@ import {
 import { CalendarEvent } from "./interfaces";
 
 describe("all-day events", () => {
+  test("ics declares DATE values for both all-day boundaries", () => {
+    const link = decodeURIComponent(ics({
+      title: "Vacation",
+      start: "2026-11-15",
+      end: "2026-11-18",
+      allDay: true,
+    }));
+    expect(link).toContain("\r\nDTSTART;VALUE=DATE:20261115\r\n");
+    expect(link).toContain("\r\nDTEND;VALUE=DATE:20261118\r\n");
+  });
+
+  test("ics keeps timed boundaries as UTC DATE-TIME values", () => {
+    const link = decodeURIComponent(ics({
+      title: "Meeting",
+      start: "2026-11-15T12:00:00Z",
+      duration: [1, "hour"],
+    }));
+    expect(link).toContain("\r\nDTSTART:20261115T120000Z\r\n");
+    expect(link).toContain("\r\nDTEND:20261115T130000Z\r\n");
+    expect(link).not.toContain("VALUE=DATE");
+  });
+
   test("ics date-only events are timezone-stable", () => {
     const link = ics({ title: "Dec 29", start: "2025-12-29", allDay: true });
 
-    expect(decodeURIComponent(link)).toContain("DTSTART:20251229");
-    expect(decodeURIComponent(link)).toContain("DTEND:20251230");
+    expect(decodeURIComponent(link)).toContain("DTSTART;VALUE=DATE:20251229");
+    expect(decodeURIComponent(link)).toContain("DTEND;VALUE=DATE:20251230");
   });
 
   const berlinTest = Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/Berlin"
@@ -32,8 +54,8 @@ describe("all-day events", () => {
     expect(event.start.toISOString()).toBe("2026-09-24T22:00:00.000Z");
 
     const link = decodeURIComponent(ics(event));
-    expect(link).toContain("DTSTART:20260925");
-    expect(link).toContain("DTEND:20260927");
+    expect(link).toContain("DTSTART;VALUE=DATE:20260925");
+    expect(link).toContain("DTEND;VALUE=DATE:20260927");
     expect(new URL(google(event)).searchParams.get("dates")).toBe("20260925/20260927");
   });
 
@@ -44,8 +66,8 @@ describe("all-day events", () => {
       allDay: true,
     }));
 
-    expect(link).toContain("DTSTART:20260925");
-    expect(link).toContain("DTEND:20260926");
+    expect(link).toContain("DTSTART;VALUE=DATE:20260925");
+    expect(link).toContain("DTEND;VALUE=DATE:20260926");
   });
 });
 
