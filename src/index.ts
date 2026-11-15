@@ -250,11 +250,11 @@ export const ics = (calendarEvent: CalendarEvent): string => {
       value: event.url,
     },
     {
-      key: "DTSTART",
+      key: event.allDay ? "DTSTART;VALUE=DATE" : "DTSTART",
       value: start,
     },
     {
-      key: "DTEND",
+      key: event.allDay ? "DTEND;VALUE=DATE" : "DTEND",
       value: end,
     },
     {
