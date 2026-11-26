@@ -11,6 +11,28 @@ import {
 } from "./index";
 import { CalendarEvent } from "./interfaces";
 
+describe("ics PRODID", () => {
+  const event: CalendarEvent = { title: "Launch", start: "2019-12-29", duration: [1, "hour"] };
+
+  test("defaults to the calendar-link product ID", () => {
+    expect(decodeURIComponent(ics(event))).toContain(
+      "\r\nPRODID:-//AnandChowdhary//calendar-link//EN\r\n"
+    );
+  });
+
+  test("uses a custom product ID when provided", () => {
+    const link = decodeURIComponent(ics({ ...event, productId: "-//Your App//Calendar Export//EN" }));
+    expect(link).toContain("\r\nPRODID:-//Your App//Calendar Export//EN\r\n");
+    expect(link.match(/PRODID/g)).toHaveLength(1);
+  });
+
+  test("keeps a custom product ID on a single line", () => {
+    const link = decodeURIComponent(ics({ ...event, productId: "-//App//X//EN\r\nX-INJECTED:1" }));
+    expect(link).toContain("\r\nPRODID:-//App//X//EN X-INJECTED:1\r\n");
+    expect(link).not.toContain("\r\nX-INJECTED");
+  });
+});
+
 describe("all-day events", () => {
   test("ics date-only events are timezone-stable", () => {
     const link = ics({ title: "Dec 29", start: "2025-12-29", allDay: true });

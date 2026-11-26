@@ -239,7 +239,7 @@ export const ics = (calendarEvent: CalendarEvent): string => {
     },
     {
       key: "PRODID",
-      value: "-//AnandChowdhary//calendar-link//EN"
+      value: (event.productId || "-//AnandChowdhary//calendar-link//EN").replace(/[\r\n]+/g, " "),
     },
     {
       key: "BEGIN",

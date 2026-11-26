@@ -55,6 +55,7 @@ ics(event); // standard ICS file based on https://icalendar.org
 | `guests`           | Emails of other guests. This is currently only supported for `google`, `outlook`, `outlookMobile`, `office365`, `office365Mobile` and `msTeams`          | Array of emails (String)                                                                                                                  |
 | `url`              | Calendar document URL           | String                                                                                                                                    |
 | `uid`              | Unique identifier for the event | String                                                                                                                                    |
+| `productId`        | `PRODID` of the calendar file, defaults to `-//AnandChowdhary//calendar-link//EN` <br />**NOTE:** Only supported by `ics` | String, e.g. `-//Your App//Calendar Export//EN`                                                       |
 
 #### Notes
 
