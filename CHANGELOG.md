@@ -1,3 +1,12 @@
+## v2.12.0 (2026-11-26)
+
+[📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.12.0) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.7...v2.12.0) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.12.0) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.12.0.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.12.0.tar.gz))
+
+### ✨ New features
+
+- [`6f36c8f`](https://github.com/AnandChowdhary/calendar-link/commit/6f36c8f)  Support a custom PRODID in ics links (#725)
+(Issues: [`#725`](https://github.com/AnandChowdhary/calendar-link/issues/725))
+
 ## v2.11.7 (2026-11-02)
 
 [📝 Release notes](https://github.com/AnandChowdhary/calendar-link/releases/tag/v2.11.7) · [💻 Compare](https://github.com/AnandChowdhary/calendar-link/compare/v2.11.6...v2.11.7) · [🔖 Tag](https://github.com/AnandChowdhary/calendar-link/tree/v2.11.7) · 🗄️ Archive ([zip](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.7.zip) · [tar.gz](https://github.com/AnandChowdhary/calendar-link/archive/v2.11.7.tar.gz))
